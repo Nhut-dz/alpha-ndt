@@ -101,7 +101,7 @@ export default function Services() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <span className="inline-block text-blue-400 font-semibold text-sm tracking-widest uppercase mb-3">
+          <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
             Dịch vụ
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
@@ -161,15 +161,15 @@ export default function Services() {
                 <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
                   {service.category}
                 </span>
-                <span className="bg-blue-500/10 text-blue-400 text-xs font-black px-2.5 py-1 rounded-lg border border-blue-500/20">
+                <span className="bg-orange-500/10 text-orange-400 text-xs font-black px-2.5 py-1 rounded-lg border border-orange-500/20">
                   {service.code}
                 </span>
               </div>
 
               {/* Icon */}
               <div
-                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} bg-opacity-10 flex items-center justify-center mb-5 text-blue-400 group-hover:scale-110 transition-transform duration-300`}
-                style={{ background: "rgba(59,130,246,0.08)" }}
+                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} bg-opacity-10 flex items-center justify-center mb-5 text-orange-400 group-hover:scale-110 transition-transform duration-300`}
+                style={{ background: "rgba(249,115,22,0.08)" }}
               >
                 <ServiceIcon code={service.code} />
               </div>

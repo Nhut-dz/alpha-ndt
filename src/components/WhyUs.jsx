@@ -60,7 +60,7 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="inline-block text-blue-400 font-semibold text-sm tracking-widest uppercase mb-3">
+          <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
             Vì sao chọn chúng tôi
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
@@ -88,7 +88,7 @@ export default function WhyUs() {
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Icon circle */}
-              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mx-auto mb-5 group-hover:bg-blue-500/20 transition-colors duration-300 group-hover:scale-110 transform">
+              <div className="w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 mx-auto mb-5 group-hover:bg-orange-500/20 transition-colors duration-300 group-hover:scale-110 transform">
                 {iconMap[item.icon]}
               </div>
 

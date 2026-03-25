@@ -40,7 +40,7 @@ export default function Partners() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="inline-block text-blue-400 font-semibold text-sm tracking-widest uppercase mb-3">
+          <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
             Đối tác
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
@@ -97,7 +97,7 @@ export default function Partners() {
               key={i}
               className="bg-slate-700 border border-slate-700 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-colors"
             >
-              <div className="text-3xl font-black text-blue-400 mb-1">{s.value}</div>
+              <div className="text-3xl font-black text-orange-400 mb-1">{s.value}</div>
               <div className="text-white font-semibold text-sm">{s.label}</div>
               <div className="text-slate-500 text-xs">{s.sub}</div>
             </div>

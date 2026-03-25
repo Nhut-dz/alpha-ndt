@@ -91,7 +91,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="inline-block text-blue-400 font-semibold text-sm tracking-widest uppercase mb-3">
+          <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
             Liên hệ
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
@@ -112,7 +112,7 @@ export default function Contact() {
             <div className="space-y-5 mb-8">
               {contactInfo.map((info, i) => (
                 <div key={i} className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 flex-none group-hover:bg-blue-500/20 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 flex-none group-hover:bg-orange-500/20 transition-colors">
                     {info.icon}
                   </div>
                   <div>

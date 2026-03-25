@@ -60,7 +60,7 @@ export default function Hero() {
       >
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold px-4 py-2 rounded-full mb-8 backdrop-blur-sm">
-          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
           Thành lập năm 2002 • ISO 9001:2015 Certified
         </div>
 
@@ -80,8 +80,8 @@ export default function Hero() {
         {/* Sub heading */}
         <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-light mb-4 max-w-3xl mx-auto">
           Đảm bảo chất lượng –{" "}
-          <span className="text-blue-400 font-medium">An toàn</span> –{" "}
-          <span className="text-blue-400 font-medium">Chính xác</span>
+          <span className="text-orange-400 font-medium">An toàn</span> –{" "}
+          <span className="text-orange-400 font-medium">Chính xác</span>
         </p>
         <p className="text-slate-400 text-base sm:text-lg mb-12 max-w-2xl mx-auto">
           Phục vụ ngành dầu khí, đóng tàu, năng lượng và xây dựng cơ khí với công nghệ
@@ -122,7 +122,7 @@ export default function Hero() {
               key={stat.label}
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors"
             >
-              <div className="text-2xl sm:text-3xl font-black text-blue-400 mb-1">
+              <div className="text-2xl sm:text-3xl font-black text-orange-400 mb-1">
                 {stat.value}
               </div>
               <div className="text-slate-400 text-xs sm:text-sm font-medium">

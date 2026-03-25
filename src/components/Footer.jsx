@@ -51,7 +51,7 @@ export default function Footer() {
                 </div>
               </div>
               <div>
-                <span className="text-white font-bold text-xl">Alpha<span className="text-blue-400">NDT</span></span>
+                <span className="text-white font-bold text-xl">Alpha<span className="text-orange-400">NDT</span></span>
                 <p className="text-slate-500 text-xs">Inspection Services</p>
               </div>
             </a>
@@ -119,7 +119,7 @@ export default function Footer() {
                     onClick={(e) => { e.preventDefault(); scrollTo("#services"); }}
                     className="text-slate-400 hover:text-white text-sm flex items-center gap-2 group transition-colors"
                   >
-                    <svg className="w-3 h-3 text-blue-500 group-hover:translate-x-0.5 transition-transform flex-none" fill="currentColor" viewBox="0 0 8 8">
+                    <svg className="w-3 h-3 text-orange-500 group-hover:translate-x-0.5 transition-transform flex-none" fill="currentColor" viewBox="0 0 8 8">
                       <path d="M0 0l8 4-8 4V0z" />
                     </svg>
                     <span className="line-clamp-1">{srv}</span>

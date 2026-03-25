@@ -23,7 +23,7 @@ export default function Careers() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="inline-block text-blue-400 font-semibold text-sm tracking-widest uppercase mb-3">
+          <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
             Tuyển dụng
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
@@ -125,7 +125,7 @@ export default function Careers() {
                     "Lương thưởng cạnh tranh",
                   ].map((benefit, i) => (
                     <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
-                      <svg className="w-5 h-5 text-blue-400 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-orange-400 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {benefit}

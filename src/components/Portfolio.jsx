@@ -37,7 +37,7 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="inline-block text-blue-400 font-semibold text-sm tracking-widest uppercase mb-3">
+          <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
             Dự án
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
@@ -174,7 +174,7 @@ export default function Portfolio() {
                 {selected.tag}
               </span>
               <h3 className="text-white font-black text-xl mb-2">{selected.title}</h3>
-              <p className="text-blue-400 text-sm font-semibold mb-4">Khách hàng: {selected.client}</p>
+              <p className="text-orange-400 text-sm font-semibold mb-4">Khách hàng: {selected.client}</p>
               <p className="text-slate-400 leading-relaxed">{selected.description}</p>
               <div className="flex justify-end mt-6">
                 <button
