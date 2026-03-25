@@ -41,8 +41,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-800/98 backdrop-blur-md shadow-xl py-3"
-          : "bg-transparent py-5"
+          ? "bg-slate-900/95 backdrop-blur-md shadow-2xl py-2 border-b border-blue-500/30"
+          : "bg-gradient-to-b from-slate-900/80 to-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,10 +69,10 @@ export default function Header() {
                 href={item.href}
                 {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 onClick={(e) => !item.external && handleNavClick(e, item.href)}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+                className={`px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 ${
                   !item.external && activeSection === item.href.replace("#", "")
-                    ? "text-blue-400 bg-blue-500/10"
-                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                    ? "text-orange-400 bg-orange-500/10 border-b-2 border-orange-400"
+                    : "text-white hover:text-orange-300 hover:bg-white/10"
                 }`}
               >
                 {item.label}

@@ -5,9 +5,9 @@ const LanguageContext = createContext();
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(() => {
     try {
-      return localStorage.getItem("alpha-ndt-lang") || "vi";
+      return localStorage.getItem("alpha-ndt-lang") || "en";
     } catch {
-      return "vi";
+      return "en";
     }
   });
 
