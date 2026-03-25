@@ -82,7 +82,7 @@ export default function Header() {
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
             <button onClick={toggleLang} className="hidden sm:flex items-center gap-1.5 text-slate-300 hover:text-white text-sm font-medium px-3 py-2 rounded-lg border border-slate-600 hover:border-slate-400 transition-colors">
-              {lang === "vi" ? "EN" : "VI"}
+              {lang === "vi" ? "🇬🇧" : "🇻🇳"}
             </button>
             <a
               href="#contact"
@@ -138,7 +138,7 @@ export default function Header() {
               {t(lang, "nav.contactNow")}
             </a>
             <button onClick={toggleLang} className="flex items-center gap-1.5 text-slate-300 hover:text-white text-sm font-medium px-3 py-2 rounded-lg border border-slate-600 hover:border-slate-400 transition-colors justify-center">
-              {lang === "vi" ? "EN" : "VI"}
+              {lang === "vi" ? "🇬🇧" : "🇻🇳"}
             </button>
           </nav>
         </div>
