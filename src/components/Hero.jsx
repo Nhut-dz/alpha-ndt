@@ -13,7 +13,7 @@ const bannerImages = [
   "/banner-5.jpg",
 ];
 
-const SLIDE_DURATION = 5000; // 5s per slide
+const SLIDE_DURATION = 3000; // 3s per slide
 const FADE_DURATION = 800; // 0.8s transition
 
 export default function Hero() {
