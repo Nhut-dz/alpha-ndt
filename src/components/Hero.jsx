@@ -46,7 +46,7 @@ export default function Hero() {
       </div>
 
       {/* Banner Text Overlay */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-left px-8 md:px-16 lg:px-24">
         {bannerSlides.map((slide, index) => (
           <div
             key={index}
