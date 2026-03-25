@@ -106,7 +106,7 @@ export default function Services() {
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Danh mục{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
               dịch vụ NDT
             </span>
           </h2>
@@ -146,7 +146,7 @@ export default function Services() {
               onMouseLeave={() => setHoveredId(null)}
               className={`group relative bg-slate-700 border border-slate-700 rounded-2xl p-6 cursor-pointer
                 transition-all duration-300 overflow-hidden
-                hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1
+                hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
               `}
               style={{ transitionDelay: `${i * 60}ms` }}

@@ -17,7 +17,7 @@ function useFadeIn() {
 
 const categoryColors = {
   "Công nghệ": "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  "Dịch vụ": "bg-blue-500/10 text-blue-400 border-blue-500/20",
+  "Dịch vụ": "bg-orange-500/10 text-orange-400 border-orange-500/20",
   "Chất lượng": "bg-green-500/10 text-green-400 border-green-500/20",
 };
 
@@ -35,7 +35,7 @@ export default function News() {
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
               Cập nhật{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
                 mới nhất
               </span>
             </h2>

@@ -68,10 +68,10 @@ export default function Hero() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
           Giải pháp kiểm định{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
               không phá hủy
             </span>
-            <span className="absolute bottom-1 left-0 right-0 h-3 bg-blue-500/20 -skew-x-3" />
+            <span className="absolute bottom-1 left-0 right-0 h-3 bg-orange-500/20 -skew-x-3" />
           </span>
           <br />
           hàng đầu Việt Nam

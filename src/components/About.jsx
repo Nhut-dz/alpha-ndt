@@ -49,7 +49,7 @@ export default function About() {
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
             Đối tác kiểm định{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
               tin cậy
             </span>
           </h2>
@@ -75,7 +75,7 @@ export default function About() {
               AlphaNDT được thành lập năm 2002, là một trong những công ty kiểm định
               không phá hủy (NDT) hàng đầu tại Việt Nam. Chúng tôi cung cấp dịch vụ
               kiểm định chuyên nghiệp, đáng tin cậy cho các ngành{" "}
-              <strong className="text-blue-400">dầu khí, đóng tàu, năng lượng</strong>{" "}
+              <strong className="text-orange-400">dầu khí, đóng tàu, năng lượng</strong>{" "}
               và xây dựng công nghiệp.
             </p>
 
@@ -140,8 +140,8 @@ export default function About() {
             </div>
 
             {/* Decoration */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-500/10 rounded-full blur-xl" />
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/10 rounded-full blur-xl" />
           </div>
         </div>
 

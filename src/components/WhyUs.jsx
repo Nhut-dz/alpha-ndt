@@ -55,7 +55,7 @@ export default function WhyUs() {
     <section id="why-us" className="py-24 bg-slate-900 relative overflow-hidden" ref={ref}>
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -65,7 +65,7 @@ export default function WhyUs() {
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Cam kết{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
               chất lượng vượt trội
             </span>
           </h2>
@@ -81,7 +81,7 @@ export default function WhyUs() {
             <div
               key={i}
               className={`group relative bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-700
-                rounded-2xl p-6 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10
+                rounded-2xl p-6 hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10
                 transition-all duration-300 hover:-translate-y-2 text-center
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
               `}
@@ -100,7 +100,7 @@ export default function WhyUs() {
               </p>
 
               {/* Top border accent */}
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
             </div>
           ))}
         </div>

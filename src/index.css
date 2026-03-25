@@ -10,6 +10,7 @@
 @layer base {
   :root {
     --color-primary: 59 130 246;    /* blue-500 */
+    --color-secondary: 249 115 22;  /* orange-500 */
     --color-primary-dark: 30 64 175; /* blue-800 */
     --color-bg: 30 41 59;           /* slate-800 */
   }
@@ -50,12 +51,12 @@
 @layer components {
   /* Section title underline accent */
   .section-accent {
-    @apply inline-block h-1 w-12 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full;
+    @apply inline-block h-1 w-12 bg-gradient-to-r from-blue-500 to-orange-400 rounded-full;
   }
 
   /* Gradient text */
   .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400;
   }
 
   /* Card hover effect */
