@@ -51,21 +51,11 @@ export default function Header() {
             className="flex items-center gap-3 group"
             aria-label="Alpha NDT - Trang chủ"
           >
-            {/* Logo mark */}
-            <div className="relative w-10 h-10">
-              <div className="absolute inset-0 bg-blue-500 rounded-lg rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-              <div className="relative w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-black text-lg leading-none">α</span>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-white font-bold text-xl leading-none tracking-wide">
-                Alpha<span className="text-blue-400">NDT</span>
-              </span>
-              <span className="text-slate-400 text-[10px] font-medium tracking-widest uppercase">
-                Inspection Services
-              </span>
-            </div>
+            <img
+              src="/logo.jpg"
+              alt="Alpha NDT"
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Nav */}
