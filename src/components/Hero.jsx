@@ -58,12 +58,6 @@ export default function Hero() {
           loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold px-4 py-2 rounded-full mb-8 backdrop-blur-sm">
-          <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-          Thành lập năm 2002 • ISO 9001:2015 Certified
-        </div>
-
         {/* Main heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
           Giải pháp kiểm định{" "}
