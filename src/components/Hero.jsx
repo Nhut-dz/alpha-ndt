@@ -6,9 +6,6 @@ import { useState, useEffect, useCallback } from "react";
 const bannerImages = [
   "/banner-1.jpg",
   "/banner-2.jpg",
-  "/banner-3.jpg",
-  "/banner-4.jpg",
-  "/banner-5.jpg",
 ];
 
 const SLIDE_DURATION = 3000; // 3s per slide
