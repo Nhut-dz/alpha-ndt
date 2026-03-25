@@ -1,11 +1,7 @@
-// ============================================================
-// ALPHA NDT - Data / Dummy Content
-// ============================================================
-
 export const companyInfo = {
   name: "Alpha NDT",
-  tagline: "Giải pháp kiểm định không phá hủy hàng đầu",
-  subTagline: "Đảm bảo chất lượng – An toàn – Chính xác",
+  tagline: "Leading Non-Destructive Testing Solutions",
+  subTagline: "Quality Assurance – Safety – Accuracy",
   established: 2002,
   registration: "0306455519",
   address: "37/7 Đường C18, Phường Bảy Hiền, TP. Hồ Chí Minh",
@@ -13,7 +9,7 @@ export const companyInfo = {
   email: "info@alpha-ndt.com",
   website: "www.alpha-ndt.com",
   description:
-    "AlphaNDT được thành lập năm 2002, là đơn vị hàng đầu Việt Nam trong lĩnh vực kiểm tra không phá hủy (NDT) và kiểm định công nghiệp. Với hơn 20 năm kinh nghiệm, chúng tôi cung cấp dịch vụ chuyên nghiệp cho các ngành dầu khí, đóng tàu, năng lượng và xây dựng cơ khí.",
+    "AlphaNDT was established in 2002 and is a leading company in Vietnam in the field of non-destructive testing (NDT) and industrial inspection. With over 20 years of experience, we provide professional services for oil & gas, shipbuilding, energy, and mechanical construction industries.",
   socials: {
     facebook: "https://www.facebook.com/profile.php?id=100063655170473",
     linkedin: "#",
@@ -22,10 +18,10 @@ export const companyInfo = {
 };
 
 export const stats = [
-  { value: "20+", label: "Năm kinh nghiệm" },
-  { value: "500+", label: "Dự án hoàn thành" },
-  { value: "100+", label: "Chuyên gia NDT" },
-  { value: "50+", label: "Đối tác quốc tế" },
+  { value: "20+", label: "Years of Experience" },
+  { value: "500+", label: "Completed Projects" },
+  { value: "100+", label: "NDT Experts" },
+  { value: "50+", label: "International Partners" },
 ];
 
 export const certifications = [
@@ -45,9 +41,9 @@ export const services = [
     icon: "🔍",
     code: "IS",
     title: "Inspection Services",
-    titleVi: "Dịch vụ kiểm định",
+    titleVi: "Inspection Services",
     description:
-      "Dịch vụ kiểm tra, giám sát chất lượng công trình và thiết bị công nghiệp. Bao gồm Visual Testing, Welding Inspection và Third Party Inspection.",
+      "Inspection and quality supervision services for industrial structures and equipment, including Visual Testing, Welding Inspection, and Third Party Inspection.",
     category: "Inspection Services",
     color: "from-green-600 to-green-800",
   },
@@ -56,9 +52,9 @@ export const services = [
     icon: "📡",
     code: "ANDT",
     title: "Advanced NDT Services",
-    titleVi: "Dịch vụ NDT nâng cao",
+    titleVi: "Advanced NDT Services",
     description:
-      "Các phương pháp kiểm tra không phá hủy tiên tiến: Phased Array UT (PAUT), Time of Flight Diffraction (TOFD), Eddy Current Testing (ECT).",
+      "Advanced non-destructive testing methods such as Phased Array UT (PAUT), Time of Flight Diffraction (TOFD), and Eddy Current Testing (ECT).",
     category: "Advanced NDT Services",
     color: "from-teal-600 to-teal-800",
   },
@@ -67,9 +63,9 @@ export const services = [
     icon: "🔊",
     code: "CNDT",
     title: "Conventional Non-Destructive Testing",
-    titleVi: "Kiểm tra không phá hủy truyền thống",
+    titleVi: "Conventional NDT",
     description:
-      "Các phương pháp NDT truyền thống: Ultrasonic Testing (UT), Radiographic Testing (RT), Magnetic Particle Testing (MT), Penetrant Testing (PT).",
+      "Conventional NDT methods including Ultrasonic Testing (UT), Radiographic Testing (RT), Magnetic Particle Testing (MT), and Penetrant Testing (PT).",
     category: "Conventional NDT",
     color: "from-blue-600 to-blue-800",
   },
@@ -78,9 +74,9 @@ export const services = [
     icon: "🌬️",
     code: "WES",
     title: "Wind Energy Service (WES)",
-    titleVi: "Dịch vụ năng lượng gió (WES)",
+    titleVi: "Wind Energy Service (WES)",
     description:
-      "Kiểm tra, bảo dưỡng tuabin gió bằng phương pháp NDT tiên tiến. Dịch vụ toàn diện cho ngành năng lượng tái tạo.",
+      "Inspection and maintenance of wind turbines using advanced NDT methods. Comprehensive services for the renewable energy sector.",
     category: "Wind Energy Service (WES)",
     color: "from-sky-600 to-sky-800",
   },
@@ -89,9 +85,9 @@ export const services = [
     icon: "⚙️",
     code: "GOES",
     title: "Wind Turbine Gear Oil Exchange by GOES",
-    titleVi: "Đổi dầu hộp số tuabin gió bằng GOES",
+    titleVi: "Wind Turbine Gear Oil Exchange by GOES",
     description:
-      "Dịch vụ đổi dầu hộp số tuabin gió chuyên nghiệp bằng hệ thống GOES, đảm bảo hiệu suất vận hành tối ưu và kéo dài tuổi thọ thiết bị.",
+      "Professional gearbox oil exchange service for wind turbines using GOES system, ensuring optimal performance and extended equipment lifespan.",
     category: "Wind Turbine Gear Oil Exchange by GOES",
     color: "from-amber-600 to-amber-800",
   },
@@ -100,66 +96,66 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    title: "NDT Cho Nhà Máy Khí Việt-Nhật",
+    title: "NDT for Vietnam-Japan Gas Plant",
     client: "Vietnam-Japan Gas Plant",
     industry: "Oil & Gas",
     description:
-      "Hoàn thành kiểm định NDT cho toàn bộ công trình xây dựng nhà máy khí Vietnam-Japan với các phương pháp RT, UT, MT.",
+      "Completed NDT inspection for the entire construction of the Vietnam-Japan Gas Plant using RT, UT, and MT methods.",
     image: "https://alpha-ndt.com/Upload/37_1.jpg",
     tag: "Oil & Gas",
     year: "2023",
   },
   {
     id: 2,
-    title: "Kiểm Tra Thiết Bị Giếng Khoan Schlumberger",
+    title: "Inspection of Schlumberger Drilling Equipment",
     client: "Schlumberger",
     industry: "Oil & Gas",
     description:
-      "Hợp đồng kiểm định thường xuyên thiết bị và dụng cụ giếng khoan dầu bằng MPI, DPI, UT cho Schlumberger.",
+      "Ongoing inspection contract for drilling equipment using MPI, DPI, and UT methods for Schlumberger.",
     image: "https://alpha-ndt.com/Upload/41_1.jpg",
     tag: "Oil & Gas",
     year: "2022",
   },
   {
     id: 3,
-    title: "Đo Độ Dày Thân Tàu Vietsovpetro",
+    title: "Hull Thickness Measurement for Vietsovpetro",
     client: "Vietsovpetro",
     industry: "Marine",
     description:
-      "Đo độ dày kết cấu thân tàu LAMSON của Vietsovpetro, thực hiện theo yêu cầu đăng kiểm DNV.",
+      "Thickness measurement of LAMSON vessel hull structure for Vietsovpetro in compliance with DNV requirements.",
     image: "https://alpha-ndt.com/Upload/12.jpg",
     tag: "Marine",
     year: "2023",
   },
   {
     id: 4,
-    title: "Kiểm Định Nền Tảng C1 & CLPP - JVPC",
+    title: "Inspection of C1 & CLPP Platforms - JVPC",
     client: "JVPC / PTSC",
     industry: "Oil & Gas",
     description:
-      "Kiểm định toàn bộ nền tảng C1, CLPP và cầu nối cho dự án phát triển mỏ Randong của JVPC tại Vũng Tàu.",
+      "Comprehensive inspection of C1, CLPP platforms and connecting bridges for JVPC Randong field development project in Vũng Tàu.",
     image: "https://alpha-ndt.com/Upload/32.jpg",
     tag: "Oil & Gas",
     year: "2022",
   },
   {
     id: 5,
-    title: "NDT Tàu Bulk Carrier 4100 Tấn",
+    title: "NDT for 4100-Ton Bulk Carrier",
     client: "Pha-Rung Shipyard",
     industry: "Marine",
     description:
-      "Cung cấp dịch vụ NDT trong quá trình đóng mới tàu hàng khô Au-Co 1 trọng tải 4100 tấn tại nhà máy đóng tàu Phà Rừng.",
+      "Provided NDT services during the construction of Au-Co 1 bulk carrier (4100 tons) at Pha Rung Shipyard.",
     image: "https://alpha-ndt.com/Upload/36.jpg",
     tag: "Marine",
     year: "2021",
   },
   {
     id: 6,
-    title: "Kiểm Tra Ngoài Khơi - PETRONAS Rubi Field",
+    title: "Offshore Inspection - PETRONAS Rubi Field",
     client: "PETRONAS / PTSC",
     industry: "Oil & Gas",
     description:
-      "Thực hiện kiểm định NDT ngoài khơi cho dự án Rubi-A Gaslift tại mỏ Rubi của PETRONAS, ngoài khơi Việt Nam.",
+      "Performed offshore NDT inspection for Rubi-A Gaslift project at PETRONAS Rubi Field, offshore Vietnam.",
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Offshore",
     year: "2021",
@@ -169,56 +165,56 @@ export const projects = [
 export const whyChooseUs = [
   {
     icon: "🎯",
-    title: "Độ Chính Xác Cao",
+    title: "High Accuracy",
     description:
-      "Thiết bị hiện đại kết hợp đội ngũ chuyên gia được đào tạo bài bản đảm bảo kết quả kiểm định chính xác nhất.",
+      "Modern equipment combined with well-trained experts ensures the most accurate inspection results.",
   },
   {
     icon: "🏆",
-    title: "Chuẩn Quốc Tế",
+    title: "International Standards",
     description:
-      "Được chứng nhận ISO 9001, ISO/IEC 17025 và các chứng chỉ PCN, CSWIP, ASNT theo tiêu chuẩn quốc tế.",
+      "Certified with ISO 9001, ISO/IEC 17025 and international certifications such as PCN, CSWIP, and ASNT.",
   },
   {
     icon: "⚙️",
-    title: "Công Nghệ Tiên Tiến",
+    title: "Advanced Technology",
     description:
-      "Liên tục đầu tư vào công nghệ mới: PAUT, TOFD, ECT, AUT... để mang lại dịch vụ tốt nhất cho khách hàng.",
+      "Continuously investing in modern technologies such as PAUT, TOFD, ECT, and AUT to deliver the best services.",
   },
   {
     icon: "🤝",
-    title: "Uy Tín 20+ Năm",
+    title: "20+ Years of Reputation",
     description:
-      "Hơn 20 năm phục vụ hàng trăm khách hàng trong nước và quốc tế với mức độ hài lòng cao nhất ngành.",
+      "Over 20 years serving hundreds of domestic and international clients with the highest satisfaction in the industry.",
   },
 ];
 
 export const news = [
   {
     id: 1,
-    title: "AlphaNDT Triển Khai Công Nghệ PAUT Thế Hệ Mới",
+    title: "AlphaNDT Deploys Next-Generation PAUT Technology",
     excerpt:
-      "AlphaNDT vừa đưa vào ứng dụng hệ thống Phased Array Ultrasonic Testing thế hệ mới, nâng cao đáng kể độ chính xác và tốc độ kiểm định.",
+      "AlphaNDT has implemented next-generation Phased Array Ultrasonic Testing systems, significantly improving inspection accuracy and speed.",
     date: "15/03/2025",
-    category: "Công nghệ",
+    category: "Technology",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=250&fit=crop",
   },
   {
     id: 2,
-    title: "AlphaNDT Mở Rộng Dịch Vụ Kiểm Tra Tuabin Gió",
+    title: "AlphaNDT Expands Wind Turbine Inspection Services",
     excerpt:
-      "Đáp ứng nhu cầu ngày càng tăng của ngành năng lượng tái tạo, AlphaNDT chính thức ra mắt gói dịch vụ Wind Energy Service toàn diện.",
+      "In response to the growing demand in renewable energy, AlphaNDT officially launches a comprehensive Wind Energy Service package.",
     date: "02/02/2025",
-    category: "Dịch vụ",
+    category: "Services",
     image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=250&fit=crop",
   },
   {
     id: 3,
-    title: "AlphaNDT Tái Chứng Nhận ISO 9001:2015 Thành Công",
+    title: "AlphaNDT Successfully Re-Certified ISO 9001:2015",
     excerpt:
-      "AlphaNDT đã vượt qua đánh giá và được tái chứng nhận ISO 9001:2015, khẳng định hệ thống quản lý chất lượng đạt chuẩn quốc tế.",
+      "AlphaNDT has successfully passed the audit and been re-certified for ISO 9001:2015, reaffirming its international quality management system.",
     date: "10/01/2025",
-    category: "Chất lượng",
+    category: "Quality",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
   },
 ];
@@ -237,21 +233,21 @@ export const partners = [
 export const jobOpenings = [
   {
     id: 1,
-    title: "Kỹ Sư NDT Level II",
-    department: "Kỹ thuật",
+    title: "NDT Engineer Level II",
+    department: "Engineering",
     location: "TP. Hồ Chí Minh",
     type: "Full-time",
   },
   {
     id: 2,
-    title: "Chuyên Gia Kiểm Định Hàn",
-    department: "Kỹ thuật",
+    title: "Welding Inspection Specialist",
+    department: "Engineering",
     location: "Vũng Tàu",
     type: "Full-time",
   },
   {
     id: 3,
-    title: "Kỹ Sư PAUT / TOFD",
+    title: "PAUT / TOFD Engineer",
     department: "Advanced NDT",
     location: "TP. Hồ Chí Minh",
     type: "Full-time",
