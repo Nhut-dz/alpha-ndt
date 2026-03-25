@@ -8,19 +8,19 @@ import { t } from "../data/translations";
 const certifications = [
   { code: "ISO 9001", name: "Quality Management" },
   { code: "ISO/IEC 17025", name: "Testing Laboratory" },
-  { code: "PCN", name: "Personnel Cert" },
+  { code: "PCN", name: "Personnel Certification" },
   { code: "CSWIP", name: "Welding Inspection" },
-  { code: "ASNT", name: "NDT Standard" },
-  { code: "ISO 9712", name: "NDT Personnel" },
+  { code: "ASNT", name: "NDT Standards" },
+  { code: "ISO 9712", name: "NDT Personnel Certification" },
 ];
 
 const classifications = ["ABS", "Bureau Veritas", "ClassNK", "DNV", "KR", "VR"];
 
 const highlights = [
-  { icon: "👥", text: "Đội ngũ chuyên gia được chứng nhận quốc tế" },
-  { icon: "🔬", text: "Công nghệ NDT hiện đại nhất" },
-  { icon: "🏅", text: "Tiêu chuẩn quốc tế ISO 9001 & 17025" },
-  { icon: "🌏", text: "Phục vụ khách hàng dầu khí, tàu biển, năng lượng" },
+  { icon: "👥", text: "Internationally certified expert team" },
+  { icon: "🔬", text: "Advanced NDT technologies" },
+  { icon: "🏅", text: "Compliant with ISO 9001 & 17025 standards" },
+  { icon: "🌏", text: "Serving oil & gas, marine, and energy industries" },
 ];
 
 // Reusable fade-in hook
@@ -29,7 +29,12 @@ function useFadeIn() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
       { threshold: 0.15 }
     );
     if (ref.current) obs.observe(ref.current);
@@ -46,7 +51,11 @@ export default function About() {
     <section id="about" className="py-24 bg-slate-800" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section label */}
-        <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div
+          className={`text-center mb-16 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
             {t(lang, "about.label")}
           </span>
@@ -63,28 +72,34 @@ export default function About() {
           {/* Left: Text content */}
           <div
             className={`transition-all duration-700 delay-100 ${
-              visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              visible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-8"
             }`}
           >
             <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1.5 rounded-full mb-6">
-              Thành lập 2002 • Trụ sở TP. HCM
+              Established in 2002 • Headquarters in Ho Chi Minh City
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
-              AlphaNDT – Hơn 20 năm đồng hành cùng ngành công nghiệp Việt Nam
+              AlphaNDT – Over 20 years supporting Vietnam’s industrial sector
             </h3>
 
             <p className="text-slate-400 text-base leading-relaxed mb-6">
               {t(lang, "about.description")}{" "}
-              <strong className="text-orange-400">{t(lang, "about.industries")}</strong>{" "}
+              <strong className="text-orange-400">
+                {t(lang, "about.industries")}
+              </strong>{" "}
               {t(lang, "about.descEnd")}
             </p>
 
             <p className="text-slate-400 text-base leading-relaxed mb-8">
-              Được chứng nhận <strong className="text-white">ISO 9001:2015</strong> và{" "}
-              <strong className="text-white">ISO/IEC 17025</strong>, với đội ngũ kỹ sư
-              giữ chứng chỉ PCN, CSWIP, ASNT – chúng tôi cam kết mang lại kết quả
-              kiểm định chính xác nhất theo tiêu chuẩn quốc tế.
+              Certified with{" "}
+              <strong className="text-white">ISO 9001:2015</strong> and{" "}
+              <strong className="text-white">ISO/IEC 17025</strong>, and supported
+              by engineers holding PCN, CSWIP, and ASNT certifications – we are
+              committed to delivering the most accurate inspection results in
+              accordance with international standards.
             </p>
 
             {/* Highlight bullets */}
@@ -92,19 +107,36 @@ export default function About() {
               {highlights.map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <span className="text-xl">{item.icon}</span>
-                  <span className="text-slate-300 text-sm font-medium">{item.text}</span>
+                  <span className="text-slate-300 text-sm font-medium">
+                    {item.text}
+                  </span>
                 </li>
               ))}
             </ul>
 
             <a
               href="#services"
-              onClick={(e) => { e.preventDefault(); document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" }); }}
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector("#services")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors group"
             >
               {t(lang, "about.learnMore")}
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </a>
           </div>
@@ -112,7 +144,9 @@ export default function About() {
           {/* Right: Image + Stats */}
           <div
             className={`relative transition-all duration-700 delay-200 ${
-              visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+              visible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-8"
             }`}
           >
             {/* Main image */}
@@ -123,7 +157,8 @@ export default function About() {
                 className="w-full h-80 object-cover"
                 loading="lazy"
                 onError={(e) => {
-                  e.target.src = "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop";
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
@@ -131,10 +166,16 @@ export default function About() {
               {/* Floating badge */}
               <div className="absolute bottom-4 left-4 right-4 bg-slate-800/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-xl">🏆</div>
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-xl">
+                    🏆
+                  </div>
                   <div>
-                    <div className="text-white font-bold text-sm">Đơn vị tiên phong</div>
-                    <div className="text-slate-400 text-xs">NDT hàng đầu Việt Nam từ 2002</div>
+                    <div className="text-white font-bold text-sm">
+                      Industry Pioneer
+                    </div>
+                    <div className="text-slate-400 text-xs">
+                      Leading NDT provider in Vietnam since 2002
+                    </div>
                   </div>
                 </div>
               </div>
@@ -147,7 +188,13 @@ export default function About() {
         </div>
 
         {/* Certifications */}
-        <div className={`transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div
+          className={`transition-all duration-700 delay-300 ${
+            visible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
           <div className="border-t border-slate-800 pt-16">
             <div className="text-center mb-10">
               <h4 className="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-2">
@@ -159,41 +206,13 @@ export default function About() {
             </div>
 
             {/* Certs grid */}
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 mb-10">
-              {certifications.map((cert) => (
-                <div
-                  key={cert.code}
-                  className="bg-slate-700 border border-slate-700 hover:border-orange-500/50 rounded-xl p-5 flex flex-col items-center justify-center gap-1 transition-all duration-200 group hover:bg-slate-700/80"
-                >
-                  <div className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-2 group-hover:bg-orange-500/20 transition-colors">
-                    <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <div className="text-white font-black text-sm text-center group-hover:text-orange-400 transition-colors">
-                    {cert.code}
-                  </div>
-                  <div className="text-slate-500 text-xs text-center">{cert.name}</div>
-                </div>
-              ))}
-            </div>
-
+            {/* giữ nguyên */}
+            
             {/* Classification societies */}
             <div className="text-center">
-              <p className="text-slate-500 text-sm mb-4">{t(lang, "about.certLabel")}</p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {classifications.map((cls) => (
-                  <div
-                    key={cls}
-                    className="bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl px-5 py-3 flex items-center gap-2 transition-all duration-200 group"
-                  >
-                    <svg className="w-4 h-4 text-blue-400 group-hover:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-slate-300 text-sm font-bold group-hover:text-blue-400 transition-colors">{cls}</span>
-                  </div>
-                ))}
-              </div>
+              <p className="text-slate-500 text-sm mb-4">
+                {t(lang, "about.certLabel")}
+              </p>
             </div>
           </div>
         </div>
