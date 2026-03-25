@@ -45,7 +45,7 @@ export default function Partners() {
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
             Khách hàng &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
+            <span className="text-orange-400">
               Đối tác tin cậy
             </span>
           </h2>

@@ -165,7 +165,7 @@ export default function Footer() {
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>
-            © {currentYear} <span className="text-slate-300 font-semibold">Alpha NDT</span>. Mã số doanh nghiệp: 0306455519
+            © {currentYear} <span className="text-orange-400 font-semibold">Alpha NDT</span>. Mã số doanh nghiệp: 0306455519
           </p>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-slate-300 transition-colors">Chính sách bảo mật</a>

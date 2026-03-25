@@ -42,7 +42,7 @@ export default function Portfolio() {
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Dự án{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
+            <span className="text-orange-400">
               tiêu biểu
             </span>
           </h2>
