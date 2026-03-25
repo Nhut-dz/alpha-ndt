@@ -52,7 +52,7 @@ export default function Header() {
             aria-label="Alpha NDT - Trang chủ"
           >
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Alpha NDT"
               className="h-10 sm:h-12 w-auto object-contain"
             />
