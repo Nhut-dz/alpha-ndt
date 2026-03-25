@@ -48,9 +48,9 @@ export default function Hero() {
       {/* Banner Text Overlay */}
       <div className="relative z-10 text-center px-4">
         {bannerSlides.map((slide, index) => (
-          <p
+          <div
             key={index}
-            className="text-white text-2xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg whitespace-pre-line"
+            className="whitespace-pre-line"
             style={{
               opacity: currentSlide === index ? 1 : 0,
               transition: `opacity ${FADE_DURATION}ms ease-in-out`,
@@ -61,8 +61,17 @@ export default function Hero() {
               justifyContent: "center",
             }}
           >
-            {slide.text}
-          </p>
+            {index === 0 ? (
+              <p className="text-white text-2xl md:text-4xl lg:text-5xl drop-shadow-lg" style={{ fontFamily: "'Arial Unicode MS', Arial, sans-serif" }}>
+                <span className="font-bold italic" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}>Give us</span>{" "}
+                a chance and we will prove our efficiency!
+              </p>
+            ) : (
+              <p className="text-white text-2xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg" style={{ fontFamily: "'Arial Unicode MS', Arial, sans-serif" }}>
+                {slide.text}
+              </p>
+            )}
+          </div>
         ))}
       </div>
     </section>
