@@ -111,7 +111,7 @@ export default function Hero() {
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {[
             { value: "20+", label: "Năm kinh nghiệm" },
             { value: "500+", label: "Dự án hoàn thành" },
@@ -133,19 +133,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <button
-          onClick={() => scrollTo("#about")}
-          className="flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors"
-          aria-label="Scroll down"
-        >
-          <span className="text-xs tracking-widest uppercase">Khám phá</span>
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-      </div>
     </section>
   );
 }
