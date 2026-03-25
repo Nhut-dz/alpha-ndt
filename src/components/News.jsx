@@ -3,6 +3,8 @@
 // ============================================================
 import { useEffect, useRef, useState } from "react";
 import { news } from "../data";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 function useFadeIn() {
   const ref = useRef(null);
@@ -23,6 +25,7 @@ const categoryColors = {
 
 export default function News() {
   const { ref, visible } = useFadeIn();
+  const { lang } = useLang();
 
   return (
     <section id="news" className="py-24 bg-slate-900" ref={ref}>
@@ -31,12 +34,12 @@ export default function News() {
         <div className={`flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 gap-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div>
             <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-              Tin tức
+              {t(lang, "news.label")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-              Cập nhật{" "}
+              {t(lang, "news.heading1")}{" "}
               <span className="text-orange-400">
-                mới nhất
+                {t(lang, "news.headingHighlight")}
               </span>
             </h2>
           </div>
@@ -100,7 +103,7 @@ export default function News() {
                 </p>
 
                 <div className="flex items-center gap-1 text-blue-400 text-sm font-medium group-hover:gap-2 transition-all">
-                  Đọc thêm
+                  {t(lang, "news.readMore")}
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

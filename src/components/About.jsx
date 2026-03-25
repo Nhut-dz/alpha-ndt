@@ -2,6 +2,8 @@
 // About Us Section - Company Introduction
 // ============================================================
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 const certifications = [
   { code: "ISO 9001", name: "Quality Management" },
@@ -38,6 +40,7 @@ function useFadeIn() {
 
 export default function About() {
   const { ref: sectionRef, visible } = useFadeIn();
+  const { lang } = useLang();
 
   return (
     <section id="about" className="py-24 bg-slate-800" ref={sectionRef}>
@@ -45,12 +48,12 @@ export default function About() {
         {/* Section label */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            Về chúng tôi
+            {t(lang, "about.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-            Đối tác kiểm định{" "}
+            {t(lang, "about.heading1")}{" "}
             <span className="text-orange-400">
-              tin cậy
+              {t(lang, "about.headingHighlight")}
             </span>
           </h2>
         </div>
@@ -72,11 +75,9 @@ export default function About() {
             </h3>
 
             <p className="text-slate-400 text-base leading-relaxed mb-6">
-              AlphaNDT được thành lập năm 2002, là một trong những công ty kiểm định
-              không phá hủy (NDT) hàng đầu tại Việt Nam. Chúng tôi cung cấp dịch vụ
-              kiểm định chuyên nghiệp, đáng tin cậy cho các ngành{" "}
-              <strong className="text-orange-400">dầu khí, đóng tàu, năng lượng</strong>{" "}
-              và xây dựng công nghiệp.
+              {t(lang, "about.description")}{" "}
+              <strong className="text-orange-400">{t(lang, "about.industries")}</strong>{" "}
+              {t(lang, "about.descEnd")}
             </p>
 
             <p className="text-slate-400 text-base leading-relaxed mb-8">
@@ -101,7 +102,7 @@ export default function About() {
               onClick={(e) => { e.preventDefault(); document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" }); }}
               className="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors group"
             >
-              Xem tất cả dịch vụ
+              {t(lang, "about.learnMore")}
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -118,7 +119,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10">
               <img
                 src="https://alpha-ndt.com/Upload/z6166850261694_22212ff1f30c47f21c5f60980ab00bf0.jpg"
-                alt="Alpha NDT - Đội ngũ kỹ thuật viên NDT"
+                alt={t(lang, "about.teamAlt")}
                 className="w-full h-80 object-cover"
                 loading="lazy"
                 onError={(e) => {
@@ -150,10 +151,10 @@ export default function About() {
           <div className="border-t border-slate-800 pt-16">
             <div className="text-center mb-10">
               <h4 className="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-2">
-                Chứng nhận & Đăng kiểm
+                {t(lang, "about.certTitle")}
               </h4>
               <p className="text-white font-bold text-xl">
-                Được chứng nhận bởi các tổ chức uy tín nhất thế giới
+                {t(lang, "about.certDesc")}
               </p>
             </div>
 
@@ -174,7 +175,7 @@ export default function About() {
 
             {/* Classification societies */}
             <div className="text-center">
-              <p className="text-slate-500 text-sm mb-4">Được phê duyệt bởi các đăng kiểm tàu biển:</p>
+              <p className="text-slate-500 text-sm mb-4">{t(lang, "about.certLabel")}</p>
               <div className="flex flex-wrap justify-center gap-3">
                 {classifications.map((cls) => (
                   <span

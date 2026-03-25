@@ -2,8 +2,11 @@
 // Hero Section - Video Banner with CTA
 // ============================================================
 import { useState, useEffect } from "react";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 export default function Hero() {
+  const { lang } = useLang();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -60,26 +63,25 @@ export default function Hero() {
       >
         {/* Main heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-          Giải pháp kiểm định{" "}
+          {t(lang, "hero.heading1")}{" "}
           <span className="relative inline-block">
             <span className="relative z-10 text-orange-400">
-              không phá hủy
+              {t(lang, "hero.headingHighlight")}
             </span>
             <span className="absolute bottom-1 left-0 right-0 h-3 bg-orange-500/20 -skew-x-3" />
           </span>
           <br />
-          hàng đầu Việt Nam
+          {t(lang, "hero.heading2")}
         </h1>
 
         {/* Sub heading */}
         <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-light mb-4 max-w-3xl mx-auto">
-          Đảm bảo chất lượng –{" "}
-          <span className="text-orange-400 font-medium">An toàn</span> –{" "}
-          <span className="text-orange-400 font-medium">Chính xác</span>
+          {t(lang, "hero.sub1")}{" "}
+          <span className="text-orange-400 font-medium">{t(lang, "hero.safe")}</span> –{" "}
+          <span className="text-orange-400 font-medium">{t(lang, "hero.accurate")}</span>
         </p>
         <p className="text-slate-400 text-base sm:text-lg mb-12 max-w-2xl mx-auto">
-          Phục vụ ngành dầu khí, đóng tàu, năng lượng và xây dựng cơ khí với công nghệ
-          NDT tiên tiến nhất
+          {t(lang, "hero.sub2")}
         </p>
 
         {/* CTA Buttons */}
@@ -91,7 +93,7 @@ export default function Hero() {
             <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
-            Xem dịch vụ
+            {t(lang, "hero.cta1")}
           </button>
           <button
             onClick={() => scrollTo("#contact")}
@@ -100,17 +102,17 @@ export default function Hero() {
             <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            Liên hệ tư vấn
+            {t(lang, "hero.cta2")}
           </button>
         </div>
 
         {/* Stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {[
-            { value: "20+", label: "Năm kinh nghiệm" },
-            { value: "500+", label: "Dự án hoàn thành" },
-            { value: "100+", label: "Chuyên gia NDT" },
-            { value: "50+", label: "Đối tác quốc tế" },
+            { value: "20+", label: t(lang, "stats.experience") },
+            { value: "500+", label: t(lang, "stats.projects") },
+            { value: "100+", label: t(lang, "stats.experts") },
+            { value: "50+", label: t(lang, "stats.partners") },
           ].map((stat) => (
             <div
               key={stat.label}

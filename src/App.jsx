@@ -3,6 +3,7 @@
 // Alpha NDT Website - React + Tailwind CSS
 // ============================================================
 import { lazy, Suspense } from "react";
+import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 
@@ -62,6 +63,7 @@ function FloatingCTA() {
 
 export default function App() {
   return (
+    <LanguageProvider>
     <div className="min-h-screen bg-slate-800 font-sans antialiased">
       {/* Sticky Header - always loaded */}
       <Header />
@@ -110,5 +112,6 @@ export default function App() {
       <BackToTop />
       <FloatingCTA />
     </div>
+    </LanguageProvider>
   );
 }

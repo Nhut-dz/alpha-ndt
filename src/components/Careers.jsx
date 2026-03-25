@@ -3,6 +3,8 @@
 // ============================================================
 import { useEffect, useRef, useState } from "react";
 import { jobOpenings } from "../data";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 function useFadeIn() {
   const ref = useRef(null);
@@ -17,6 +19,7 @@ function useFadeIn() {
 
 export default function Careers() {
   const { ref, visible } = useFadeIn();
+  const { lang } = useLang();
 
   return (
     <section id="careers" className="py-24 bg-slate-800" ref={ref}>
@@ -24,17 +27,16 @@ export default function Careers() {
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            Tuyển dụng
+            {t(lang, "careers.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-            Gia nhập{" "}
+            {t(lang, "careers.heading1")}{" "}
             <span className="text-orange-400">
-              Alpha NDT
+              {t(lang, "careers.headingHighlight")}
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Chúng tôi tìm kiếm những kỹ sư tài năng, đam mê kỹ thuật và sẵn sàng
-            phát triển cùng đội ngũ chuyên gia NDT hàng đầu
+            {t(lang, "careers.description")}
           </p>
         </div>
 
@@ -140,7 +142,7 @@ export default function Careers() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
-                  Nộp hồ sơ ngay
+                  {t(lang, "careers.applyCta")}
                 </a>
               </div>
             </div>

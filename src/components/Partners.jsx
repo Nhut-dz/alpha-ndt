@@ -2,6 +2,8 @@
 // Partners / Clients Logo Slider Section
 // ============================================================
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 const partnersList = [
   { name: "Schlumberger", abbr: "SLB" },
@@ -34,6 +36,7 @@ function useFadeIn() {
 
 export default function Partners() {
   const { ref, visible } = useFadeIn();
+  const { lang } = useLang();
 
   return (
     <section id="partners" className="py-20 bg-slate-800 overflow-hidden" ref={ref}>
@@ -41,12 +44,12 @@ export default function Partners() {
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            Đối tác
+            {t(lang, "partners.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-            Khách hàng &{" "}
+            {t(lang, "partners.heading1")}{" "}
             <span className="text-orange-400">
-              Đối tác tin cậy
+              {t(lang, "partners.headingHighlight")}
             </span>
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto">
@@ -88,10 +91,10 @@ export default function Partners() {
         {/* Stats strip */}
         <div className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           {[
-            { value: "500+", label: "Dự án", sub: "đã hoàn thành" },
-            { value: "20+", label: "Năm kinh nghiệm", sub: "kể từ 2002" },
-            { value: "50+", label: "Đối tác", sub: "trong & ngoài nước" },
-            { value: "100%", label: "Đạt chuẩn", sub: "tiêu chuẩn quốc tế" },
+            { value: "500+", label: t(lang, "partners.projectsDone"), sub: "" },
+            { value: "20+", label: t(lang, "partners.yearsExp"), sub: "" },
+            { value: "50+", label: t(lang, "partners.intlPartners"), sub: "" },
+            { value: "100%", label: t(lang, "partners.satisfaction"), sub: "" },
           ].map((s, i) => (
             <div
               key={i}

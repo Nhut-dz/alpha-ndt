@@ -3,6 +3,8 @@
 // ============================================================
 import { useEffect, useRef, useState } from "react";
 import { services } from "../data";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 function useFadeIn(threshold = 0.1) {
   const ref = useRef(null);
@@ -18,7 +20,7 @@ function useFadeIn(threshold = 0.1) {
   return { ref, visible };
 }
 
-const categories = ["Tất cả", "Conventional NDT", "Advanced NDT", "Inspection Services", "Specialized"];
+const categoriesEN = ["Conventional NDT", "Advanced NDT", "Inspection Services", "Specialized"];
 
 // SVG icons for each service (more professional than emoji in production)
 const ServiceIcon = ({ code }) => {
@@ -85,10 +87,18 @@ const ServiceIcon = ({ code }) => {
 
 export default function Services() {
   const { ref: sectionRef, visible } = useFadeIn();
-  const [activeFilter, setActiveFilter] = useState("Tất cả");
+  const { lang } = useLang();
+  const allLabel = t(lang, "services.all");
+  const categories = [allLabel, ...categoriesEN];
+  const [activeFilter, setActiveFilter] = useState(allLabel);
   const [hoveredId, setHoveredId] = useState(null);
 
-  const filtered = activeFilter === "Tất cả"
+  // Reset filter when lang changes so "All"/"Tất cả" stays valid
+  useEffect(() => {
+    setActiveFilter(t(lang, "services.all"));
+  }, [lang]);
+
+  const filtered = activeFilter === allLabel
     ? services
     : services.filter((s) => s.category === activeFilter);
 
@@ -102,17 +112,16 @@ export default function Services() {
           }`}
         >
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            Dịch vụ
+            {t(lang, "services.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-            Danh mục{" "}
+            {t(lang, "services.heading1")}{" "}
             <span className="text-orange-400">
-              dịch vụ NDT
+              {t(lang, "services.headingHighlight")}
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Cung cấp đầy đủ các phương pháp kiểm tra không phá hủy từ truyền thống
-            đến tiên tiến, đáp ứng mọi tiêu chuẩn quốc tế
+            {t(lang, "services.description")}
           </p>
         </div>
 
@@ -176,9 +185,9 @@ export default function Services() {
 
               {/* Title */}
               <h3 className="text-white font-bold text-base mb-1 group-hover:text-blue-300 transition-colors">
-                {service.title}
+                {lang === "en" ? service.title : service.titleVi}
               </h3>
-              <p className="text-slate-500 text-xs font-medium mb-3">{service.titleVi}</p>
+              <p className="text-slate-500 text-xs font-medium mb-3">{lang === "en" ? service.titleVi : service.title}</p>
 
               {/* Description */}
               <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
@@ -187,7 +196,7 @@ export default function Services() {
 
               {/* Learn more link */}
               <div className="mt-4 flex items-center gap-1 text-blue-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-2 group-hover:translate-y-0">
-                Tìm hiểu thêm
+                {t(lang, "about.learnMore")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

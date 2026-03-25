@@ -2,18 +2,21 @@
 // Header Component - Sticky Navigation
 // ============================================================
 import { useState, useEffect } from "react";
-
-const navItems = [
-  { label: "Trang chủ", href: "#home" },
-  { label: "Giới thiệu", href: "#about" },
-  { label: "Dịch vụ", href: "#services" },
-  { label: "Dự án", href: "#portfolio" },
-  { label: "Tin tức", href: "#news" },
-  { label: "Tuyển dụng", href: "#careers" },
-  { label: "Liên hệ", href: "#contact" },
-];
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 export default function Header() {
+  const { lang, toggleLang } = useLang();
+
+  const navItems = [
+    { label: t(lang, "nav.home"), href: "#home" },
+    { label: t(lang, "nav.about"), href: "#about" },
+    { label: t(lang, "nav.services"), href: "#services" },
+    { label: t(lang, "nav.portfolio"), href: "#portfolio" },
+    { label: t(lang, "nav.news"), href: "#news" },
+    { label: t(lang, "nav.careers"), href: "#careers" },
+    { label: t(lang, "nav.contact"), href: "#contact" },
+  ];
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -78,6 +81,9 @@ export default function Header() {
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
+            <button onClick={toggleLang} className="hidden sm:flex items-center gap-1.5 text-slate-300 hover:text-white text-sm font-medium px-3 py-2 rounded-lg border border-slate-600 hover:border-slate-400 transition-colors">
+              {lang === "vi" ? "EN" : "VI"}
+            </button>
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
@@ -86,7 +92,7 @@ export default function Header() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Liên hệ ngay
+              {t(lang, "nav.contactNow")}
             </a>
 
             {/* Mobile hamburger */}
@@ -129,8 +135,11 @@ export default function Header() {
               onClick={(e) => handleNavClick(e, "#contact")}
               className="mt-2 inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors"
             >
-              Liên hệ ngay
+              {t(lang, "nav.contactNow")}
             </a>
+            <button onClick={toggleLang} className="flex items-center gap-1.5 text-slate-300 hover:text-white text-sm font-medium px-3 py-2 rounded-lg border border-slate-600 hover:border-slate-400 transition-colors justify-center">
+              {lang === "vi" ? "EN" : "VI"}
+            </button>
           </nav>
         </div>
       </div>

@@ -3,6 +3,8 @@
 // ============================================================
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../data";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 function useFadeIn() {
   const ref = useRef(null);
@@ -15,7 +17,7 @@ function useFadeIn() {
   return { ref, visible };
 }
 
-const filters = ["Tất cả", "Oil & Gas", "Marine", "Offshore"];
+const filtersEN = ["Oil & Gas", "Marine", "Offshore"];
 const tagColors = {
   "Oil & Gas": "bg-orange-500/10 text-orange-400 border-orange-500/20",
   "Marine": "bg-blue-500/10 text-blue-400 border-blue-500/20",
@@ -25,10 +27,17 @@ const tagColors = {
 
 export default function Portfolio() {
   const { ref: sectionRef, visible } = useFadeIn();
-  const [activeFilter, setActiveFilter] = useState("Tất cả");
+  const { lang } = useLang();
+  const allLabel = t(lang, "portfolio.all");
+  const filters = [allLabel, ...filtersEN];
+  const [activeFilter, setActiveFilter] = useState(allLabel);
   const [selected, setSelected] = useState(null);
 
-  const filtered = activeFilter === "Tất cả"
+  useEffect(() => {
+    setActiveFilter(t(lang, "portfolio.all"));
+  }, [lang]);
+
+  const filtered = activeFilter === allLabel
     ? projects
     : projects.filter((p) => p.tag === activeFilter);
 
@@ -38,17 +47,16 @@ export default function Portfolio() {
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            Dự án
+            {t(lang, "portfolio.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-            Dự án{" "}
+            {t(lang, "portfolio.heading1")}{" "}
             <span className="text-orange-400">
-              tiêu biểu
+              {t(lang, "portfolio.headingHighlight")}
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Hơn 500 dự án đã hoàn thành cho các tập đoàn dầu khí, đóng tàu và năng
-            lượng hàng đầu trong và ngoài nước
+            {t(lang, "portfolio.description")}
           </p>
         </div>
 
@@ -139,7 +147,7 @@ export default function Portfolio() {
         {/* View more CTA */}
         <div className={`text-center mt-10 transition-all duration-700 delay-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           <button className="inline-flex items-center gap-2 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 hover:bg-slate-700">
-            Xem tất cả dự án
+            {t(lang, "portfolio.viewAll")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -174,14 +182,14 @@ export default function Portfolio() {
                 {selected.tag}
               </span>
               <h3 className="text-white font-black text-xl mb-2">{selected.title}</h3>
-              <p className="text-orange-400 text-sm font-semibold mb-4">Khách hàng: {selected.client}</p>
+              <p className="text-orange-400 text-sm font-semibold mb-4">{t(lang, "portfolio.client")}: {selected.client}</p>
               <p className="text-slate-400 leading-relaxed">{selected.description}</p>
               <div className="flex justify-end mt-6">
                 <button
                   onClick={() => setSelected(null)}
                   className="bg-slate-700 hover:bg-slate-600 text-white text-sm font-semibold px-6 py-2.5 rounded-xl transition-colors"
                 >
-                  Đóng
+                  {t(lang, "portfolio.close")}
                 </button>
               </div>
             </div>

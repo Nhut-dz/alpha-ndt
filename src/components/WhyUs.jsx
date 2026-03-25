@@ -3,6 +3,8 @@
 // ============================================================
 import { useEffect, useRef, useState } from "react";
 import { whyChooseUs } from "../data";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 function useFadeIn() {
   const ref = useRef(null);
@@ -50,6 +52,7 @@ const iconMap = {
 
 export default function WhyUs() {
   const { ref, visible } = useFadeIn();
+  const { lang } = useLang();
 
   return (
     <section id="why-us" className="py-24 bg-slate-900 relative overflow-hidden" ref={ref}>
@@ -61,17 +64,16 @@ export default function WhyUs() {
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            Vì sao chọn chúng tôi
+            {t(lang, "whyUs.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-            Cam kết{" "}
+            {t(lang, "whyUs.heading1")}{" "}
             <span className="text-orange-400">
-              chất lượng vượt trội
+              {t(lang, "whyUs.headingHighlight")}
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            AlphaNDT tự hào là đối tác kiểm định đáng tin cậy nhất với những cam kết
-            chất lượng không thể thỏa hiệp
+            {t(lang, "whyUs.description")}
           </p>
         </div>
 

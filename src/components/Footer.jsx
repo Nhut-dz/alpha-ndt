@@ -1,16 +1,8 @@
 // ============================================================
 // Footer Component
 // ============================================================
-
-const quickLinks = [
-  { label: "Trang chủ", href: "#home" },
-  { label: "Giới thiệu", href: "#about" },
-  { label: "Dịch vụ", href: "#services" },
-  { label: "Dự án", href: "#portfolio" },
-  { label: "Tin tức", href: "#news" },
-  { label: "Tuyển dụng", href: "#careers" },
-  { label: "Liên hệ", href: "#contact" },
-];
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 const services = [
   "Ultrasonic Testing (UT)",
@@ -30,6 +22,17 @@ const scrollTo = (href) => {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { lang } = useLang();
+
+  const quickLinks = [
+    { label: t(lang, "nav.home"), href: "#home" },
+    { label: t(lang, "nav.about"), href: "#about" },
+    { label: t(lang, "nav.services"), href: "#services" },
+    { label: t(lang, "nav.portfolio"), href: "#portfolio" },
+    { label: t(lang, "nav.news"), href: "#news" },
+    { label: t(lang, "nav.careers"), href: "#careers" },
+    { label: t(lang, "nav.contact"), href: "#contact" },
+  ];
 
   return (
     <footer className="bg-slate-900 border-t border-slate-800">
@@ -57,8 +60,7 @@ export default function Footer() {
             </a>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Đối tác kiểm định không phá hủy (NDT) hàng đầu Việt Nam. Thành lập 2002,
-              phục vụ dầu khí, tàu biển và năng lượng.
+              {t(lang, "footer.desc")}
             </p>
 
             {/* Cert badges */}
@@ -89,7 +91,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Điều hướng</h4>
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">{t(lang, "footer.quickLinks")}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -110,7 +112,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Dịch vụ</h4>
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">{t(lang, "footer.servicesTitle")}</h4>
             <ul className="space-y-3">
               {services.map((srv) => (
                 <li key={srv}>
@@ -131,7 +133,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Liên hệ</h4>
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">{t(lang, "footer.contactTitle")}</h4>
             <ul className="space-y-4">
               {[
                 { icon: "📍", text: "37/7 Đường C18, Phường Bảy Hiền, TP. HCM" },
@@ -152,7 +154,7 @@ export default function Footer() {
 
             {/* Emergency contact */}
             <div className="mt-6 p-4 bg-orange-500/10 border border-orange-500/20 rounded-xl">
-              <p className="text-orange-400 font-semibold text-xs uppercase tracking-wider mb-1">Hotline 24/7</p>
+              <p className="text-orange-400 font-semibold text-xs uppercase tracking-wider mb-1">{t(lang, "footer.hotline")}</p>
               <a href="tel:+84901234567" className="text-white font-black text-lg hover:text-orange-300 transition-colors">
                 +84 90 123 4567
               </a>
@@ -165,11 +167,11 @@ export default function Footer() {
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>
-            © {currentYear} <span className="text-orange-400 font-semibold">Alpha NDT</span>. Mã số doanh nghiệp: 0306455519
+            © {currentYear} <span className="text-orange-400 font-semibold">Alpha NDT</span>. {t(lang, "footer.copyright")}
           </p>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-slate-300 transition-colors">Chính sách bảo mật</a>
-            <a href="#" className="hover:text-slate-300 transition-colors">Điều khoản sử dụng</a>
+            <a href="#" className="hover:text-slate-300 transition-colors">{t(lang, "footer.privacy")}</a>
+            <a href="#" className="hover:text-slate-300 transition-colors">{t(lang, "footer.terms")}</a>
           </div>
         </div>
       </div>

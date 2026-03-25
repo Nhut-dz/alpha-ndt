@@ -2,6 +2,8 @@
 // Contact Section - Form + Info
 // ============================================================
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 
 function useFadeIn() {
   const ref = useRef(null);
@@ -60,15 +62,16 @@ const contactInfo = [
 
 export default function Contact() {
   const { ref, visible } = useFadeIn();
+  const { lang } = useLang();
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
 
   const validate = () => {
     const e = {};
-    if (!formData.name.trim()) e.name = "Vui lòng nhập họ tên";
-    if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) e.email = "Email không hợp lệ";
-    if (!formData.message.trim()) e.message = "Vui lòng nhập nội dung";
+    if (!formData.name.trim()) e.name = t(lang, "contact.nameRequired");
+    if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) e.email = t(lang, "contact.emailRequired");
+    if (!formData.message.trim()) e.message = t(lang, "contact.messageRequired");
     return e;
   };
 
@@ -92,17 +95,16 @@ export default function Contact() {
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            Liên hệ
+            {t(lang, "contact.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-            Liên hệ{" "}
+            {t(lang, "contact.heading1")}{" "}
             <span className="text-orange-400">
-              với chúng tôi
+              {t(lang, "contact.headingHighlight")}
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Để lại thông tin, đội ngũ chuyên gia của chúng tôi sẽ liên hệ tư vấn
-            miễn phí trong vòng 24 giờ
+            {t(lang, "contact.description")}
           </p>
         </div>
 
@@ -183,13 +185,13 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                  <h3 className="text-white font-bold text-xl mb-6">Gửi yêu cầu tư vấn</h3>
+                  <h3 className="text-white font-bold text-xl mb-6">{t(lang, "contact.send")}</h3>
 
                   {/* Name + Email */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-slate-400 text-sm font-medium mb-2">
-                        Họ và tên <span className="text-red-400">*</span>
+                        {t(lang, "contact.name")} <span className="text-red-400">*</span>
                       </label>
                       <input
                         type="text"
@@ -202,7 +204,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="block text-slate-400 text-sm font-medium mb-2">
-                        Email <span className="text-red-400">*</span>
+                        {t(lang, "contact.email")} <span className="text-red-400">*</span>
                       </label>
                       <input
                         type="email"
@@ -218,7 +220,7 @@ export default function Contact() {
                   {/* Phone + Service */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-slate-400 text-sm font-medium mb-2">Số điện thoại</label>
+                      <label className="block text-slate-400 text-sm font-medium mb-2">{t(lang, "contact.phone")}</label>
                       <input
                         type="tel"
                         value={formData.phone}
@@ -228,13 +230,13 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 text-sm font-medium mb-2">Dịch vụ quan tâm</label>
+                      <label className="block text-slate-400 text-sm font-medium mb-2">{t(lang, "contact.service")}</label>
                       <select
                         value={formData.service}
                         onChange={handleChange("service")}
                         className="w-full bg-slate-800 border border-slate-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors appearance-none"
                       >
-                        <option value="">Chọn dịch vụ...</option>
+                        <option value="">{t(lang, "contact.selectService")}</option>
                         <option value="UT">Ultrasonic Testing (UT)</option>
                         <option value="RT">Radiographic Testing (RT)</option>
                         <option value="MT">Magnetic Particle Testing (MT)</option>
@@ -250,7 +252,7 @@ export default function Contact() {
                   {/* Message */}
                   <div>
                     <label className="block text-slate-400 text-sm font-medium mb-2">
-                      Nội dung yêu cầu <span className="text-red-400">*</span>
+                      {t(lang, "contact.message")} <span className="text-red-400">*</span>
                     </label>
                     <textarea
                       rows={5}
@@ -269,7 +271,7 @@ export default function Contact() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
-                    Gửi yêu cầu tư vấn
+                    {t(lang, "contact.send")}
                   </button>
 
                   <p className="text-slate-600 text-xs text-center">
