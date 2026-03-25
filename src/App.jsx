@@ -50,13 +50,12 @@ function FloatingCTA() {
   return (
     <a
       href="tel:+842838156789"
-      className="fixed bottom-6 left-6 z-40 flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+      className="fixed bottom-6 left-6 z-40 w-11 h-11 bg-blue-600 hover:bg-blue-500 text-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-200 hover:-translate-y-1"
       aria-label="Gọi ngay"
     >
-      <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
-      <span className="hidden sm:block">Gọi ngay</span>
     </a>
   );
 }
