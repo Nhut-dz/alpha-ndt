@@ -54,7 +54,7 @@ export default function Header() {
             <img
               src="/logo.png"
               alt="Alpha NDT"
-              className="h-20 sm:h-24 w-auto object-contain"
+              className="h-28 sm:h-32 w-auto object-contain"
             />
           </a>
 
