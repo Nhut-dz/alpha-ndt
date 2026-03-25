@@ -82,7 +82,11 @@ export default function Header() {
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
             <button onClick={toggleLang} className="hidden sm:flex items-center gap-1.5 text-slate-300 hover:text-white text-sm font-medium px-3 py-2 rounded-lg border border-slate-600 hover:border-slate-400 transition-colors">
-              {lang === "vi" ? "🇬🇧" : "🇻🇳"}
+              {lang === "vi" ? (
+                <svg className="w-6 h-4 rounded-sm" viewBox="0 0 60 30"><clipPath id="gb"><rect width="60" height="30"/></clipPath><g clipPath="url(#gb)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" strokeWidth="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" strokeWidth="4" clipPath="url(#gb)"/><path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/></g></svg>
+              ) : (
+                <svg className="w-6 h-4 rounded-sm" viewBox="0 0 900 600"><rect width="900" height="600" fill="#da251d"/><polygon points="450,120 347,405 570,225 330,225 553,405" fill="#ff0"/></svg>
+              )}
             </button>
             <a
               href="#contact"
@@ -138,7 +142,11 @@ export default function Header() {
               {t(lang, "nav.contactNow")}
             </a>
             <button onClick={toggleLang} className="flex items-center gap-1.5 text-slate-300 hover:text-white text-sm font-medium px-3 py-2 rounded-lg border border-slate-600 hover:border-slate-400 transition-colors justify-center">
-              {lang === "vi" ? "🇬🇧" : "🇻🇳"}
+              {lang === "vi" ? (
+                <svg className="w-6 h-4 rounded-sm" viewBox="0 0 60 30"><clipPath id="gb"><rect width="60" height="30"/></clipPath><g clipPath="url(#gb)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" strokeWidth="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" strokeWidth="4" clipPath="url(#gb)"/><path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/></g></svg>
+              ) : (
+                <svg className="w-6 h-4 rounded-sm" viewBox="0 0 900 600"><rect width="900" height="600" fill="#da251d"/><polygon points="450,120 347,405 570,225 330,225 553,405" fill="#ff0"/></svg>
+              )}
             </button>
           </nav>
         </div>
