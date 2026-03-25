@@ -62,10 +62,10 @@ export default function Hero() {
             }}
           >
             {index === 0 ? (
-              <p className="text-white text-2xl md:text-4xl lg:text-5xl drop-shadow-lg" style={{ fontFamily: "'Arial Unicode MS', Arial, sans-serif" }}>
-                <span className="font-bold italic" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}>Give us</span>{" "}
-                a chance and we will prove our efficiency!
-              </p>
+              <div className="text-white drop-shadow-lg" style={{ fontFamily: "'Arial Unicode MS', Arial, sans-serif" }}>
+                <p className="text-3xl md:text-5xl lg:text-6xl font-bold italic mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}>Give us</p>
+                <p className="text-xl md:text-3xl lg:text-4xl">a chance and we will prove our efficiency!</p>
+              </div>
             ) : (
               <p className="text-white text-2xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg" style={{ fontFamily: "'Arial Unicode MS', Arial, sans-serif" }}>
                 {slide.text}
