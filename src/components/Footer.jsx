@@ -32,7 +32,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
+    <footer className="bg-blue-950 border-t border-slate-800">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -64,7 +64,7 @@ export default function Footer() {
             {/* Cert badges */}
             <div className="flex flex-wrap gap-2 mb-6">
               {certBadges.map((cert) => (
-                <span key={cert} className="bg-slate-700 border border-slate-700 text-slate-400 text-xs px-2.5 py-1 rounded-lg">
+                <span key={cert} className="bg-blue-800 border border-slate-700 text-slate-400 text-xs px-2.5 py-1 rounded-lg">
                   {cert}
                 </span>
               ))}
@@ -78,7 +78,7 @@ export default function Footer() {
                 { name: "YouTube", href: "#", path: <><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" /></> },
               ].map((s) => (
                 <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer"
-                  className={`w-9 h-9 bg-slate-700 border border-slate-700 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-200 ${s.name === "YouTube" ? "hover:bg-orange-500 hover:border-orange-500" : "hover:bg-blue-600 hover:border-blue-600"}`}
+                  className={`w-9 h-9 bg-blue-800 border border-slate-700 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-200 ${s.name === "YouTube" ? "hover:bg-orange-500 hover:border-orange-500" : "hover:bg-blue-600 hover:border-blue-600"}`}
                   aria-label={s.name}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">{s.path}</svg>

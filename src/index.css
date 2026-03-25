@@ -12,7 +12,7 @@
     --color-primary: 59 130 246;    /* blue-500 */
     --color-secondary: 249 115 22;  /* orange-500 */
     --color-primary-dark: 30 64 175; /* blue-800 */
-    --color-bg: 30 41 59;           /* slate-800 */
+    --color-bg: 23 37 84;           /* blue-950 */
   }
 
   html {
@@ -22,7 +22,7 @@
   }
 
   body {
-    @apply bg-slate-800 text-slate-100 font-sans;
+    @apply bg-blue-900 text-slate-100 font-sans;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
@@ -31,7 +31,7 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #1e293b;
+    background: #172554;
   }
   ::-webkit-scrollbar-thumb {
     background: #1e3a5f;

@@ -19,7 +19,7 @@ const Footer = lazy(() => import("./components/Footer"));
 
 // Section skeleton loader
 const SectionLoader = () => (
-  <div className="py-24 flex justify-center bg-slate-800">
+  <div className="py-24 flex justify-center bg-blue-900">
     <div className="flex gap-2">
       <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
       <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -62,7 +62,7 @@ function FloatingCTA() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-800 font-sans antialiased">
+    <div className="min-h-screen bg-blue-900 font-sans antialiased">
       {/* Sticky Header - always loaded */}
       <Header />
 
@@ -102,7 +102,7 @@ export default function App() {
         <Contact />
       </Suspense>
 
-      <Suspense fallback={<div className="bg-slate-900 h-32" />}>
+      <Suspense fallback={<div className="bg-blue-950 h-32" />}>
         <Footer />
       </Suspense>
 
