@@ -50,7 +50,7 @@ function FloatingCTA() {
   return (
     <a
       href="tel:+842838156789"
-      className="fixed bottom-6 left-6 z-40 flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white text-sm font-bold px-4 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+      className="fixed bottom-6 left-6 z-40 flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
       aria-label="Gọi ngay"
     >
       <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
