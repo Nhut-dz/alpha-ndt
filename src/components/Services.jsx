@@ -20,7 +20,7 @@ function useFadeIn(threshold = 0.1) {
   return { ref, visible };
 }
 
-const categoriesEN = ["Conventional NDT", "Advanced NDT", "Inspection Services", "Specialized"];
+// No filter needed - each service is its own category
 
 // SVG icons for each service (more professional than emoji in production)
 const ServiceIcon = ({ code }) => {
@@ -81,6 +81,37 @@ const ServiceIcon = ({ code }) => {
         <circle cx="20" cy="30" r="4" stroke="currentColor" strokeWidth="2" />
       </svg>
     ),
+    IS: (
+      <svg viewBox="0 0 40 40" className="w-8 h-8" fill="none">
+        <rect x="8" y="6" width="24" height="28" rx="3" stroke="currentColor" strokeWidth="2" />
+        <path d="M14 14h12M14 20h12M14 26h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="30" cy="30" r="6" stroke="currentColor" strokeWidth="2" />
+        <path d="M28 30l2 2 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    ANDT: (
+      <svg viewBox="0 0 40 40" className="w-8 h-8" fill="none">
+        <rect x="10" y="16" width="20" height="12" rx="2" stroke="currentColor" strokeWidth="2" />
+        <path d="M14 16V12M18 16V10M22 16V10M26 16V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M6 28 Q20 38 34 28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="20" cy="8" r="3" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+    CNDT: (
+      <svg viewBox="0 0 40 40" className="w-8 h-8" fill="none">
+        <circle cx="20" cy="20" r="14" stroke="currentColor" strokeWidth="2" />
+        <path d="M10 20 Q15 12 20 20 Q25 28 30 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+        <circle cx="20" cy="20" r="4" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+    GOES: (
+      <svg viewBox="0 0 40 40" className="w-8 h-8" fill="none">
+        <circle cx="20" cy="20" r="10" stroke="currentColor" strokeWidth="2" />
+        <circle cx="20" cy="20" r="5" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M20 4v6M20 30v6M4 20h6M30 20h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M12 12l3 3M25 25l3 3M12 28l3-3M25 15l3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
   };
   return icons[code] || <span className="text-2xl">🔬</span>;
 };
@@ -88,19 +119,7 @@ const ServiceIcon = ({ code }) => {
 export default function Services() {
   const { ref: sectionRef, visible } = useFadeIn();
   const { lang } = useLang();
-  const allLabel = t(lang, "services.all");
-  const categories = [allLabel, ...categoriesEN];
-  const [activeFilter, setActiveFilter] = useState(allLabel);
   const [hoveredId, setHoveredId] = useState(null);
-
-  // Reset filter when lang changes so "All"/"Tất cả" stays valid
-  useEffect(() => {
-    setActiveFilter(t(lang, "services.all"));
-  }, [lang]);
-
-  const filtered = activeFilter === allLabel
-    ? services
-    : services.filter((s) => s.category === activeFilter);
 
   return (
     <section id="services" className="py-24 bg-slate-900" ref={sectionRef}>
@@ -125,30 +144,9 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Filter tabs */}
-        <div
-          className={`flex flex-wrap justify-center gap-2 mb-12 transition-all duration-700 delay-100 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveFilter(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
-                activeFilter === cat
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                  : "bg-slate-700 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filtered.map((service, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, i) => (
             <div
               key={service.id}
               onMouseEnter={() => setHoveredId(service.id)}
