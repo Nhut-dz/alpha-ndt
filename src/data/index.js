@@ -40,74 +40,9 @@ export const certifications = [
 export const classifications = ["ABS", "BV", "ClassNK", "DNV", "KR", "VR"];
 
 export const services = [
+  // === INSPECTION SERVICES ===
   {
     id: 1,
-    icon: "🔊",
-    code: "UT",
-    title: "Ultrasonic Testing",
-    titleVi: "Kiểm tra siêu âm",
-    description:
-      "Phát hiện khuyết tật bên trong vật liệu, đo độ dày thành ống, bồn chứa và cấu kiện kết cấu bằng sóng siêu âm độ chính xác cao.",
-    category: "Conventional NDT",
-    color: "from-blue-600 to-blue-800",
-  },
-  {
-    id: 2,
-    icon: "☢️",
-    code: "RT",
-    title: "Radiographic Testing",
-    titleVi: "Kiểm tra chụp ảnh phóng xạ",
-    description:
-      "Sử dụng tia X và tia gamma để kiểm tra chất lượng mối hàn, phát hiện lỗ rỗng, tạp chất và các khuyết tật bên trong.",
-    category: "Conventional NDT",
-    color: "from-indigo-600 to-indigo-800",
-  },
-  {
-    id: 3,
-    icon: "🧲",
-    code: "MT",
-    title: "Magnetic Particle Testing",
-    titleVi: "Kiểm tra hạt từ",
-    description:
-      "Phát hiện các vết nứt và khuyết tật bề mặt trên vật liệu ferromagnetic bằng phương pháp từ trường và bột từ.",
-    category: "Conventional NDT",
-    color: "from-purple-600 to-purple-800",
-  },
-  {
-    id: 4,
-    icon: "💧",
-    code: "PT",
-    title: "Penetrant Testing",
-    titleVi: "Kiểm tra thẩm thấu",
-    description:
-      "Phát hiện khuyết tật mở ra bề mặt trên mọi loại vật liệu không xốp bằng chất lỏng thẩm thấu màu hoặc huỳnh quang.",
-    category: "Conventional NDT",
-    color: "from-cyan-600 to-cyan-800",
-  },
-  {
-    id: 5,
-    icon: "⚡",
-    code: "ECT",
-    title: "Eddy Current Testing",
-    titleVi: "Kiểm tra dòng điện xoáy",
-    description:
-      "Kiểm tra ống nhiệt, phát hiện ăn mòn và khuyết tật bề mặt trên vật liệu dẫn điện với tốc độ cao.",
-    category: "Advanced NDT",
-    color: "from-orange-600 to-orange-800",
-  },
-  {
-    id: 6,
-    icon: "📡",
-    code: "PAUT",
-    title: "Phased Array UT",
-    titleVi: "Siêu âm mảng pha",
-    description:
-      "Công nghệ siêu âm tiên tiến cho phép quét diện rộng, tạo ảnh 2D/3D và phát hiện khuyết tật chính xác hơn UT truyền thống.",
-    category: "Advanced NDT",
-    color: "from-teal-600 to-teal-800",
-  },
-  {
-    id: 7,
     icon: "👁️",
     code: "VT",
     title: "Visual Testing",
@@ -118,15 +53,129 @@ export const services = [
     color: "from-green-600 to-green-800",
   },
   {
+    id: 2,
+    icon: "🔍",
+    code: "WI",
+    title: "Welding Inspection",
+    titleVi: "Kiểm tra hàn",
+    description:
+      "Giám sát và kiểm tra chất lượng mối hàn theo tiêu chuẩn quốc tế AWS, ASME, EN. Đảm bảo mối hàn đạt yêu cầu kỹ thuật.",
+    category: "Inspection Services",
+    color: "from-emerald-600 to-emerald-800",
+  },
+  {
+    id: 3,
+    icon: "📋",
+    code: "TPI",
+    title: "Third Party Inspection",
+    titleVi: "Kiểm tra bên thứ ba",
+    description:
+      "Dịch vụ kiểm tra độc lập, khách quan cho các dự án công nghiệp. Đảm bảo tuân thủ tiêu chuẩn và quy định an toàn.",
+    category: "Inspection Services",
+    color: "from-lime-600 to-lime-800",
+  },
+  // === ADVANCED NDT SERVICES ===
+  {
+    id: 4,
+    icon: "📡",
+    code: "PAUT",
+    title: "Phased Array UT",
+    titleVi: "Siêu âm mảng pha",
+    description:
+      "Công nghệ siêu âm tiên tiến cho phép quét diện rộng, tạo ảnh 2D/3D và phát hiện khuyết tật chính xác hơn UT truyền thống.",
+    category: "Advanced NDT Services",
+    color: "from-teal-600 to-teal-800",
+  },
+  {
+    id: 5,
+    icon: "⚡",
+    code: "ECT",
+    title: "Eddy Current Testing",
+    titleVi: "Kiểm tra dòng điện xoáy",
+    description:
+      "Kiểm tra ống nhiệt, phát hiện ăn mòn và khuyết tật bề mặt trên vật liệu dẫn điện với tốc độ cao.",
+    category: "Advanced NDT Services",
+    color: "from-orange-600 to-orange-800",
+  },
+  {
+    id: 6,
+    icon: "📊",
+    code: "TOFD",
+    title: "Time of Flight Diffraction",
+    titleVi: "Kỹ thuật TOFD",
+    description:
+      "Kỹ thuật siêu âm tiên tiến dùng hiện tượng nhiễu xạ để xác định chính xác kích thước và vị trí khuyết tật trong mối hàn.",
+    category: "Advanced NDT Services",
+    color: "from-violet-600 to-violet-800",
+  },
+  // === CONVENTIONAL NON-DESTRUCTIVE TESTING ===
+  {
+    id: 7,
+    icon: "🔊",
+    code: "UT",
+    title: "Ultrasonic Testing",
+    titleVi: "Kiểm tra siêu âm",
+    description:
+      "Phát hiện khuyết tật bên trong vật liệu, đo độ dày thành ống, bồn chứa và cấu kiện kết cấu bằng sóng siêu âm độ chính xác cao.",
+    category: "Conventional NDT",
+    color: "from-blue-600 to-blue-800",
+  },
+  {
     id: 8,
+    icon: "☢️",
+    code: "RT",
+    title: "Radiographic Testing",
+    titleVi: "Kiểm tra chụp ảnh phóng xạ",
+    description:
+      "Sử dụng tia X và tia gamma để kiểm tra chất lượng mối hàn, phát hiện lỗ rỗng, tạp chất và các khuyết tật bên trong.",
+    category: "Conventional NDT",
+    color: "from-indigo-600 to-indigo-800",
+  },
+  {
+    id: 9,
+    icon: "🧲",
+    code: "MT",
+    title: "Magnetic Particle Testing",
+    titleVi: "Kiểm tra hạt từ",
+    description:
+      "Phát hiện các vết nứt và khuyết tật bề mặt trên vật liệu ferromagnetic bằng phương pháp từ trường và bột từ.",
+    category: "Conventional NDT",
+    color: "from-purple-600 to-purple-800",
+  },
+  {
+    id: 10,
+    icon: "💧",
+    code: "PT",
+    title: "Penetrant Testing",
+    titleVi: "Kiểm tra thẩm thấu",
+    description:
+      "Phát hiện khuyết tật mở ra bề mặt trên mọi loại vật liệu không xốp bằng chất lỏng thẩm thấu màu hoặc huỳnh quang.",
+    category: "Conventional NDT",
+    color: "from-cyan-600 to-cyan-800",
+  },
+  // === WIND ENERGY SERVICE (WES) ===
+  {
+    id: 11,
     icon: "🌬️",
     code: "WES",
     title: "Wind Energy Service",
     titleVi: "Dịch vụ năng lượng gió",
     description:
-      "Kiểm tra, bảo dưỡng tuabin gió bằng phương pháp NDT tiên tiến. Đổi dầu hộp số tuabin gió chuyên nghiệp.",
-    category: "Specialized",
+      "Kiểm tra, bảo dưỡng tuabin gió bằng phương pháp NDT tiên tiến. Dịch vụ toàn diện cho ngành năng lượng tái tạo.",
+    category: "Wind Energy Service (WES)",
     color: "from-sky-600 to-sky-800",
+  },
+  // === WIND TURBINE GEAR OIL EXCHANGE BY GOES ===
+  {
+    id: 12,
+    icon: "⚙️",
+    code: "GOES",
+    title: "Wind Turbine Gear Oil Exchange by GOES",
+    titleVi: "Đổi dầu hộp số tuabin gió bằng GOES",
+    description:
+      "Dịch vụ đổi dầu hộp số tuabin gió chuyên nghiệp bằng hệ thống GOES, đảm bảo hiệu suất vận hành tối ưu và kéo dài tuổi thọ thiết bị.",
+    category: "Wind Turbine Gear Oil Exchange by GOES",
+    color: "from-amber-600 to-amber-800",
   },
 ];
 
