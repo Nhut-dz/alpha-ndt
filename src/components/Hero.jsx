@@ -40,7 +40,7 @@ export default function Hero() {
         </video>
 
         {/* Multi-layer overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-800/80 via-slate-800/60 to-slate-800/90" />
         <div className="absolute inset-0 bg-blue-950/30" />
       </div>
 

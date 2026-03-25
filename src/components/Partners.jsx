@@ -36,7 +36,7 @@ export default function Partners() {
   const { ref, visible } = useFadeIn();
 
   return (
-    <section id="partners" className="py-20 bg-slate-900 overflow-hidden" ref={ref}>
+    <section id="partners" className="py-20 bg-slate-800 overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -57,8 +57,8 @@ export default function Partners() {
         {/* Infinite scrolling strip */}
         <div className={`relative transition-all duration-700 delay-200 ${visible ? "opacity-100" : "opacity-0"}`}>
           {/* Fade masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-slate-900 to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-slate-900 to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-slate-800 to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-slate-800 to-transparent pointer-events-none" />
 
           {/* Scrolling track */}
           <div className="flex gap-4 overflow-hidden">
@@ -71,7 +71,7 @@ export default function Partners() {
               {doubled.map((partner, i) => (
                 <div
                   key={i}
-                  className="flex-none flex items-center justify-center w-40 h-20 bg-slate-800 border border-slate-700 rounded-xl hover:border-blue-500/50 hover:bg-slate-700 transition-all duration-200 group"
+                  className="flex-none flex items-center justify-center w-40 h-20 bg-slate-700 border border-slate-700 rounded-xl hover:border-blue-500/50 hover:bg-slate-700 transition-all duration-200 group"
                 >
                   <div className="text-center">
                     <div className="text-slate-300 font-black text-lg group-hover:text-blue-400 transition-colors">
@@ -95,7 +95,7 @@ export default function Partners() {
           ].map((s, i) => (
             <div
               key={i}
-              className="bg-slate-800 border border-slate-700 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-colors"
+              className="bg-slate-700 border border-slate-700 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-colors"
             >
               <div className="text-3xl font-black text-blue-400 mb-1">{s.value}</div>
               <div className="text-white font-semibold text-sm">{s.label}</div>

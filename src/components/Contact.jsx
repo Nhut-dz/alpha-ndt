@@ -87,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-950" ref={ref}>
+    <section id="contact" className="py-24 bg-slate-900" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -150,7 +150,7 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-slate-800 hover:bg-blue-600 border border-slate-700 hover:border-blue-600 text-slate-400 hover:text-white rounded-xl flex items-center justify-center transition-all duration-200"
+                    className="w-10 h-10 bg-slate-700 hover:bg-blue-600 border border-slate-700 hover:border-blue-600 text-slate-400 hover:text-white rounded-xl flex items-center justify-center transition-all duration-200"
                     aria-label={social.name}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -164,7 +164,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div className={`lg:col-span-3 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8">
+            <div className="bg-slate-700 border border-slate-700 rounded-2xl p-6 sm:p-8">
               {submitted ? (
                 <div className="text-center py-8">
                   <div className="w-20 h-20 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -196,7 +196,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange("name")}
                         placeholder="Nguyễn Văn A"
-                        className={`w-full bg-slate-900 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.name ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
+                        className={`w-full bg-slate-800 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.name ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
                       />
                       {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
                     </div>
@@ -209,7 +209,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange("email")}
                         placeholder="email@company.com"
-                        className={`w-full bg-slate-900 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.email ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
+                        className={`w-full bg-slate-800 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.email ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
                       />
                       {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                     </div>
@@ -224,7 +224,7 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange("phone")}
                         placeholder="+84 9xx xxx xxx"
-                        className="w-full bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors"
+                        className="w-full bg-slate-800 border border-slate-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors"
                       />
                     </div>
                     <div>
@@ -232,7 +232,7 @@ export default function Contact() {
                       <select
                         value={formData.service}
                         onChange={handleChange("service")}
-                        className="w-full bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors appearance-none"
+                        className="w-full bg-slate-800 border border-slate-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors appearance-none"
                       >
                         <option value="">Chọn dịch vụ...</option>
                         <option value="UT">Ultrasonic Testing (UT)</option>
@@ -257,7 +257,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange("message")}
                       placeholder="Mô tả dự án, thiết bị cần kiểm định, tiêu chuẩn yêu cầu..."
-                      className={`w-full bg-slate-900 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors resize-none ${errors.message ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
+                      className={`w-full bg-slate-800 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors resize-none ${errors.message ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
                     />
                     {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
                   </div>

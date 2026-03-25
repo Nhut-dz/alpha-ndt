@@ -93,7 +93,7 @@ export default function Services() {
     : services.filter((s) => s.category === activeFilter);
 
   return (
-    <section id="services" className="py-24 bg-slate-950" ref={sectionRef}>
+    <section id="services" className="py-24 bg-slate-900" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div
@@ -129,7 +129,7 @@ export default function Services() {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeFilter === cat
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                  : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
+                  : "bg-slate-700 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
               }`}
             >
               {cat}
@@ -144,7 +144,7 @@ export default function Services() {
               key={service.id}
               onMouseEnter={() => setHoveredId(service.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className={`group relative bg-slate-800 border border-slate-700 rounded-2xl p-6 cursor-pointer
+              className={`group relative bg-slate-700 border border-slate-700 rounded-2xl p-6 cursor-pointer
                 transition-all duration-300 overflow-hidden
                 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}

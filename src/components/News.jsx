@@ -25,7 +25,7 @@ export default function News() {
   const { ref, visible } = useFadeIn();
 
   return (
-    <section id="news" className="py-24 bg-slate-950" ref={ref}>
+    <section id="news" className="py-24 bg-slate-900" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 gap-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -56,7 +56,7 @@ export default function News() {
           {news.map((article, i) => (
             <article
               key={article.id}
-              className={`group bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden
+              className={`group bg-slate-700 border border-slate-700 rounded-2xl overflow-hidden
                 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1
                 transition-all duration-300 cursor-pointer
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}

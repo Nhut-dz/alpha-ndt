@@ -33,7 +33,7 @@ export default function Portfolio() {
     : projects.filter((p) => p.tag === activeFilter);
 
   return (
-    <section id="portfolio" className="py-24 bg-slate-900" ref={sectionRef}>
+    <section id="portfolio" className="py-24 bg-slate-800" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -61,7 +61,7 @@ export default function Portfolio() {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeFilter === f
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                  : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
+                  : "bg-slate-700 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700"
               }`}
             >
               {f}
@@ -75,7 +75,7 @@ export default function Portfolio() {
             <article
               key={project.id}
               onClick={() => setSelected(project)}
-              className={`group relative bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden cursor-pointer
+              className={`group relative bg-slate-700 border border-slate-700 rounded-2xl overflow-hidden cursor-pointer
                 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1
                 transition-all duration-300
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
@@ -104,7 +104,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Year */}
-                <div className="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-sm text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-lg">
+                <div className="absolute top-3 right-3 bg-slate-800/80 backdrop-blur-sm text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-lg">
                   {project.year}
                 </div>
 
@@ -138,7 +138,7 @@ export default function Portfolio() {
 
         {/* View more CTA */}
         <div className={`text-center mt-10 transition-all duration-700 delay-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          <button className="inline-flex items-center gap-2 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 hover:bg-slate-800">
+          <button className="inline-flex items-center gap-2 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 hover:bg-slate-700">
             Xem tất cả dự án
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -150,11 +150,11 @@ export default function Portfolio() {
       {/* Modal */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-800/90 backdrop-blur-sm"
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-slate-800 border border-slate-700 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden"
+            className="bg-slate-700 border border-slate-700 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
@@ -163,7 +163,7 @@ export default function Portfolio() {
               />
               <button
                 onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 bg-slate-900/80 hover:bg-slate-900 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+                className="absolute top-4 right-4 bg-slate-800/80 hover:bg-slate-800 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors"
               >
                 ✕
               </button>

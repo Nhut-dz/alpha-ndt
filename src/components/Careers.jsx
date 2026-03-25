@@ -19,7 +19,7 @@ export default function Careers() {
   const { ref, visible } = useFadeIn();
 
   return (
-    <section id="careers" className="py-24 bg-slate-900" ref={ref}>
+    <section id="careers" className="py-24 bg-slate-800" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -47,7 +47,7 @@ export default function Careers() {
             {jobOpenings.map((job, i) => (
               <div
                 key={job.id}
-                className="group flex items-start gap-4 bg-slate-800 border border-slate-700 rounded-xl p-5 hover:border-blue-500/50 hover:bg-slate-750 transition-all duration-200 cursor-pointer hover:-translate-y-0.5"
+                className="group flex items-start gap-4 bg-slate-700 border border-slate-700 rounded-xl p-5 hover:border-blue-500/50 hover:bg-slate-750 transition-all duration-200 cursor-pointer hover:-translate-y-0.5"
               >
                 <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 flex-none group-hover:bg-blue-500/20 transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
