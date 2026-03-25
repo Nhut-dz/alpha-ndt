@@ -6,15 +6,22 @@ import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
 
 const certifications = [
-  { code: "ISO 9001", name: "Quality Management" },
-  { code: "ISO/IEC 17025", name: "Testing Laboratory" },
-  { code: "PCN", name: "Personnel Cert" },
-  { code: "CSWIP", name: "Welding Inspection" },
-  { code: "ASNT", name: "NDT Standard" },
-  { code: "ISO 9712", name: "NDT Personnel" },
+  { code: "ISO 9001", name: "Quality Management", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ISO_logo_%28Red_square%29.svg/120px-ISO_logo_%28Red_square%29.svg.png" },
+  { code: "ISO/IEC 17025", name: "Testing Laboratory", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ISO_logo_%28Red_square%29.svg/120px-ISO_logo_%28Red_square%29.svg.png" },
+  { code: "PCN", name: "Personnel Cert", logo: "https://www.bindt.org/images/PCN-Logo.png" },
+  { code: "CSWIP", name: "Welding Inspection", logo: "https://www.twi-global.com/images/default-source/cswip/cswip-logo.png" },
+  { code: "ASNT", name: "NDT Standard", logo: "https://www.asnt.org/images/default-source/default-album/asnt-logo.png" },
+  { code: "ISO 9712", name: "NDT Personnel", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ISO_logo_%28Red_square%29.svg/120px-ISO_logo_%28Red_square%29.svg.png" },
 ];
 
-const classifications = ["ABS", "Bureau Veritas", "ClassNK", "DNV", "KR", "VR"];
+const classifications = [
+  { name: "ABS", logo: "https://ww2.eagle.org/content/dam/eagle/abs-logo/abs-logo.svg" },
+  { name: "Bureau Veritas", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bureau_Veritas_logo.svg/200px-Bureau_Veritas_logo.svg.png" },
+  { name: "ClassNK", logo: "https://www.classnk.or.jp/hp/images/common/logo.png" },
+  { name: "DNV", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DNV_logo.svg/200px-DNV_logo.svg.png" },
+  { name: "KR", logo: "https://www.krs.co.kr/images/common/logo.png" },
+  { name: "VR", logo: "https://www.vr.org.vn/images/logo.png" },
+];
 
 const highlights = [
   { icon: "👥", text: "Đội ngũ chuyên gia được chứng nhận quốc tế" },
@@ -163,12 +170,16 @@ export default function About() {
               {certifications.map((cert) => (
                 <div
                   key={cert.code}
-                  className="bg-slate-700 hover:bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl p-4 text-center transition-all duration-200 group"
+                  className="bg-slate-700 hover:bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl p-4 flex flex-col items-center justify-center gap-2 transition-all duration-200 group"
                 >
-                  <div className="text-white font-black text-lg group-hover:text-orange-400 transition-colors">
-                    {cert.code}
-                  </div>
-                  <div className="text-slate-500 text-xs mt-1">{cert.name}</div>
+                  <img
+                    src={cert.logo}
+                    alt={cert.code}
+                    className="h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    onError={(e) => { e.target.style.display = "none"; e.target.nextSibling.style.display = "block"; }}
+                  />
+                  <span className="text-white font-black text-sm hidden">{cert.code}</span>
+                  <div className="text-slate-500 text-xs">{cert.name}</div>
                 </div>
               ))}
             </div>
@@ -176,14 +187,20 @@ export default function About() {
             {/* Classification societies */}
             <div className="text-center">
               <p className="text-slate-500 text-sm mb-4">{t(lang, "about.certLabel")}</p>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-4">
                 {classifications.map((cls) => (
-                  <span
-                    key={cls}
-                    className="bg-slate-700 border border-slate-700 text-slate-300 text-sm font-semibold px-4 py-2 rounded-full hover:border-blue-500/50 hover:text-blue-400 transition-colors"
+                  <div
+                    key={cls.name}
+                    className="bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl px-5 py-3 flex items-center justify-center transition-all duration-200 group"
                   >
-                    {cls}
-                  </span>
+                    <img
+                      src={cls.logo}
+                      alt={cls.name}
+                      className="h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                      onError={(e) => { e.target.style.display = "none"; e.target.nextSibling.style.display = "block"; }}
+                    />
+                    <span className="text-slate-300 text-sm font-semibold hidden">{cls.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
