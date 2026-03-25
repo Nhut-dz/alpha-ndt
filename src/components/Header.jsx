@@ -14,8 +14,8 @@ export default function Header() {
     { label: t(lang, "nav.services"), href: "#services" },
     { label: t(lang, "nav.portfolio"), href: "#portfolio" },
     { label: t(lang, "nav.news"), href: "#news" },
-    { label: t(lang, "nav.careers"), href: "#careers" },
     { label: t(lang, "nav.contact"), href: "#contact" },
+    { label: "Platform", href: "http://platform.alpha-ndt.com/Login?ReturnUrl=~/Default?st=", external: true },
   ];
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,9 +67,10 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                onClick={(e) => !item.external && handleNavClick(e, item.href)}
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
-                  activeSection === item.href.replace("#", "")
+                  !item.external && activeSection === item.href.replace("#", "")
                     ? "text-blue-400 bg-blue-500/10"
                     : "text-slate-300 hover:text-white hover:bg-white/5"
                 }`}
@@ -128,7 +129,8 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                onClick={(e) => !item.external && handleNavClick(e, item.href)}
                 className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
               >
                 {item.label}
