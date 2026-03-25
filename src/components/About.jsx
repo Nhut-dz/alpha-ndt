@@ -6,22 +6,15 @@ import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
 
 const certifications = [
-  { code: "ISO 9001", name: "Quality Management", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ISO_logo_%28Red_square%29.svg/120px-ISO_logo_%28Red_square%29.svg.png" },
-  { code: "ISO/IEC 17025", name: "Testing Laboratory", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ISO_logo_%28Red_square%29.svg/120px-ISO_logo_%28Red_square%29.svg.png" },
-  { code: "PCN", name: "Personnel Cert", logo: "https://www.bindt.org/images/PCN-Logo.png" },
-  { code: "CSWIP", name: "Welding Inspection", logo: "https://www.twi-global.com/images/default-source/cswip/cswip-logo.png" },
-  { code: "ASNT", name: "NDT Standard", logo: "https://www.asnt.org/images/default-source/default-album/asnt-logo.png" },
-  { code: "ISO 9712", name: "NDT Personnel", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ISO_logo_%28Red_square%29.svg/120px-ISO_logo_%28Red_square%29.svg.png" },
+  { code: "ISO 9001", name: "Quality Management" },
+  { code: "ISO/IEC 17025", name: "Testing Laboratory" },
+  { code: "PCN", name: "Personnel Cert" },
+  { code: "CSWIP", name: "Welding Inspection" },
+  { code: "ASNT", name: "NDT Standard" },
+  { code: "ISO 9712", name: "NDT Personnel" },
 ];
 
-const classifications = [
-  { name: "ABS", logo: "https://ww2.eagle.org/content/dam/eagle/abs-logo/abs-logo.svg" },
-  { name: "Bureau Veritas", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bureau_Veritas_logo.svg/200px-Bureau_Veritas_logo.svg.png" },
-  { name: "ClassNK", logo: "https://www.classnk.or.jp/hp/images/common/logo.png" },
-  { name: "DNV", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DNV_logo.svg/200px-DNV_logo.svg.png" },
-  { name: "KR", logo: "https://www.krs.co.kr/images/common/logo.png" },
-  { name: "VR", logo: "https://www.vr.org.vn/images/logo.png" },
-];
+const classifications = ["ABS", "Bureau Veritas", "ClassNK", "DNV", "KR", "VR"];
 
 const highlights = [
   { icon: "👥", text: "Đội ngũ chuyên gia được chứng nhận quốc tế" },
@@ -170,16 +163,17 @@ export default function About() {
               {certifications.map((cert) => (
                 <div
                   key={cert.code}
-                  className="bg-slate-700 hover:bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl p-4 flex flex-col items-center justify-center gap-2 transition-all duration-200 group"
+                  className="bg-slate-700 border border-slate-700 hover:border-orange-500/50 rounded-xl p-5 flex flex-col items-center justify-center gap-1 transition-all duration-200 group hover:bg-slate-700/80"
                 >
-                  <img
-                    src={cert.logo}
-                    alt={cert.code}
-                    className="h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                    onError={(e) => { e.target.style.display = "none"; e.target.nextSibling.style.display = "block"; }}
-                  />
-                  <span className="text-white font-black text-sm hidden">{cert.code}</span>
-                  <div className="text-slate-500 text-xs">{cert.name}</div>
+                  <div className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-2 group-hover:bg-orange-500/20 transition-colors">
+                    <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div className="text-white font-black text-sm text-center group-hover:text-orange-400 transition-colors">
+                    {cert.code}
+                  </div>
+                  <div className="text-slate-500 text-xs text-center">{cert.name}</div>
                 </div>
               ))}
             </div>
@@ -187,19 +181,16 @@ export default function About() {
             {/* Classification societies */}
             <div className="text-center">
               <p className="text-slate-500 text-sm mb-4">{t(lang, "about.certLabel")}</p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-3">
                 {classifications.map((cls) => (
                   <div
-                    key={cls.name}
-                    className="bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl px-5 py-3 flex items-center justify-center transition-all duration-200 group"
+                    key={cls}
+                    className="bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl px-5 py-3 flex items-center gap-2 transition-all duration-200 group"
                   >
-                    <img
-                      src={cls.logo}
-                      alt={cls.name}
-                      className="h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                      onError={(e) => { e.target.style.display = "none"; e.target.nextSibling.style.display = "block"; }}
-                    />
-                    <span className="text-slate-300 text-sm font-semibold hidden">{cls.name}</span>
+                    <svg className="w-4 h-4 text-blue-400 group-hover:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-slate-300 text-sm font-bold group-hover:text-blue-400 transition-colors">{cls}</span>
                   </div>
                 ))}
               </div>
