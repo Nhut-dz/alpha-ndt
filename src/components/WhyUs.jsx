@@ -116,34 +116,6 @@ export default function WhyUs() {
               backgroundSize: "20px 20px",
             }}
           />
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10">
-            <div>
-              <h3 className="text-white font-black text-2xl md:text-3xl mb-2">
-                Sẵn sàng cho dự án của bạn?
-              </h3>
-              <p className="text-blue-200 text-base">
-                Liên hệ đội ngũ chuyên gia AlphaNDT để được tư vấn miễn phí
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <a
-                href="tel:+842838156789"
-                className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-7 py-3.5 rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Gọi ngay
-              </a>
-              <a
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
-                className="inline-flex items-center gap-2 bg-slate-800/50 border border-white/20 text-white font-bold px-7 py-3.5 rounded-xl hover:bg-slate-800 transition-colors"
-              >
-                Gửi yêu cầu
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

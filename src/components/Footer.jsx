@@ -54,7 +54,18 @@ export default function Footer() {
                 </div>
               </div>
               <div>
-                <span className="text-white font-bold text-xl">Alpha<span className="text-orange-400">NDT</span></span>
+               <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, "#home")}
+            className="flex items-center gap-3 group"
+            aria-label="Alpha NDT - Trang chủ"
+          >
+            <img
+              src="/logo.png"
+              alt="Alpha NDT"
+              className="h-20 sm:h-24 w-auto object-contain"
+            />
+          </a>
                 <p className="text-slate-500 text-xs">Inspection Services</p>
               </div>
             </a>
