@@ -40,7 +40,7 @@ export default function About() {
   const { ref: sectionRef, visible } = useFadeIn();
 
   return (
-    <section id="about" className="py-24 bg-blue-900" ref={sectionRef}>
+    <section id="about" className="py-24 bg-slate-800" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section label */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -125,10 +125,10 @@ export default function About() {
                   e.target.src = "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
 
               {/* Floating badge */}
-              <div className="absolute bottom-4 left-4 right-4 bg-blue-900/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
+              <div className="absolute bottom-4 left-4 right-4 bg-slate-800/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-xl">🏆</div>
                   <div>
@@ -162,7 +162,7 @@ export default function About() {
               {certifications.map((cert) => (
                 <div
                   key={cert.code}
-                  className="bg-blue-800 hover:bg-blue-800 border border-slate-700 hover:border-blue-500/50 rounded-xl p-4 text-center transition-all duration-200 group"
+                  className="bg-slate-700 hover:bg-slate-700 border border-slate-700 hover:border-blue-500/50 rounded-xl p-4 text-center transition-all duration-200 group"
                 >
                   <div className="text-white font-black text-lg group-hover:text-blue-400 transition-colors">
                     {cert.code}
@@ -179,7 +179,7 @@ export default function About() {
                 {classifications.map((cls) => (
                   <span
                     key={cls}
-                    className="bg-blue-800 border border-slate-700 text-slate-300 text-sm font-semibold px-4 py-2 rounded-full hover:border-blue-500/50 hover:text-blue-400 transition-colors"
+                    className="bg-slate-700 border border-slate-700 text-slate-300 text-sm font-semibold px-4 py-2 rounded-full hover:border-blue-500/50 hover:text-blue-400 transition-colors"
                   >
                     {cls}
                   </span>
