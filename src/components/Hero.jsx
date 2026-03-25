@@ -1,19 +1,39 @@
 // ============================================================
-// Hero Section - Video Banner with CTA
+// Hero Section - Image Slideshow Banner with CTA
 // ============================================================
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
+
+const bannerImages = [
+  "/banner-1.jpg",
+  "/banner-2.jpg",
+  "/banner-3.jpg",
+  "/banner-4.jpg",
+  "/banner-5.jpg",
+];
+
+const SLIDE_DURATION = 5000; // 5s per slide
+const FADE_DURATION = 800; // 0.8s transition
 
 export default function Hero() {
   const { lang } = useLang();
   const [loaded, setLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    // Trigger fade-in after mount
     const timer = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, SLIDE_DURATION);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
 
   const scrollTo = (id) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
@@ -24,23 +44,21 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Video Background */}
+      {/* Image Slideshow Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&h=1080&fit=crop"
-          className="absolute inset-0 w-full h-full object-cover"
-          aria-hidden="true"
-        >
-          {/* Replace src with actual NDT video in production */}
-          <source
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
-            type="video/mp4"
+        {bannerImages.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              opacity: currentSlide === index ? 1 : 0,
+              transition: `opacity ${FADE_DURATION}ms ease-in-out`,
+            }}
           />
-        </video>
+        ))}
 
         {/* Multi-layer overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-800/80 via-slate-800/60 to-slate-800/90" />
