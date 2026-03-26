@@ -95,7 +95,7 @@ export const services = [
       "Professional gearbox oil exchange service for wind turbines using GOES system, ensuring optimal performance and extended equipment lifespan.",
     category: "Wind Turbine Gear Oil Exchange by GOES",
     color: "from-amber-600 to-amber-800",
-    image: "/service-4.jpg",
+    image: "/service-5.jpg",
   },
 ];
 
