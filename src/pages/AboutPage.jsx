@@ -347,31 +347,54 @@ export default function AboutPage() {
           >
             <SectionTitle label="OUR COMPANY" heading="Inside" highlight="Alpha NDT" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((n, i) => (
-              <div
-                key={n}
-                className={`rounded-xl overflow-hidden transition-all duration-500 ${
-                  n === 1 || n === 4 ? "md:col-span-1 md:row-span-2" : ""
-                } ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <img
-                  src={`/about-gallery-${n}.jpg`}
-                  alt={`Alpha NDT Gallery ${n}`}
-                  className={`w-full object-cover hover:scale-105 transition-transform duration-500 ${
-                    n === 1 || n === 4 ? "h-full min-h-[200px]" : "h-48 md:h-56"
-                  }`}
-                  onError={(e) => {
-                    e.target.src = `https://images.unsplash.com/photo-158109479${n}329-c8112a89af12?w=600&h=400&fit=crop`;
-                    e.target.onerror = () => {
-                      e.target.src =
-                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop";
-                    };
-                  }}
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* Image 1 - Team photo (large, spans 2 cols) */}
+            <div
+              className={`md:col-span-2 rounded-xl overflow-hidden transition-all duration-500
+                ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+            >
+              <img
+                src="/about-gallery-1.jpg"
+                alt="Alpha NDT Team"
+                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            {/* Image 2 - Marathon event */}
+            <div
+              className={`rounded-xl overflow-hidden transition-all duration-500
+                ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+              style={{ transitionDelay: "80ms" }}
+            >
+              <img
+                src="/about-gallery-2.jpg"
+                alt="Alpha NDT Community Event"
+                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            {/* Image 3 - On-site engineers */}
+            <div
+              className={`rounded-xl overflow-hidden transition-all duration-500
+                ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+              style={{ transitionDelay: "160ms" }}
+            >
+              <img
+                src="/about-gallery-3.jpg"
+                alt="Alpha NDT Engineers On-Site"
+                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            {/* Image 4 - Project management office (spans 2 cols center) */}
+            <div
+              className={`col-span-2 md:col-start-2 rounded-xl overflow-hidden transition-all duration-500
+                ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+              style={{ transitionDelay: "240ms" }}
+            >
+              <img
+                src="/about-gallery-4.jpg"
+                alt="Alpha NDT Project Management"
+                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
           </div>
         </div>
       </section>
