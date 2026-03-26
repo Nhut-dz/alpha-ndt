@@ -10,16 +10,18 @@ export default function ProjectModal({ project, onClose }) {
 
   if (!project) return null;
 
+  const content = project.content;
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-800/90 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-slate-700 border border-slate-700 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden"
+        className="bg-slate-700 border border-slate-700 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative">
+        <div className="relative flex-shrink-0">
           <img
             src={project.image}
             alt={project.title}
@@ -37,7 +39,7 @@ export default function ProjectModal({ project, onClose }) {
           </button>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-800 to-transparent" />
         </div>
-        <div className="p-6 -mt-4 relative z-10">
+        <div className="p-6 -mt-4 relative z-10 overflow-y-auto">
           <span
             className={`text-xs font-bold px-3 py-1.5 rounded-full border ${
               tagColors[project.tag] || ""
@@ -48,12 +50,104 @@ export default function ProjectModal({ project, onClose }) {
           <h3 className="text-white font-black text-xl mb-2">
             {project.title}
           </h3>
-          <p className="text-orange-400 text-sm font-semibold mb-4">
+          <p className="text-orange-400 text-sm font-semibold mb-2">
             {t(lang, "portfolio.client")}: {project.client}
           </p>
-          <p className="text-slate-400 leading-relaxed">
+
+          {/* Year & Industry */}
+          <div className="flex gap-4 mb-4 text-sm">
+            <span className="text-slate-400">
+              <span className="text-slate-500">Year:</span> {project.year}
+            </span>
+            <span className="text-slate-400">
+              <span className="text-slate-500">Industry:</span> {project.industry}
+            </span>
+          </div>
+
+          <p className="text-slate-400 leading-relaxed mb-4">
             {project.description}
           </p>
+
+          {/* Detailed Content */}
+          {content && (
+            <div className="space-y-4 border-t border-slate-600 pt-4">
+              {/* Scope of Work */}
+              {content.scope && (
+                <div>
+                  <h4 className="text-orange-400 font-semibold text-sm mb-2">
+                    Scope of Work
+                  </h4>
+                  <ul className="space-y-1">
+                    {content.scope.map((item, i) => (
+                      <li key={i} className="text-slate-400 text-sm flex items-start gap-2">
+                        <span className="text-orange-400 mt-1 flex-shrink-0">•</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* NDT Methods */}
+              {content.methods && (
+                <div>
+                  <h4 className="text-orange-400 font-semibold text-sm mb-2">
+                    NDT Methods
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {content.methods.map((method, i) => (
+                      <span
+                        key={i}
+                        className="bg-slate-600 text-slate-300 text-xs px-2.5 py-1 rounded-lg font-medium"
+                      >
+                        {method}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Standards */}
+              {content.standards && (
+                <div>
+                  <h4 className="text-orange-400 font-semibold text-sm mb-2">
+                    Applied Standards
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {content.standards.map((std, i) => (
+                      <span
+                        key={i}
+                        className="bg-orange-500/10 text-orange-400 text-xs px-2.5 py-1 rounded-lg font-medium border border-orange-500/20"
+                      >
+                        {std}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Location & Duration */}
+              <div className="grid grid-cols-2 gap-4">
+                {content.location && (
+                  <div>
+                    <h4 className="text-orange-400 font-semibold text-sm mb-1">
+                      Location
+                    </h4>
+                    <p className="text-slate-400 text-sm">{content.location}</p>
+                  </div>
+                )}
+                {content.duration && (
+                  <div>
+                    <h4 className="text-orange-400 font-semibold text-sm mb-1">
+                      Duration
+                    </h4>
+                    <p className="text-slate-400 text-sm">{content.duration}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           <div className="flex justify-end mt-6">
             <button
               onClick={onClose}
