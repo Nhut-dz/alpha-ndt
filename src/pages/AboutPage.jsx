@@ -287,20 +287,25 @@ const businessSectors = [
   },
 ];
 
-// Vietnam map SVG with location dots
+// Vietnam map locations with realistic coordinates for detailed SVG (viewBox 0 0 500 900)
 const vietnamLocations = [
-  { name: "Ha Noi", x: 168, y: 95, projects: "Office & Projects" },
-  { name: "Hai Phong", x: 185, y: 105, projects: "Dinh Vu LPG Project" },
-  { name: "Thai Binh", x: 178, y: 110, projects: "Ham Rong Pipeline" },
-  { name: "Quang Ninh", x: 195, y: 90, projects: "Mong Duong Power Plant" },
-  { name: "Quang Ngai", x: 170, y: 195, projects: "Dung Quat Refinery & Shipyard" },
-  { name: "Vung Tau", x: 165, y: 295, projects: "HQ & Major Fabrication Yards" },
-  { name: "Ho Chi Minh City", x: 155, y: 285, projects: "Headquarters" },
-  { name: "Ca Mau", x: 140, y: 330, projects: "Gas Processing & Fertilizer Plant" },
-  { name: "Can Tho", x: 145, y: 315, projects: "Can Tho Bridge" },
-  { name: "Offshore Block 15-1", x: 195, y: 270, projects: "Su Tu Fields" },
-  { name: "Offshore Bien Dong", x: 210, y: 240, projects: "Bien Dong 1" },
-  { name: "Phu My", x: 163, y: 290, projects: "Phu My Power Plant" },
+  { name: "Hà Nội", x: 280, y: 175, projects: "Office & Projects" },
+  { name: "Hải Phòng", x: 310, y: 190, projects: "Đình Vũ LPG Project" },
+  { name: "Thái Bình", x: 295, y: 200, projects: "Hàm Rồng Pipeline" },
+  { name: "Quảng Ninh", x: 330, y: 155, projects: "Mong Dương Power Plant" },
+  { name: "Thanh Hóa", x: 265, y: 235, projects: "Nghi Sơn Refinery" },
+  { name: "Nghệ An", x: 255, y: 270, projects: "Industrial Projects" },
+  { name: "Đà Nẵng", x: 265, y: 370, projects: "Central Region Office" },
+  { name: "Quảng Ngãi", x: 260, y: 400, projects: "Dung Quất Refinery & Shipyard" },
+  { name: "Bình Định", x: 270, y: 430, projects: "PTSC Fabrication" },
+  { name: "Nha Trang", x: 285, y: 500, projects: "Offshore Support Base" },
+  { name: "TP. Hồ Chí Minh", x: 240, y: 610, projects: "Headquarters" },
+  { name: "Vũng Tàu", x: 270, y: 630, projects: "HQ & Major Fabrication Yards" },
+  { name: "Phú Mỹ", x: 258, y: 620, projects: "Phú Mỹ Power Plant" },
+  { name: "Cần Thơ", x: 215, y: 670, projects: "Cần Thơ Bridge" },
+  { name: "Cà Mau", x: 195, y: 720, projects: "Gas Processing & Fertilizer Plant" },
+  { name: "Offshore Block 15-1", x: 340, y: 580, projects: "Sư Tử Fields" },
+  { name: "Offshore Biển Đông", x: 370, y: 520, projects: "Biển Đông 1" },
 ];
 
 // ---- COMPONENTS ----
@@ -796,124 +801,139 @@ export default function AboutPage() {
       <section className="py-16 bg-slate-800" ref={fade9.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className={`transition-all duration-700 ${
-              fade9.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-          >
-            <SectionTitle
-              label="DISTRIBUTION NETWORK"
-              heading="Our Presence Across"
-              highlight="Vietnam"
-            >
-              Alpha NDT has delivered projects across Vietnam, from the northern highlands
-              to the southern delta and offshore platforms.
-            </SectionTitle>
-          </div>
-
-          <div
-            className={`flex flex-col lg:flex-row items-center gap-12 transition-all duration-700 delay-200 ${
+            className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 transition-all duration-700 ${
               fade9.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            {/* Vietnam Map SVG */}
-            <div className="relative flex-shrink-0">
+            {/* Left: Text & Stats */}
+            <div className="flex-1 order-2 lg:order-1">
+              <span className="inline-block text-orange-400 font-bold text-sm tracking-widest uppercase mb-3">
+                DISTRIBUTION NETWORK
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                Mạng lưới dự án trải dài khắp <span className="text-orange-400">Việt Nam</span>
+              </h2>
+
+              {/* Big stat */}
+              <div className="mb-6">
+                <span className="text-6xl sm:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                  500+
+                </span>
+              </div>
+              <p className="text-orange-400 font-semibold text-lg mb-4">
+                Dự án đã thực hiện tại 15+ tỉnh thành & ngoài khơi.
+              </p>
+              <p className="text-slate-400 leading-relaxed mb-8">
+                Alpha NDT tự hào là đơn vị NDT hàng đầu Việt Nam với mạng lưới dự án
+                phủ sóng từ Bắc vào Nam, từ các nhà máy điện, lọc dầu, đóng tàu cho đến
+                các giàn khoan ngoài khơi và trang trại điện gió.
+              </p>
+
+              {/* Location tags */}
+              <div className="flex flex-wrap gap-2">
+                {vietnamLocations.filter(l => !l.name.includes("Offshore")).map((loc, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-slate-700/50 border border-slate-600 text-slate-300 text-xs font-medium px-3 py-1.5 rounded-full hover:border-orange-500/40 hover:text-orange-400 transition-colors cursor-default"
+                    onMouseEnter={() => setActiveTooltip(i)}
+                    onMouseLeave={() => setActiveTooltip(null)}
+                  >
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
+                    {loc.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Vietnam Map */}
+            <div className="relative flex-shrink-0 order-1 lg:order-2">
               <svg
-                viewBox="0 0 300 420"
-                className="w-[280px] md:w-[320px] h-auto"
+                viewBox="0 0 500 900"
+                className="w-[300px] md:w-[380px] lg:w-[420px] h-auto drop-shadow-2xl"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* Vietnam outline - simplified */}
-                <path
-                  d="M175 30 C180 25, 195 30, 200 40 C205 50, 195 55, 200 65
-                     C205 70, 195 75, 190 80 C185 85, 195 90, 195 95
-                     C195 100, 185 105, 180 110 C175 115, 175 120, 170 125
-                     C165 130, 168 135, 170 140 C172 145, 168 150, 165 155
-                     C162 160, 165 165, 168 170 C170 175, 168 180, 165 185
-                     C162 190, 165 195, 168 200 C170 205, 172 210, 170 215
-                     C168 220, 165 225, 160 230 C155 235, 158 240, 160 245
-                     C162 250, 158 255, 155 260 C152 265, 155 270, 158 275
-                     C160 280, 165 285, 168 290 C170 295, 165 300, 160 305
-                     C155 310, 150 315, 148 320 C145 325, 140 330, 135 335
-                     C130 340, 125 338, 128 332 C130 328, 135 325, 140 320
-                     C145 315, 140 312, 135 310 C130 308, 125 310, 120 315
-                     C115 320, 112 325, 115 330 C118 335, 115 340, 110 342
-                     C105 340, 108 335, 110 330 C112 325, 110 320, 115 315
-                     C118 310, 122 305, 125 300 C128 295, 125 290, 122 285
-                     C120 280, 125 275, 130 270 C135 265, 132 260, 128 258
-                     C125 256, 128 252, 132 248 C135 244, 130 240, 128 236
-                     C126 232, 130 228, 135 224 C140 220, 138 215, 135 212
-                     C132 208, 135 204, 140 200 C145 196, 142 192, 138 190
-                     C135 188, 140 184, 145 180 C148 176, 145 172, 142 168
-                     C140 164, 145 160, 148 156 C150 152, 148 148, 145 145
-                     C142 142, 148 138, 152 134 C155 130, 152 125, 148 122
-                     C145 118, 150 114, 155 110 C158 106, 155 100, 152 95
-                     C150 90, 155 85, 158 80 C160 75, 155 70, 152 65
-                     C150 60, 155 55, 160 50 C165 45, 160 40, 165 35
-                     C168 32, 172 30, 175 30Z"
-                  fill="none"
-                  stroke="#f97316"
-                  strokeWidth="2"
-                  className="drop-shadow-lg"
-                  opacity="0.6"
-                />
-                {/* Fill */}
-                <path
-                  d="M175 30 C180 25, 195 30, 200 40 C205 50, 195 55, 200 65
-                     C205 70, 195 75, 190 80 C185 85, 195 90, 195 95
-                     C195 100, 185 105, 180 110 C175 115, 175 120, 170 125
-                     C165 130, 168 135, 170 140 C172 145, 168 150, 165 155
-                     C162 160, 165 165, 168 170 C170 175, 168 180, 165 185
-                     C162 190, 165 195, 168 200 C170 205, 172 210, 170 215
-                     C168 220, 165 225, 160 230 C155 235, 158 240, 160 245
-                     C162 250, 158 255, 155 260 C152 265, 155 270, 158 275
-                     C160 280, 165 285, 168 290 C170 295, 165 300, 160 305
-                     C155 310, 150 315, 148 320 C145 325, 140 330, 135 335
-                     C130 340, 125 338, 128 332 C130 328, 135 325, 140 320
-                     C145 315, 140 312, 135 310 C130 308, 125 310, 120 315
-                     C115 320, 112 325, 115 330 C118 335, 115 340, 110 342
-                     C105 340, 108 335, 110 330 C112 325, 110 320, 115 315
-                     C118 310, 122 305, 125 300 C128 295, 125 290, 122 285
-                     C120 280, 125 275, 130 270 C135 265, 132 260, 128 258
-                     C125 256, 128 252, 132 248 C135 244, 130 240, 128 236
-                     C126 232, 130 228, 135 224 C140 220, 138 215, 135 212
-                     C132 208, 135 204, 140 200 C145 196, 142 192, 138 190
-                     C135 188, 140 184, 145 180 C148 176, 145 172, 142 168
-                     C140 164, 145 160, 148 156 C150 152, 148 148, 145 145
-                     C142 142, 148 138, 152 134 C155 130, 152 125, 148 122
-                     C145 118, 150 114, 155 110 C158 106, 155 100, 152 95
-                     C150 90, 155 85, 158 80 C160 75, 155 70, 152 65
-                     C150 60, 155 55, 160 50 C165 45, 160 40, 165 35
-                     C168 32, 172 30, 175 30Z"
-                  fill="url(#mapGradient)"
-                  opacity="0.15"
-                />
                 <defs>
-                  <radialGradient id="mapGradient">
-                    <stop offset="0%" stopColor="#f97316" />
-                    <stop offset="100%" stopColor="#3b82f6" />
-                  </radialGradient>
+                  <linearGradient id="vnMapGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#22c55e" />
+                    <stop offset="50%" stopColor="#16a34a" />
+                    <stop offset="100%" stopColor="#15803d" />
+                  </linearGradient>
+                  <linearGradient id="vnMapStroke" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#4ade80" />
+                    <stop offset="100%" stopColor="#166534" />
+                  </linearGradient>
+                  <filter id="mapShadow" x="-10%" y="-5%" width="120%" height="110%">
+                    <feDropShadow dx="3" dy="5" stdDeviation="8" floodColor="#000" floodOpacity="0.3" />
+                  </filter>
                 </defs>
 
-                {/* Location dots */}
+                {/* Vietnam detailed outline - North */}
+                <path
+                  d="M250 40 L270 35 L290 45 L310 40 L330 50 L345 45 L360 55 L370 70
+                     L355 80 L340 75 L325 85 L335 100 L350 95 L365 105 L355 115
+                     L340 110 L330 120 L345 130 L335 140 L320 135 L310 145 L325 155
+                     L315 165 L300 160 L290 170 L305 180 L295 190 L280 185
+                     L270 195 L285 205 L275 215 L260 210 L250 220 L265 230
+                     L255 240 L245 235 L235 245 L250 255 L240 265 L230 260
+                     L220 270 L235 280 L225 290 L215 285 L210 295 L225 305
+                     L220 315 L230 325 L245 335 L260 345 L275 360 L285 375
+                     L280 390 L270 400 L275 415 L270 430 L280 445 L275 460
+                     L265 475 L275 490 L285 505 L280 520 L270 535 L275 550
+                     L265 565 L260 580 L270 590 L280 600 L275 610 L265 620
+                     L270 635 L260 645 L250 640 L240 650 L230 660 L220 670
+                     L210 680 L200 690 L195 700 L205 710 L200 720 L190 725
+                     L180 720 L175 710 L185 700 L180 690 L190 680 L200 670
+                     L210 660 L205 650 L195 645 L185 650 L175 660 L170 670
+                     L165 665 L170 655 L180 645 L190 635 L195 625 L200 615
+                     L195 605 L205 595 L210 585 L215 575 L210 565 L220 555
+                     L225 545 L220 535 L230 525 L235 515 L230 505 L240 495
+                     L245 485 L240 475 L250 465 L255 455 L250 445 L245 435
+                     L250 425 L245 415 L240 405 L235 395 L230 385 L225 375
+                     L220 365 L225 355 L230 345 L225 335 L220 325 L215 315
+                     L220 305 L215 295 L220 285 L215 275 L210 265 L215 255
+                     L220 245 L215 235 L220 225 L215 215 L220 205 L225 195
+                     L220 185 L225 175 L230 165 L225 155 L230 145 L235 135
+                     L230 125 L235 115 L240 105 L235 95 L240 85 L245 75
+                     L240 65 L245 55 L250 40Z"
+                  fill="url(#vnMapGrad)"
+                  stroke="url(#vnMapStroke)"
+                  strokeWidth="2"
+                  filter="url(#mapShadow)"
+                />
+
+                {/* Hoàng Sa islands */}
+                <g opacity="0.6">
+                  <circle cx="400" cy="340" r="4" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
+                  <circle cx="410" cy="335" r="3" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
+                  <circle cx="415" cy="345" r="2.5" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
+                  <circle cx="405" cy="350" r="2" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
+                  <text x="395" y="325" fill="#4ade80" fontSize="10" fontWeight="bold" textAnchor="middle">Hoàng Sa</text>
+                </g>
+
+                {/* Trường Sa islands */}
+                <g opacity="0.6">
+                  <circle cx="420" cy="530" r="3" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
+                  <circle cx="430" cy="540" r="2.5" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
+                  <circle cx="415" cy="545" r="2" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
+                  <text x="425" y="520" fill="#4ade80" fontSize="10" fontWeight="bold" textAnchor="middle">Trường Sa</text>
+                </g>
+
+                {/* Location pins */}
                 {vietnamLocations.map((loc, i) => (
-                  <g key={i}>
-                    {/* Pulse ring */}
-                    <circle cx={loc.x} cy={loc.y} r="8" fill="#f97316" opacity="0.15">
-                      <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite" begin={`${i * 0.3}s`} />
-                      <animate attributeName="opacity" values="0.2;0;0.2" dur="2s" repeatCount="indefinite" begin={`${i * 0.3}s`} />
+                  <g
+                    key={i}
+                    className="cursor-pointer"
+                    onMouseEnter={() => setActiveTooltip(i)}
+                    onMouseLeave={() => setActiveTooltip(null)}
+                  >
+                    {/* Pulse animation */}
+                    <circle cx={loc.x} cy={loc.y} r="10" fill="#f97316" opacity="0.2">
+                      <animate attributeName="r" values="8;16;8" dur="2.5s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
+                      <animate attributeName="opacity" values="0.3;0;0.3" dur="2.5s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
                     </circle>
-                    {/* Dot */}
-                    <circle
-                      cx={loc.x}
-                      cy={loc.y}
-                      r="4"
-                      fill="#f97316"
-                      stroke="#1e293b"
-                      strokeWidth="2"
-                      className="cursor-pointer"
-                      onMouseEnter={() => setActiveTooltip(i)}
-                      onMouseLeave={() => setActiveTooltip(null)}
-                    />
+                    {/* Pin marker */}
+                    <circle cx={loc.x} cy={loc.y} r="7" fill="#ea580c" stroke="#fff" strokeWidth="2.5" />
+                    <circle cx={loc.x} cy={loc.y} r="3" fill="#fff" />
                   </g>
                 ))}
               </svg>
@@ -921,40 +941,17 @@ export default function AboutPage() {
               {/* Tooltip */}
               {activeTooltip !== null && (
                 <div
-                  className="absolute bg-slate-700 border border-orange-500/30 rounded-lg px-3 py-2 text-xs pointer-events-none z-20 shadow-xl"
+                  className="absolute bg-slate-800 border border-orange-500/40 rounded-xl px-4 py-2.5 pointer-events-none z-20 shadow-2xl"
                   style={{
-                    left: `${(vietnamLocations[activeTooltip].x / 300) * 100}%`,
-                    top: `${(vietnamLocations[activeTooltip].y / 420) * 100 - 8}%`,
+                    left: `${(vietnamLocations[activeTooltip].x / 500) * 100}%`,
+                    top: `${(vietnamLocations[activeTooltip].y / 900) * 100 - 4}%`,
                     transform: "translate(-50%, -100%)",
                   }}
                 >
-                  <p className="text-orange-400 font-bold">{vietnamLocations[activeTooltip].name}</p>
-                  <p className="text-slate-300">{vietnamLocations[activeTooltip].projects}</p>
+                  <p className="text-orange-400 font-bold text-sm">{vietnamLocations[activeTooltip].name}</p>
+                  <p className="text-slate-300 text-xs">{vietnamLocations[activeTooltip].projects}</p>
                 </div>
               )}
-            </div>
-
-            {/* Location list */}
-            <div className="flex-1 w-full">
-              <h3 className="text-white font-bold text-lg mb-6">
-                Project Locations & Partnerships
-              </h3>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {vietnamLocations.map((loc, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 bg-slate-700/30 rounded-xl px-4 py-3 border border-slate-700 hover:border-orange-500/20 transition-colors"
-                    onMouseEnter={() => setActiveTooltip(i)}
-                    onMouseLeave={() => setActiveTooltip(null)}
-                  >
-                    <span className="w-3 h-3 bg-orange-500 rounded-full flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-white text-sm font-semibold">{loc.name}</p>
-                      <p className="text-slate-400 text-xs">{loc.projects}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
