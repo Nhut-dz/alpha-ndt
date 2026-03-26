@@ -80,7 +80,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-900" ref={ref}>
+    <section id="contact" className="py-12 bg-slate-900" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>

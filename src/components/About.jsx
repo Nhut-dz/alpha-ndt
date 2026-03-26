@@ -48,7 +48,7 @@ export default function About() {
   const { lang } = useLang();
 
   return (
-    <section id="about" className="py-24 bg-slate-800" ref={sectionRef}>
+    <section id="about" className="py-12 bg-slate-800" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section label */}
         <div
