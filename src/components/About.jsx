@@ -154,7 +154,7 @@ export default function About() {
               <img
                 src="/about.jpg"
                 alt={t(lang, "about.teamAlt")}
-                className="w-full h-[28rem] object-cover"
+                className="w-full h-[36rem] object-cover object-center"
                 loading="lazy"
                 onError={(e) => {
                   e.target.src =
