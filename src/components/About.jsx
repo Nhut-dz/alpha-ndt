@@ -67,8 +67,8 @@ export default function About() {
           </h2>
         </div>
 
-        {/* Main 2-column layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-8">
+        {/* Main layout */}
+        <div className="grid lg:grid-cols-1 gap-8 items-center mb-8">
           {/* Left: Text content */}
           <div
             className={`transition-all duration-700 delay-100 ${
@@ -154,7 +154,7 @@ export default function About() {
               <img
                 src="/about.jpg"
                 alt={t(lang, "about.teamAlt")}
-                className="w-full h-[36rem] object-cover object-center"
+                className="w-full h-80 lg:h-96 object-cover object-center"
                 loading="lazy"
                 onError={(e) => {
                   e.target.src =
