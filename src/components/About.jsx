@@ -163,22 +163,6 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
 
-              {/* Floating badge */}
-              <div className="absolute bottom-4 left-4 right-4 bg-slate-800/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-xl">
-                    🏆
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-sm">
-                      Industry Pioneer
-                    </div>
-                    <div className="text-slate-400 text-xs">
-                      Leading NDT provider in Vietnam since 2002
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Decoration */}
