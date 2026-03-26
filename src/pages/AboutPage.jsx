@@ -347,7 +347,7 @@ export default function AboutPage() {
           >
             <SectionTitle label="OUR COMPANY" heading="Inside" highlight="Alpha NDT" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {/* Image 1 - Team photo (large, spans 2 cols) */}
             <div
               className={`md:col-span-2 rounded-xl overflow-hidden transition-all duration-500
@@ -383,15 +383,27 @@ export default function AboutPage() {
                 className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
-            {/* Image 4 - Project management office (spans 2 cols center) */}
+            {/* Image 4 - Project management office */}
             <div
-              className={`col-span-2 md:col-start-2 rounded-xl overflow-hidden transition-all duration-500
+              className={`rounded-xl overflow-hidden transition-all duration-500
                 ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
               style={{ transitionDelay: "240ms" }}
             >
               <img
                 src="/about-gallery-4.jpg"
                 alt="Alpha NDT Project Management"
+                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            {/* Image 5 - Team building beach (spans 2 cols) */}
+            <div
+              className={`md:col-span-2 rounded-xl overflow-hidden transition-all duration-500
+                ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+              style={{ transitionDelay: "320ms" }}
+            >
+              <img
+                src="/about-gallery-5.jpg"
+                alt="Alpha NDT Team Building"
                 className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
