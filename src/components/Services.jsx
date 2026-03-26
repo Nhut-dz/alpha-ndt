@@ -160,7 +160,7 @@ export default function Services() {
             >
               {/* Service Image */}
               {service.image && (
-                <div className="relative h-40 -mx-6 -mt-6 mb-5 overflow-hidden rounded-t-2xl">
+                <div className="relative h-48 -mx-6 -mt-6 mb-5 overflow-hidden rounded-t-2xl">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -175,24 +175,6 @@ export default function Services() {
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
               />
-
-              {/* Category badge */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                  {service.category}
-                </span>
-                <span className="bg-orange-500/10 text-orange-400 text-xs font-black px-2.5 py-1 rounded-lg border border-orange-500/20">
-                  {service.code}
-                </span>
-              </div>
-
-              {/* Icon */}
-              <div
-                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} bg-opacity-10 flex items-center justify-center mb-5 text-orange-400 group-hover:scale-110 transition-transform duration-300`}
-                style={{ background: "rgba(249,115,22,0.08)" }}
-              >
-                <ServiceIcon code={service.code} />
-              </div>
 
               {/* Title */}
               <h3 className="text-white font-bold text-base mb-1 group-hover:text-blue-300 transition-colors">
