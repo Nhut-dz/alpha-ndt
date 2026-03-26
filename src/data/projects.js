@@ -16,14 +16,14 @@ export const projects = [
   },
   {
     id: 2,
-    title: "NDT PROVISION FOR GHANA OCTP DEVELOPMENT PROJECT",
-    client: "Schlumberger",
+    title: " Statfjord C",
+    client: "PWHT",
     industry: "Oil & Gas",
     description:
-      "Full NDT services (MT, UT, PT, RT, PAUT/TOFD) for offshore structures and pipelines.",
-    image: "https://alpha-ndt.com/Upload/41_1.jpg",
+      "Our scope has supported the fabrication of key components, including a concentrator polishing plant, a multi-blade dehumidifier for the deep settling environment, and a framed feedwater tank, fully complying with current international standards.",
+    image: "/project/statfjord.jpg",
     tag: "Oil & Gas",
-    year: "2022",
+    year: "2025",
   },
   {
     id: 3,
