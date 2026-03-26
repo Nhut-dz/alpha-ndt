@@ -338,6 +338,14 @@ function HistoryTimeline({ fadeRef }) {
   return (
     <section className="py-16 bg-slate-900" ref={fadeRef.ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={`transition-all duration-700 ${
+            fadeRef.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <SectionTitle label="OUR HISTORY" heading="Milestones &" highlight="Development" />
+        </div>
+
         {/* Horizontal Year Timeline Bar */}
         <div
           className={`mb-10 transition-all duration-700 delay-100 ${
@@ -399,13 +407,12 @@ function HistoryTimeline({ fadeRef }) {
               {/* Content */}
               <div className="p-5">
                 <h3
-                  className={`font-black text-2xl mb-1 ${
+                  className={`font-black text-2xl mb-3 ${
                     ms.year === activeYear ? "text-orange-400" : "text-white"
                   }`}
                 >
                   {ms.year}
                 </h3>
-                <p className="text-white font-semibold text-sm mb-3">{ms.title}</p>
                 <ul className="space-y-2">
                   {ms.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-2 text-slate-400 text-sm">
