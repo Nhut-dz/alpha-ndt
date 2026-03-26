@@ -5,7 +5,8 @@ export const companyInfo = {
   established: 2002,
   registration: "0306455519",
   address: "37/7 Đ.C18, Phường 12, Bảy Hiền, Hồ Chí Minh, Vietnam",
-  phone: "+84 28 3815 6789",
+  phone: "+84 28 6687 7778",
+  fax: "+84 28 6687 7788",
   email: "info@alpha-ndt.com",
   website: "www.alpha-ndt.com",
   description:

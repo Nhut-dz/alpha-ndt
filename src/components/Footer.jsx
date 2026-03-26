@@ -140,7 +140,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { icon: "📍", text: "37/7 Đ.C18, Phường 12, Bảy Hiền, Hồ Chí Minh, Vietnam" },
-                { icon: "📞", text: "+84 28 3815 6789", href: "tel:+842838156789" },
+                { icon: "📞", text: "+84 28 6687 7778", href: "tel:+842866877778" },
                 { icon: "✉️", text: "info@alpha-ndt.com", href: "mailto:info@alpha-ndt.com" },
                 { icon: "🌐", text: "www.alpha-ndt.com", href: "http://www.alpha-ndt.com" },
               ].map((item, i) => (

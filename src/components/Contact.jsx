@@ -35,8 +35,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Điện thoại",
-    value: "+84 28 3815 6789",
-    href: "tel:+842838156789",
+    value: "Tel: +84 28 6687 7778\nFax: +84 28 6687 7788",
+    href: "tel:+842866877778",
   },
   {
     icon: (
