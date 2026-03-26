@@ -2,6 +2,7 @@
 // Services Section - NDT Services Grid
 // ============================================================
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { services } from "../data";
 import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
@@ -147,7 +148,8 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <div
+            <Link
+              to={`/services/${service.id}`}
               key={service.id}
               onMouseEnter={() => setHoveredId(service.id)}
               onMouseLeave={() => setHoveredId(null)}
@@ -197,7 +199,7 @@ export default function Services() {
 
               {/* Bottom border accent */}
               <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-            </div>
+            </Link>
           ))}
         </div>
 
