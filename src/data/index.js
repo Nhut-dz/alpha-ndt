@@ -4,7 +4,7 @@ export const companyInfo = {
   subTagline: "Quality Assurance – Safety – Accuracy",
   established: 2002,
   registration: "0306455519",
-  address: "37/7 Đường C18, Phường Bảy Hiền, TP. Hồ Chí Minh",
+  address: "37/7 Đ.C18, Phường 12, Bảy Hiền, Hồ Chí Minh, Vietnam",
   phone: "+84 28 3815 6789",
   email: "info@alpha-ndt.com",
   website: "www.alpha-ndt.com",

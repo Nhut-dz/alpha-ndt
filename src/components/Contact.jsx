@@ -25,8 +25,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Địa chỉ",
-    value: "KCN Đông Xuyên, Phường Rạch Dừa\nTP. Vũng Tàu, Việt Nam",
-    href: "https://www.google.com/maps?q=10.3460,107.0843",
+    value: "37/7 Đ.C18, Phường 12\nBảy Hiền, Hồ Chí Minh, Vietnam",
+    href: "https://www.google.com/maps?q=37/7+C18,+Phường+12,+Bảy+Hiền,+Hồ+Chí+Minh",
   },
   {
     icon: (
@@ -144,7 +144,7 @@ export default function Contact() {
               <div className="rounded-xl overflow-hidden border border-slate-700">
                 <iframe
                   title="Alpha NDT Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.5!2d107.0843!3d10.3460!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756f8a5e2e2b3d%3A0x0!2zS0NOIMSQw7RuZyBYdXnDqm4sIFLhuqFjaCBE4burYSwgVsWpbmcgVMOgdQ!5e0!3m2!1svi!2s!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5!2d106.6340!3d10.7870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z37LDoCBDMTgsIFBow7puZyAxMiwgQsOjeSBIaeG7h24sIEhDTQ!5e0!3m2!1svi!2s!4v1"
                   width="100%"
                   height="200"
                   style={{ border: 0 }}
