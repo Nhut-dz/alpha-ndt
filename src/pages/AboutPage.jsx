@@ -119,14 +119,97 @@ const coreValues = [
 ];
 
 const milestones = [
-  { year: "2002", title: "Company Established", desc: "Alpha NDT founded in Ho Chi Minh City, starting with conventional NDT services.", image: "/about-timeline-1.jpg" },
-  { year: "2005", title: "ISO 9001 Certification", desc: "Achieved ISO 9001 Quality Management System certification.", image: "/about-timeline-2.jpg" },
-  { year: "2008", title: "Offshore Expansion", desc: "Expanded services to offshore oil & gas sector, partnering with major operators.", image: "/about-timeline-3.jpg" },
-  { year: "2010", title: "Advanced NDT Division", desc: "Launched PAUT, TOFD, and ECT capabilities with state-of-the-art equipment.", image: "/about-timeline-4.jpg" },
-  { year: "2014", title: "ISO/IEC 17025 Accredited", desc: "Achieved testing laboratory accreditation, ensuring highest quality standards.", image: "/about-timeline-5.jpg" },
-  { year: "2018", title: "International Projects", desc: "Expanded to international markets including Ghana, Cambodia, Thailand, and India.", image: "/about-timeline-6.jpg" },
-  { year: "2021", title: "Wind Energy Services", desc: "Entered renewable energy sector with Wind Energy Service (WES) division.", image: "/about-timeline-7.jpg" },
-  { year: "2024", title: "AUT Technology", desc: "Developed proprietary AE MAX AUT® Scanner System for pipeline inspection.", image: "/about-timeline-8.jpg" },
+  {
+    year: "2024",
+    title: "AUT Technology & Block B Gas",
+    image: "/about-timeline-8.jpg",
+    items: [
+      "Developed proprietary AE MAX AUT® Scanner System for 406km pipeline inspection.",
+      "Won major NDT contract for Vietnam Block B Gas Project (PQPOC).",
+      "Performed NDT for Fengmiao Phase 1 Offshore Wind Farm with real-time digital reporting.",
+    ],
+  },
+  {
+    year: "2023",
+    title: "Major Project Milestones",
+    image: "/about-timeline-7.jpg",
+    items: [
+      "Completed PAUT inspection for LPG Tanks at Dinh Vu Project.",
+      "Delivered baseline corrosion survey for STTFFD jacket/deck legs.",
+      "Expanded PWHT services for Vietnam Block B Gas Project.",
+    ],
+  },
+  {
+    year: "2021",
+    title: "Wind Energy & Renewable Sector",
+    image: "/about-timeline-6.jpg",
+    items: [
+      "Launched Wind Energy Service (WES) division for wind turbine inspection.",
+      "Introduced GOES system for wind turbine gear oil exchange.",
+      "Entered the renewable energy market with onshore and offshore wind farm services.",
+    ],
+  },
+  {
+    year: "2018",
+    title: "International Expansion",
+    image: "/about-timeline-5.jpg",
+    items: [
+      "Expanded to international markets: Ghana (OCTP), Cambodia, Thailand, India.",
+      "Provided NDT for Saipem pipeline fabrication in Thailand.",
+      "Strengthened partnerships with Schlumberger, ONGC, and Doosan.",
+    ],
+  },
+  {
+    year: "2014",
+    title: "ISO/IEC 17025 & Growth",
+    image: "/about-timeline-4.jpg",
+    items: [
+      "Achieved ISO/IEC 17025 testing laboratory accreditation.",
+      "Completed SRU2 Sulfur Recovery Unit project at Dung Quat Refinery.",
+      "Delivered baseline corrosion survey for Su Tu Nau & Su Tu Vang fields.",
+    ],
+  },
+  {
+    year: "2012",
+    title: "10th Anniversary",
+    image: "/about-gallery-6.jpg",
+    items: [
+      "Celebrated 10th anniversary with over 200 employees.",
+      "Completed Thang Long – Dong Do PLEM & PLET subsea fabrication project.",
+      "Delivered NDT for Hai Su Trang – Hai Su Den field development.",
+      "Expanded services to Cambodia (Phnom Penh Sugar Plant).",
+    ],
+  },
+  {
+    year: "2008",
+    title: "Offshore Oil & Gas Expansion",
+    image: "/about-timeline-3.jpg",
+    items: [
+      "Expanded into offshore oil & gas sector with major EPCI contractors.",
+      "Began partnership with PTSC M&C and Vietsovpetro for platform fabrication.",
+      "Provided NDT for Su Tu Vang Subsea Template (Block 15-1).",
+    ],
+  },
+  {
+    year: "2005",
+    title: "ISO 9001 Certification",
+    image: "/about-timeline-2.jpg",
+    items: [
+      "Achieved ISO 9001 Quality Management System certification.",
+      "Obtained supplier approvals from ABS, Bureau Veritas, and DNV.",
+      "Expanded conventional NDT team to 50+ certified technicians.",
+    ],
+  },
+  {
+    year: "2002",
+    title: "Company Founded",
+    image: "/about-timeline-1.jpg",
+    items: [
+      "Alpha NDT established in Ho Chi Minh City (Enterprise Reg. No. 0306455519).",
+      "Started with conventional NDT services: RT, UT, MT, PT.",
+      "First projects for local shipbuilding and mechanical construction industries.",
+    ],
+  },
 ];
 
 const leaders = [
@@ -223,6 +306,117 @@ function SectionTitle({ label, heading, highlight, children }) {
       </h2>
       {children && <p className="text-slate-400 text-lg max-w-2xl mx-auto">{children}</p>}
     </div>
+  );
+}
+
+function HistoryTimeline({ fadeRef }) {
+  const [activeYear, setActiveYear] = useState(milestones[0].year);
+  const timelineRef = useRef(null);
+
+  // Get 3 milestones to show: active + next 2
+  const activeIdx = milestones.findIndex((m) => m.year === activeYear);
+  const visibleMilestones = milestones.slice(activeIdx, activeIdx + 3);
+  // If less than 3, pad from the end
+  while (visibleMilestones.length < 3 && visibleMilestones.length < milestones.length) {
+    const nextIdx = (activeIdx + visibleMilestones.length) % milestones.length;
+    if (!visibleMilestones.find((m) => m.year === milestones[nextIdx].year)) {
+      visibleMilestones.push(milestones[nextIdx]);
+    } else break;
+  }
+
+  return (
+    <section className="py-16 bg-slate-900" ref={fadeRef.ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={`transition-all duration-700 ${
+            fadeRef.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <SectionTitle label="OUR HISTORY" heading="Milestones &" highlight="Development" />
+        </div>
+
+        {/* Horizontal Year Timeline Bar */}
+        <div
+          className={`mb-10 transition-all duration-700 delay-100 ${
+            fadeRef.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <div className="relative overflow-x-auto pb-2" ref={timelineRef}>
+            <div className="flex items-center min-w-max px-2">
+              {milestones.map((ms, i) => (
+                <div key={ms.year} className="flex items-center">
+                  {/* Year button */}
+                  <button
+                    onClick={() => setActiveYear(ms.year)}
+                    className={`relative flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+                      activeYear === ms.year
+                        ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-110"
+                        : "bg-slate-800 text-slate-400 border border-slate-700 hover:border-orange-500/50 hover:text-orange-400"
+                    }`}
+                  >
+                    {ms.year}
+                  </button>
+                  {/* Dashed connector */}
+                  {i < milestones.length - 1 && (
+                    <div className="w-8 md:w-12 h-px border-t-2 border-dashed border-slate-600 mx-1" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Milestone Cards */}
+        <div
+          className={`grid md:grid-cols-3 gap-6 transition-all duration-700 delay-200 ${
+            fadeRef.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {visibleMilestones.map((ms) => (
+            <div
+              key={ms.year}
+              className={`bg-slate-800 border rounded-2xl overflow-hidden transition-all duration-300 ${
+                ms.year === activeYear
+                  ? "border-orange-500/50 shadow-lg shadow-orange-500/10"
+                  : "border-slate-700 hover:border-slate-600"
+              }`}
+            >
+              {/* Image */}
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={ms.image}
+                  alt={ms.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src =
+                      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=300&fit=crop";
+                  }}
+                />
+              </div>
+              {/* Content */}
+              <div className="p-5">
+                <h3
+                  className={`font-black text-2xl mb-1 ${
+                    ms.year === activeYear ? "text-orange-400" : "text-white"
+                  }`}
+                >
+                  {ms.year}
+                </h3>
+                <p className="text-white font-semibold text-sm mb-3">{ms.title}</p>
+                <ul className="space-y-2">
+                  {ms.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-slate-400 text-sm">
+                      <span className="text-orange-400 mt-0.5 flex-shrink-0">&bull;</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -515,69 +709,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 6. HISTORY TIMELINE ===== */}
-      <section className="py-16 bg-slate-900" ref={fade6.ref}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`transition-all duration-700 ${
-              fade6.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-          >
-            <SectionTitle label="OUR HISTORY" heading="Milestones &" highlight="Development" />
-          </div>
-
-          {/* Timeline */}
-          <div className="relative">
-            {/* Center line */}
-            <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-blue-500 to-orange-500" />
-
-            <div className="space-y-8">
-              {milestones.map((ms, i) => {
-                const isLeft = i % 2 === 0;
-                return (
-                  <div
-                    key={i}
-                    className={`relative flex items-center transition-all duration-700
-                      ${fade6.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
-                    `}
-                    style={{ transitionDelay: `${i * 120}ms` }}
-                  >
-                    {/* Dot */}
-                    <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-orange-500 rounded-full border-4 border-slate-900 z-10" />
-
-                    {/* Content */}
-                    <div
-                      className={`ml-12 md:ml-0 md:w-[45%] ${
-                        isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
-                      }`}
-                    >
-                      <div className="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-colors">
-                        <div className="h-40 overflow-hidden">
-                          <img
-                            src={ms.image}
-                            alt={ms.title}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.target.src =
-                                "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=300&fit=crop";
-                            }}
-                          />
-                        </div>
-                        <div className="p-5">
-                          <span className="inline-block bg-orange-500/10 text-orange-400 text-sm font-bold px-3 py-1 rounded-lg border border-orange-500/20 mb-2">
-                            {ms.year}
-                          </span>
-                          <h4 className="text-white font-bold text-base mb-1">{ms.title}</h4>
-                          <p className="text-slate-400 text-sm">{ms.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      <HistoryTimeline fadeRef={fade6} />
 
       {/* ===== 7. LEADERSHIP ===== */}
       <section className="py-16 bg-slate-800" ref={fade7.ref}>
