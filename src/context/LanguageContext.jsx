@@ -1,26 +1,10 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useContext } from "react";
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(() => {
-    try {
-      return localStorage.getItem("alpha-ndt-lang") || "en";
-    } catch {
-      return "en";
-    }
-  });
-
-  const toggleLang = useCallback(() => {
-    setLang((prev) => {
-      const next = prev === "vi" ? "en" : "vi";
-      try { localStorage.setItem("alpha-ndt-lang", next); } catch {}
-      return next;
-    });
-  }, []);
-
   return (
-    <LanguageContext.Provider value={{ lang, toggleLang }}>
+    <LanguageContext.Provider value={{ lang: "en" }}>
       {children}
     </LanguageContext.Provider>
   );
