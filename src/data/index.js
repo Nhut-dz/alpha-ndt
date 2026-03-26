@@ -47,6 +47,7 @@ export const services = [
       "Inspection and quality supervision services for industrial structures and equipment, including Visual Testing, Welding Inspection, and Third Party Inspection.",
     category: "Inspection Services",
     color: "from-green-600 to-green-800",
+    image: "/service-1.jpg",
   },
   {
     id: 2,
@@ -58,6 +59,7 @@ export const services = [
       "Advanced non-destructive testing methods such as Phased Array UT (PAUT), Time of Flight Diffraction (TOFD), and Eddy Current Testing (ECT).",
     category: "Advanced NDT Services",
     color: "from-teal-600 to-teal-800",
+    image: "/service-2.jpg",
   },
   {
     id: 3,
@@ -69,6 +71,7 @@ export const services = [
       "Conventional NDT methods including Ultrasonic Testing (UT), Radiographic Testing (RT), Magnetic Particle Testing (MT), and Penetrant Testing (PT).",
     category: "Conventional NDT",
     color: "from-blue-600 to-blue-800",
+    image: "/service-3.jpg",
   },
   {
     id: 4,
@@ -80,6 +83,7 @@ export const services = [
       "Inspection and maintenance of wind turbines using advanced NDT methods. Comprehensive services for the renewable energy sector.",
     category: "Wind Energy Service (WES)",
     color: "from-sky-600 to-sky-800",
+    image: "/service-4.jpg",
   },
   {
     id: 5,
@@ -91,6 +95,7 @@ export const services = [
       "Professional gearbox oil exchange service for wind turbines using GOES system, ensuring optimal performance and extended equipment lifespan.",
     category: "Wind Turbine Gear Oil Exchange by GOES",
     color: "from-amber-600 to-amber-800",
+    image: "/service-4.jpg",
   },
 ];
 

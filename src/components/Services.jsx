@@ -158,6 +158,19 @@ export default function Services() {
               `}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
+              {/* Service Image */}
+              {service.image && (
+                <div className="relative h-40 -mx-6 -mt-6 mb-5 overflow-hidden rounded-t-2xl">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-700/80 to-transparent" />
+                </div>
+              )}
+
               {/* Background gradient on hover */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
