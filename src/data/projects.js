@@ -131,6 +131,17 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "Full NDT services for gas distribution and gathering system.",
+    content: `
+AlphaNDT provided comprehensive NDT services for the Thai Binh – Ham Rong
+gas pipeline project, one of the key gas distribution systems in Northern Vietnam.
+
+The scope covered onshore and nearshore pipeline construction with girth weld
+inspection using RT and AUT methods. The project included hydrostatic test
+monitoring and full as-built documentation.
+
+AlphaNDT ensured compliance with API 1104 and ASME B31.8 standards throughout
+the 10-month fabrication and installation campaign.
+    `,
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Pipeline",
     year: "2021",
@@ -142,6 +153,17 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "NDT inspection for offshore platform fabrication.",
+    content: `
+AlphaNDT delivered full NDT services for the Te Giac Trang H5 Wellhead Platform
+fabrication project, supporting PTSC M&C as the main contractor.
+
+The scope included weld inspection for jacket and topside structural members,
+piping systems, and critical joints using PAUT. The project required strict
+compliance with AWS D1.1, ASME V, and API RP 2A standards.
+
+The 12-month fabrication campaign was completed with zero non-conformance
+reports on NDT-related items.
+    `,
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Offshore",
     year: "2021",
@@ -153,7 +175,19 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Industrial",
     description:
       "NDT services for aviation fueling infrastructure.",
-    image: "https://alpha-ndt.com/Upload/33.jpg",
+    content: `
+AlphaNDT provided NDT inspection services for the Tan Son Nhat Airport
+aviation fuelling facilities construction project.
+
+The scope included NDT for 3 fuel storage tanks (3,009 m³ each), fuel hydrant
+system pipelines, and transfer piping. Services covered RT, UT, MT, and PT
+inspection methods for all welded joints.
+
+The project was executed under WEC Engineers & Constructors as the main
+contractor, with TAPECO as the end client, ensuring compliance with API 1104
+and API 650 standards for fuel storage and transfer systems.
+    `,
+    image: "https://alpha-ndt.com/Upload/tsn%201.jpg",
     tag: "Industrial",
     year: "2021",
   },
@@ -164,7 +198,19 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "PAUT services for offshore topside fabrication.",
-    image: "https://alpha-ndt.com/Upload/33.jpg",
+    content: `
+AlphaNDT was selected to provide Phased Array Ultrasonic Testing (PAUT) services
+for the HRD Topside fabrication project, destined for the Heera Field located
+70 km southwest of Mumbai, India.
+
+The topside was fabricated by PTSC M&C at their yard in Vung Tau for ONGC
+(Oil and Natural Gas Corporation Limited). AlphaNDT's PAUT capabilities
+were critical for ensuring weld quality on structural and piping joints.
+
+The 14-month project demonstrated AlphaNDT's expertise in advanced NDT
+methods for international offshore projects.
+    `,
+    image: "https://alpha-ndt.com/Upload/hrd.jpg",
     tag: "Offshore",
     year: "2021",
   },
@@ -175,7 +221,20 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "NDT services for jackets, topsides and offshore structures.",
-    image: "https://alpha-ndt.com/Upload/33.jpg",
+    content: `
+AlphaNDT provided extensive NDT services for the Bien Dong 1 Field Development
+project, covering multiple offshore platforms including WHP-MT1, WHP-HT1,
+and PQP-HT.
+
+The scope included full NDT for jacket and topside fabrication, node weld
+inspection using PAUT and TOFD, structural member inspection, and
+pre-commissioning support. Additionally, AlphaNDT supported hook-up and
+commissioning activities offshore.
+
+The 18-month engagement covered fabrication at Vung Tau yard through to
+offshore installation, with compliance to AWS D1.1 and API RP 2A standards.
+    `,
+    image: "https://alpha-ndt.com/Upload/pqp_210.jpg",
     tag: "Offshore",
     year: "2021",
   },
@@ -186,7 +245,19 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "NDT services for vessel and offshore fabrication.",
-    image: "https://alpha-ndt.com/Upload/33.jpg",
+    content: `
+AlphaNDT delivered NDT services for the Su Tu Nau Development Project,
+supporting the fabrication of two platforms and associated equipment for
+a first phase targeting 50,000 barrels of oil per day.
+
+The scope included NDT for pressure vessel fabrication (Flare Scrubber units,
+Hazardous Open Drain Tanks), offshore jacket and topside weld inspection,
+and PAUT for critical pressure boundary welds.
+
+Fabrication was carried out at PTSC M&C Yard and AlphaECC workshop in
+Vung Tau over a 15-month period, with jacket load-out completed successfully.
+    `,
+    image: "https://alpha-ndt.com/Upload/stn3.jpg",
     tag: "Offshore",
     year: "2021",
   },
@@ -197,7 +268,19 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "Inspection for subsea template and offshore equipment.",
-    image: "https://alpha-ndt.com/Upload/33.jpg",
+    content: `
+AlphaNDT performed NDT inspection for the Su Tu Vang Subsea Template project,
+an 18-well, 12-slot design replacement template fabricated by Vietsovpetro
+for Cuu Long Joint Operating Company (CLJOC).
+
+The scope covered subsea template and manifold fabrication NDT, pipeline end
+termination (PLET) inspection, subsea connector and spool piece weld inspection,
+and hyperbaric welding inspection support.
+
+The Su Tu Vang field in Block 15-1 began production in 2008, and AlphaNDT's
+services ensured the integrity of critical subsea infrastructure.
+    `,
+    image: "https://alpha-ndt.com/Upload/sstp.jpg",
     tag: "Subsea",
     year: "2021",
   },
@@ -208,6 +291,18 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "NDT for refinery tanks, pipelines and structures.",
+    content: `
+AlphaNDT provided comprehensive NDT inspection services for the Dung Quat
+Refinery (Binh Son Refinery), Vietnam's first oil refinery.
+
+The scope included in-service inspection for refinery equipment and storage
+tanks, piping system integrity assessment, corrosion monitoring with
+thickness measurement, and turnaround inspection support.
+
+Services were performed in compliance with API 510, API 570, and API 653
+standards, supporting the refinery's maintenance and reliability programs
+during scheduled shutdown periods.
+    `,
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Refinery",
     year: "2021",
@@ -219,6 +314,17 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Marine",
     description:
       "NDT services for vessel fabrication and shipbuilding.",
+    content: `
+AlphaNDT has been providing ongoing NDT services for multiple shipbuilding
+projects at Saigon Shipyard in Ho Chi Minh City.
+
+The scope covers hull structure weld inspection, piping system NDT for marine
+vessels, tank testing and inspection, and classification society survey support
+for DNV, Lloyd's, and Bureau Veritas.
+
+As a long-term partner, AlphaNDT maintains a dedicated team at the shipyard
+to ensure continuous quality support throughout vessel construction campaigns.
+    `,
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Marine",
     year: "2021",
@@ -230,7 +336,19 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Marine",
     description:
       "Inspection for steel and aluminium vessel construction.",
-    image: "https://alpha-ndt.com/Upload/33.jpg",
+    content: `
+AlphaNDT provided NDT services (RT, MT, PT, UT) for vessel construction
+projects of Strategic Marine Company at Dong Xuyen Industrial Zone, Vung Tau City.
+
+The scope included NDT for both aluminium and steel hull construction, weld
+inspection for high-speed vessel structures, piping and mechanical system
+inspection, and final classification survey support.
+
+The project required expertise in aluminium welding inspection per AWS D1.2,
+in addition to standard steel welding codes, demonstrating AlphaNDT's
+versatility across different materials and vessel types.
+    `,
+    image: "https://alpha-ndt.com/Upload/strategic%20marine.jpg",
     tag: "Marine",
     year: "2021",
   },
@@ -241,6 +359,17 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Power",
     description:
       "NDT for power plant piping systems.",
+    content: `
+AlphaNDT delivered NDT inspection services for the Phu My 2.2 Power Plant,
+focusing on high-pressure steam piping for main generators.
+
+The scope included PAUT, MT, PT inspection methods along with PWHT monitoring,
+performed under the supervision of General Electric Company (GE). Services
+covered boiler tube inspection and weld quality verification for pressure piping.
+
+The project was executed during a planned plant shutdown at Phu My Industrial
+Zone, Ba Ria - Vung Tau, ensuring compliance with ASME B31.1 standards.
+    `,
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Power",
     year: "2021",
@@ -252,6 +381,17 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Power",
     description:
       "Inspection services for thermal power construction.",
+    content: `
+AlphaNDT provided NDT inspection services for the Mong Duong 2 Thermal Power
+Plant construction project, managed by Doosan Heavy Industries.
+
+The scope included NDT for boiler components and pressure parts, steam drum
+and header weld inspection, high-energy piping inspection, and construction
+phase quality control support.
+
+The 18-month project at Mong Duong, Quang Ninh required compliance with
+ASME I and ASME B31.1 standards for power boiler and pressure piping systems.
+    `,
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Power",
     year: "2021",
@@ -263,7 +403,18 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Oil & Gas",
     description:
       "NDT inspection for FPSO boilers and systems.",
-    image: "https://alpha-ndt.com/Upload/33.jpg",
+    content: `
+AlphaNDT performed NDT inspection services for the FPSO Lewek Emas, a Floating
+Production Storage and Offloading vessel operating at the Chim Sao Platform.
+
+The scope included UTM, RT, and MT inspection for boilers, pressure vessels,
+heat exchangers, and piping systems. Services were provided during a scheduled
+shutdown turnaround for GREENS POWER Corporation, Singapore.
+
+The project demonstrated AlphaNDT's capability to deliver high-quality NDT
+services in challenging offshore FPSO environments with strict safety requirements.
+    `,
+    image: "https://alpha-ndt.com/Upload/fpso.jpg",
     tag: "Offshore",
     year: "2021",
   },
@@ -274,6 +425,18 @@ and ensured high-quality, safe, and compliant project delivery.
     industry: "Infrastructure",
     description:
       "NDT for cable-stayed bridge construction.",
+    content: `
+AlphaNDT provided NDT inspection services for the Can Tho Bridge, one of
+Vietnam's landmark cable-stayed bridge projects spanning the Hau River.
+
+The scope included weld inspection for steel box girder fabrication, cable
+anchorage inspection, structural steel connection inspection, and quality
+assurance throughout multiple construction phases.
+
+The 24-month project required compliance with AWS D1.5 (Bridge Welding Code)
+and AASHTO standards, ensuring the structural integrity of this critical
+infrastructure connecting Can Tho City to Vinh Long Province.
+    `,
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Bridge",
     year: "2021",
