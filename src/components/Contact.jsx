@@ -25,8 +25,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Địa chỉ",
-    value: "37/7 Đường C18, Phường Bảy Hiền\nTP. Hồ Chí Minh, Việt Nam",
-    href: "https://maps.google.com",
+    value: "KCN Đông Xuyên, Phường Rạch Dừa\nTP. Vũng Tàu, Việt Nam",
+    href: "https://www.google.com/maps?q=10.3460,107.0843",
   },
   {
     icon: (
@@ -160,6 +160,25 @@ export default function Contact() {
                     </svg>
                   </a>
                 ))}
+              </div>
+            </div>
+
+            {/* Google Maps */}
+            <div className="mt-6">
+              <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-3">
+                Bản đồ
+              </p>
+              <div className="rounded-xl overflow-hidden border border-slate-700">
+                <iframe
+                  title="Alpha NDT Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.5!2d107.0843!3d10.3460!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756f8a5e2e2b3d%3A0x0!2zS0NOIMSQw7RuZyBYdXnDqm4sIFLhuqFjaCBE4burYSwgVsWpbmcgVMOgdQ!5e0!3m2!1svi!2s!4v1"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </div>
