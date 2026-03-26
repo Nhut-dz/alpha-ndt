@@ -31,7 +31,7 @@ export default function News() {
     <section id="news" className="py-12 bg-slate-900" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className={`flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 gap-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div className={`flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div>
             <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
               {t(lang, "news.label")}
