@@ -224,10 +224,9 @@ const milestones = [
 ];
 
 const leaders = [
-  { name: "Director Name", role: "General Director / CEO", image: "/leader-1.jpg" },
-  { name: "Deputy Director Name", role: "Deputy Director", image: "/leader-2.jpg" },
-  { name: "Technical Director Name", role: "Technical Director", image: "/leader-3.jpg" },
-  { name: "Operations Manager Name", role: "Operations Manager", image: "/leader-4.jpg" },
+  { name: "Nguyễn Hữu Thời", role: "Chủ tịch / Chairman", image: "/leader-1.jpg" },
+  { name: "Trần Quốc Dũng", role: "Giám Đốc / Director", image: "/leader-2.jpg" },
+  { name: "Nguyễn Giang Nam", role: "Phó Giám Đốc / Deputy Director", image: "/leader-3.jpg" },
 ];
 
 const businessSectors = [
@@ -731,7 +730,7 @@ export default function AboutPage() {
           >
             <SectionTitle label="LEADERSHIP" heading="Our" highlight="Management Team" />
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {leaders.map((person, i) => (
               <div
                 key={i}
