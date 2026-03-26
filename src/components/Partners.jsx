@@ -5,32 +5,61 @@ import { useEffect, useRef, useState } from "react";
 import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
 
-// BƯỚC 1: Thêm thuộc tính 'logo' chứa đường dẫn ảnh
-// Bạn cần lưu các file ảnh logo riêng lẻ (đuôi .png có nền trong suốt là tốt nhất) 
-// vào thư mục public/logos/ của dự án React.
 const partnersList = [
-  { name: "Schlumberger", abbr: "SLB", logo: "http://www.alpha-ndt.com/Upload/Clients/sao.png" },
-  { name: "PETRONAS", abbr: "PTN", logo: "http://www.alpha-ndt.com/Upload/Clients/petronas.png" },
-  { name: "Vietsovpetro", abbr: "VSP", logo: "http://www.alpha-ndt.com/Upload/Clients/petronas.png" },
-  { name: "PTSC", abbr: "PTSC", logo: "/logos/ptsc.png" },
-  { name: "PetroVietnam", abbr: "PVN", logo: "/logos/petrovietnam.png" },
-  { name: "DNV", abbr: "DNV", logo: "/logos/dnv.png" },
-  { name: "Bureau Veritas", abbr: "BV", logo: "/logos/bureau-veritas.png" },
-  { name: "ABS", abbr: "ABS", logo: "/logos/abs.png" },
-  { name: "ClassNK", abbr: "NK", logo: "/logos/classnk.png" },
-  { name: "JVPC", abbr: "JVPC", logo: "/logos/jvpc.png" },
-  { name: "Dung Quat", abbr: "DQR", logo: "/logos/dung-quat.png" },
-  { name: "EVN", abbr: "EVN", logo: "/logos/evn.png" },
+  { name: "Alstom", abbr: "Alstom", logo: "/logo-client/alstom.png" },
+  { name: "Applus+", abbr: "Applus", logo: "/logo-client/applus.png" },
+  { name: "Biển Đông POC", abbr: "Bien Dong", logo: "/logo-client/biendong.png" },
+  { name: "BP", abbr: "BP", logo: "/logo-client/bp.png" },
+  { name: "Bureau Veritas", abbr: "BV", logo: "/logo-client/bureau.png" },
+  { name: "Chevron", abbr: "Chevron", logo: "/logo-client/chevron.png" },
+  { name: "EVN (Điện lực)", abbr: "EVN", logo: "/logo-client/dienluc.png" },
+  { name: "DNV", abbr: "DNV", logo: "/logo-client/dnv.png" },
+  { name: "Doosan", abbr: "Doosan", logo: "/logo-client/doosan.png" },
+  { name: "EG", abbr: "EG", logo: "/logo-client/eg.png" },
+  { name: "Harbour Energy", abbr: "Harbour", logo: "/logo-client/harbour.png" },
+  { name: "HD", abbr: "HD", logo: "/logo-client/hd.png" },
+  { name: "Hilong", abbr: "Hilong", logo: "/logo-client/hilong.png" },
+  { name: "JGC", abbr: "JGC", logo: "/logo-client/jgc.png" },
+  { name: "JVPC", abbr: "JVPC", logo: "/logo-client/jvpc.png" },
+  { name: "Lilama", abbr: "Lilama", logo: "/logo-client/lilama.png" },
+  { name: "Lloyd's Register", abbr: "LR", logo: "/logo-client/lr.png" },
+  { name: "LSP", abbr: "LSP", logo: "/logo-client/lsp.png" },
+  { name: "Masan", abbr: "Masan", logo: "/logo-client/masan.png" },
+  { name: "Mermaid", abbr: "Mermaid", logo: "/logo-client/mermaid.png" },
+  { name: "Moody's", abbr: "Moody", logo: "/logo-client/moody.png" },
+  { name: "Mushtari", abbr: "Mushtari", logo: "/logo-client/mushtari.png" },
+  { name: "PetroVietnam", abbr: "PVN", logo: "/logo-client/petrovietnam.png" },
+  { name: "Phân bón Cà Mau", abbr: "PVCFC", logo: "/logo-client/phanbocamau.jpg" },
+  { name: "Phú Mỹ", abbr: "Phu My", logo: "/logo-client/phumi.png" },
+  { name: "PTCS", abbr: "PTCS", logo: "/logo-client/PTCS.png" },
+  { name: "PETRONAS", abbr: "PTN", logo: "/logo-client/PTN.png" },
+  { name: "PTSC 1", abbr: "PTSC-1", logo: "/logo-client/ptsc-1.png" },
+  { name: "PTSC", abbr: "PTSC", logo: "/logo-client/PTSC.png" },
+  { name: "PV GAS", abbr: "PV GAS", logo: "/logo-client/pv-gas.png" },
+  { name: "Qualitech", abbr: "Qualitech", logo: "/logo-client/qualitech.png" },
+  { name: "Rosneft", abbr: "Rosneft", logo: "/logo-client/rosneft.png" },
+  { name: "Siemens", abbr: "Siemens", logo: "/logo-client/siemens.png" },
+  { name: "Schlumberger", abbr: "SLB", logo: "/logo-client/SLB.png" },
+  { name: "Technip", abbr: "Technip", logo: "/logo-client/technip.png" },
+  { name: "Vard", abbr: "Vard", logo: "/logo-client/vard.png" },
+  { name: "Vestas", abbr: "Vestas", logo: "/logo-client/vestas.png" },
+  { name: "Vina", abbr: "Vina", logo: "/logo-client/vina.png" },
+  { name: "VN-Japan", abbr: "VN-Japan", logo: "/logo-client/vn-japan.jpg" },
+  { name: "Vietsovpetro", abbr: "VSP", logo: "/logo-client/vsp.png" }
 ];
 
-// Duplicate for infinite scroll effect
 const doubled = [...partnersList, ...partnersList];
 
 function useFadeIn() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.1 });
+    const obs = new IntersectionObserver(([e]) => { 
+      if (e.isIntersecting) { 
+        setVisible(true); 
+        obs.disconnect(); 
+      } 
+    }, { threshold: 0.1 });
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, []);
@@ -70,28 +99,24 @@ export default function Partners() {
           <div className="flex gap-4 overflow-hidden">
             <div
               className="flex gap-4 animate-marquee hover:pause-animation"
-              style={{
-                width: "max-content" // Đảm bảo width bao trọn list
-              }}
+              style={{ width: "max-content" }}
             >
               {doubled.map((partner, i) => (
                 <div
                   key={i}
-                  className="flex-none flex items-center justify-center w-40 h-20 bg-slate-700 border border-slate-700 rounded-xl hover:border-blue-500/50 hover:bg-slate-700 transition-all duration-200 group p-3 bg-white" 
-                  // Ghi chú: Tôi đã đổi nền ô (bg) sang màu trắng (bg-white) để các logo hiển thị rõ nhất. Nếu muốn giữ nền tối, bạn dùng logo có chữ trắng/trong suốt.
+                  className="flex-none flex items-center justify-center w-40 h-24 bg-white border border-slate-700 rounded-xl hover:border-orange-400/50 transition-all duration-300 group p-4" 
                 >
-                  {/* BƯỚC 2: Render hình ảnh thay cho chữ */}
                   {partner.logo ? (
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      // Đã xóa 'filter grayscale' để hiện màu gốc. Thêm hiệu ứng phóng nhẹ khi hover.
+                      className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
                   ) : (
-                    // Fallback hiển thị text nếu bạn chưa kịp chuẩn bị ảnh cho đối tác đó
                     <div className="text-center">
-                      <div className="text-slate-800 font-black text-lg group-hover:text-blue-500 transition-colors">
+                      <div className="text-slate-800 font-black text-lg group-hover:text-orange-500 transition-colors">
                         {partner.abbr}
                       </div>
                     </div>
@@ -102,20 +127,19 @@ export default function Partners() {
           </div>
         </div>
 
-        {/* Stats strip (Giữ nguyên) */}
+        {/* Stats strip - Bạn có thể giữ hoặc xóa tùy ý */}
         <div className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          {/* ... */}
+          {/* Nội dung stats của bạn ở đây... */}
         </div>
       </div>
 
-      {/* Marquee keyframes via style tag */}
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 30s linear infinite;
+          animation: marquee 40s linear infinite; /* Tăng từ 30s lên 40s để trôi mượt hơn với list dài */
         }
         .hover\\:pause-animation:hover {
           animation-play-state: paused;

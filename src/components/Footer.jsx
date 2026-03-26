@@ -5,13 +5,11 @@ import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
 
 const services = [
-  "Ultrasonic Testing (UT)",
-  "Radiographic Testing (RT)",
-  "Magnetic Particle Testing (MT)",
-  "Penetrant Testing (PT)",
-  "Phased Array UT (PAUT)",
-  "Eddy Current Testing (ECT)",
-  "Wind Energy Service (WES)",
+  "INSPECTION SERVICES",
+  "ADVANCED NDT SERVICES",
+  "CONVENTIONAL NON-DESTRUCTIVE TESTING",
+  "WIND ENERGY SERVICE (WES)",
+  "WIND TURBINE GEAR OIL EXCHANGE BY GOES",
 ];
 
 const certBadges = ["ISO 9001", "ISO/IEC 17025", "PCN", "CSWIP", "ASNT"];
