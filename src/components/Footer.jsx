@@ -47,12 +47,6 @@ export default function Footer() {
               onClick={(e) => { e.preventDefault(); scrollTo("#home"); }}
               className="flex items-center gap-3 mb-6 group"
             >
-              <div className="relative w-10 h-10">
-                <div className="absolute inset-0 bg-orange-500 rounded-lg rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-                <div className="relative w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-black text-lg">α</span>
-                </div>
-              </div>
               <div>
                <a
             href="#home"
