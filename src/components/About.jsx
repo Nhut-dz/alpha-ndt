@@ -68,7 +68,7 @@ export default function About() {
         </div>
 
         {/* Main 2-column layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-8">
           {/* Left: Text content */}
           <div
             className={`transition-all duration-700 delay-100 ${
@@ -179,7 +179,7 @@ export default function About() {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="border-t border-slate-800 pt-16">
+          <div className="border-t border-slate-800 pt-8">
             <div className="text-center mb-10">
               <h4 className="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-2">
                 {t(lang, "about.certTitle")}
