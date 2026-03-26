@@ -152,7 +152,7 @@ export default function About() {
             {/* Main image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10">
               <img
-                src="/n2.jpg"
+                src="/about.jpg"
                 alt={t(lang, "about.teamAlt")}
                 className="w-full h-[28rem] object-cover"
                 loading="lazy"
