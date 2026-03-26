@@ -33,7 +33,7 @@ export default function News() {
         {/* Header */}
         <div className={`flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div>
-            <span className="inline-block text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3">
+            <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
               {t(lang, "news.label")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
