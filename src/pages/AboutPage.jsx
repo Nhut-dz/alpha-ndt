@@ -120,6 +120,17 @@ const coreValues = [
 
 const milestones = [
   {
+    year: "2025",
+    title: "Chevron & Statfjord Projects",
+    image: "/about-timeline-9.jpg",
+    items: [
+      "Delivered NDT services for Chevron Phase 67 offshore platform installation campaign.",
+      "Provided PWHT services for Statfjord C oil & gas project.",
+      "Expanded Block B Gas Project scope with PWHT heat treatment furnace system.",
+      "Continued growth in renewable energy with offshore wind farm inspection contracts.",
+    ],
+  },
+  {
     year: "2024",
     title: "AUT Technology & Block B Gas",
     image: "/about-timeline-8.jpg",
