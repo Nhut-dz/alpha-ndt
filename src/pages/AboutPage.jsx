@@ -348,15 +348,15 @@ export default function AboutPage() {
             <SectionTitle label="OUR COMPANY" heading="Inside" highlight="Alpha NDT" />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {/* Image 1 - Team photo (large, spans 2 cols) */}
+            {/* Image 1 - Team photo */}
             <div
-              className={`md:col-span-2 rounded-xl overflow-hidden transition-all duration-500
+              className={`rounded-xl overflow-hidden transition-all duration-500
                 ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
             >
               <img
                 src="/about-gallery-1.jpg"
                 alt="Alpha NDT Team"
-                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             {/* Image 2 - Marathon event */}
@@ -368,7 +368,7 @@ export default function AboutPage() {
               <img
                 src="/about-gallery-2.jpg"
                 alt="Alpha NDT Community Event"
-                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             {/* Image 3 - On-site engineers */}
@@ -380,7 +380,7 @@ export default function AboutPage() {
               <img
                 src="/about-gallery-3.jpg"
                 alt="Alpha NDT Engineers On-Site"
-                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             {/* Image 4 - Project management office */}
@@ -392,19 +392,31 @@ export default function AboutPage() {
               <img
                 src="/about-gallery-4.jpg"
                 alt="Alpha NDT Project Management"
-                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
-            {/* Image 5 - Team building beach (spans 2 cols) */}
+            {/* Image 5 - Team building beach */}
             <div
-              className={`md:col-span-2 rounded-xl overflow-hidden transition-all duration-500
+              className={`rounded-xl overflow-hidden transition-all duration-500
                 ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
               style={{ transitionDelay: "320ms" }}
             >
               <img
                 src="/about-gallery-5.jpg"
                 alt="Alpha NDT Team Building"
-                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            {/* Image 6 - 10th Anniversary */}
+            <div
+              className={`rounded-xl overflow-hidden transition-all duration-500
+                ${fade3.visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+              style={{ transitionDelay: "400ms" }}
+            >
+              <img
+                src="/about-gallery-6.jpg"
+                alt="Alpha NDT 10th Anniversary"
+                className="w-full h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
