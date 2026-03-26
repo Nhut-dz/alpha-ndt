@@ -56,10 +56,10 @@ export default function About() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
+          <span className="inline-block text-orange-400 font-bold text-3xl md:text-4xl tracking-widest uppercase mb-3">
             {t(lang, "about.label")}
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             {t(lang, "about.heading1")}{" "}
             <span className="text-orange-400">
               {t(lang, "about.headingHighlight")}
