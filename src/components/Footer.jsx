@@ -159,7 +159,7 @@ export default function Footer() {
             <div className="mt-6 p-4 bg-orange-500/10 border border-orange-500/20 rounded-xl">
               <p className="text-orange-400 font-semibold text-xs uppercase tracking-wider mb-1">{t(lang, "footer.hotline")}</p>
               <a href="tel:+84901234567" className="text-white font-black text-lg hover:text-orange-300 transition-colors">
-                +84 90 123 4567
+               +84 28 66877778
               </a>
             </div>
           </div>
