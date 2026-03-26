@@ -9,13 +9,10 @@ export const projects = [
     client: "Vietnam",
     industry: "Block B Gas Project",
     description:
-<<<<<<< HEAD
       "We take pride in having independently researched, designed, and manufactured the heat treatment furnace system, one of AlphaNDT’s key technologies, enabling heat treatment of large-sized tanks, structures, and equipment - and especially allowing multiple items to be treated simultaneously. The integration of SCADA automation technology with PLC-based data collection and storage enables technicians to optimize the heat treatment process for maximum safety and efficiency.",
     image: "/project/blockbgas.jpg",
     tag: "Gas",
     year: "2025",
-=======
-      "Baseline corrosion survey including UTM and API inspection for jacket structure.",
     content: {
       scope: [
         "Ultrasonic Thickness Measurement (UTM) for jacket legs and deck legs",
@@ -31,7 +28,6 @@ export const projects = [
     image: "https://alpha-ndt.com/Upload/37_1.jpg",
     tag: "Oil & Gas",
     year: "2023",
->>>>>>> 74f1b510d99596c4c85ca94fc6c1c3c2f91f56d8
   },
   {
     id: 2,
@@ -39,11 +35,8 @@ export const projects = [
     client: "PWHT",
     industry: "Oil & Gas",
     description:
-<<<<<<< HEAD
       "Our scope has supported the fabrication of key components, including a concentrator polishing plant, a multi-blade dehumidifier for the deep settling environment, and a framed feedwater tank, fully complying with current international standards.",
     image: "/project/statfjord.jpg",
-=======
-      "Full NDT services (MT, UT, PT, RT, PAUT/TOFD) for offshore structures and pipelines.",
     content: {
       scope: [
         "Magnetic Particle Testing (MT) for surface and near-surface defects",
@@ -58,7 +51,6 @@ export const projects = [
       duration: "12 months",
     },
     image: "https://alpha-ndt.com/Upload/41_1.jpg",
->>>>>>> 74f1b510d99596c4c85ca94fc6c1c3c2f91f56d8
     tag: "Oil & Gas",
     year: "2025",
   },
@@ -68,7 +60,6 @@ export const projects = [
     client: "PV GAS / PVE SC",
     industry: "Oil & Gas",
     description:
-<<<<<<< HEAD
       "Provided NDT and heat exchanger inspection services for Ca Mau Fertilizer Plant turnaround, ensuring equipment integrity, safety, and efficient operation.",
       content: `
       AlphaNDT successfully delivered NDT and heat exchanger inspection services 
@@ -83,8 +74,6 @@ export const projects = [
       scheduled maintenance, meeting high market demand.
         `,
     image: "/project/damcamau.jpg",
-=======
-      "PAUT inspection for LPG storage tanks following ASME standards.",
     content: {
       scope: [
         "Phased Array Ultrasonic Testing (PAUT) for LPG tank shell and nozzle welds",
@@ -98,62 +87,10 @@ export const projects = [
       duration: "4 months",
     },
     image: "https://alpha-ndt.com/Upload/12.jpg",
->>>>>>> 74f1b510d99596c4c85ca94fc6c1c3c2f91f56d8
     tag: "Oil & Gas",
     year: "2023",
 },
   {
-<<<<<<< HEAD
-  id: 4,
-  title: "NDT Service Provision for Phase 67 Chevron 2025 Campaign",
-  client: "Chevron Corporation",
-  industry: "Oil & Gas",
-  description:
-    "Delivered NDT services for offshore platform installation, including topside module integration and riser hook-up in Chevron Phase 67 Campaign.",
-  content: `
-AlphaNDT successfully provided NDT services for the installation of topside modules 
-to jacket structures and riser hook-up for an offshore platform under Chevron's Phase 67 Campaign.
-The project required strict compliance with technical standards, with capabilities 
-verified and approved by the Owner, Contractor, and ABS Class prior to execution.
-Building on experience from Phase 65, AlphaNDT demonstrated strong expertise 
-and ensured high-quality, safe, and compliant project delivery.
-  `,
-  image: "/project/ch.jpg", 
-  tag: "Oil & Gas",
-  year: "2025",
-
-},
-  {
-  id: 5,
-  title: "NDT SERVICE PROVISION FOR VIETNAM BLOCK B GAS PROJECT",
-  client: "Phu Quoc Petroleum Operating Company (PQPOC)",
-  industry: "Oil & Gas",
-  description:
-    "Provided comprehensive NDT services (RT, MT, PT, UT, PAUT, AUT) for CPP topside, piping, and pipeline in Vietnam’s major Block B Gas Project.",
-  content: `
-    AlphaNDT is a key NDT service provider for Vietnam Block B Gas Project, 
-    one of the country’s largest offshore gas developments.
-    The scope of work includes multiple NDT methods such as RT, MT, PT, UT, PAUT, 
-    and AUT for CPP topside, piping, and pipeline systems.
-    A major highlight of the project is the successful execution of AUT inspection 
-    for LSAW steel pipelines with a total length of 406 km, including offshore 
-    and onshore sections, using AlphaNDT’s self-developed AE MAX AUT® Scanner System.
-    The system complies with international standards such as API 5L and DNV-ST-F101, 
-    ensuring high flexibility and adaptability for various advanced inspection technologies.
-  `,
-  image: "/project/blockbgas2.jpg", 
-  tag: "Oil & Gas",
-  year: "2024",
-  location: "Offshore Vietnam (Mekong Delta region)",
-  highlights: [
-    "Block B Gas Project (Major Offshore Development)",
-    "Full NDT Methods (RT, MT, PT, UT, PAUT, AUT)",
-    "406 km Pipeline Inspection (Offshore & Onshore)",
-    "AE MAX AUT® Scanner System",
-    "API 5L & DNV-ST-F101 Compliance"
-  ]
-},
-=======
     id: 4,
     title: "NDT FOR NSRP OIL TANK FABRICATION",
     client: "NSRP / PTSC Quang Ngai",
@@ -200,34 +137,12 @@ and ensured high-quality, safe, and compliant project delivery.
     tag: "Offshore",
     year: "2021",
   },
->>>>>>> 74f1b510d99596c4c85ca94fc6c1c3c2f91f56d8
   {
     id: 6,
     title: "NDT PERFORMANCE FOR FENGMIAO PHASE 1 OFFSHORE WIND FARM - CDWE PROJECT",
     client: "ECC",
     industry: "Renewable Energy",
     description:
-<<<<<<< HEAD
-      "Performed NDT inspection for offshore wind farm project with real-time digital reporting and on-site client verification.",
-    content: `
-  AlphaNDT successfully performed NDT inspection services under client witness 
-  for the Fengmiao Phase 1 Offshore Wind Farm project.
-  The team utilized tablets on-site to present certifications and testing procedures 
-  directly to the client, ensuring transparency and compliance during inspection.
-  Additionally, test results were updated in real-time using AlphaNDT’s 
-  self-developed software system, enhancing efficiency, accuracy, and reporting speed.
-    `,
-    image: "/project/fengmiao.jpg", 
-    tag: "Renewable Energy",
-    year: "2024",
-    highlights: [
-      "Offshore Wind Farm Project",
-      "Client Witness Inspection (ECC)",
-      "Digital On-site Verification",
-      "Real-time Reporting System",
-      "Self-developed Software Integration"
-    ]
-=======
       "Inspection including VI, UTM and PAUT for gas processing plant equipment.",
     content: {
       scope: [
@@ -244,7 +159,6 @@ and ensured high-quality, safe, and compliant project delivery.
     image: "https://alpha-ndt.com/Upload/33.jpg",
     tag: "Plant",
     year: "2021",
->>>>>>> 74f1b510d99596c4c85ca94fc6c1c3c2f91f56d8
   },
   {
     id: 7,
