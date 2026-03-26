@@ -136,33 +136,6 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Social links */}
-            <div>
-              <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-3">
-                Mạng xã hội
-              </p>
-              <div className="flex gap-3">
-                {[
-                  { name: "Facebook", href: "https://www.facebook.com/profile.php?id=100063655170473", icon: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /> },
-                  { name: "LinkedIn", href: "#", icon: <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z" /> },
-                  { name: "YouTube", href: "#", icon: <><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" /></> },
-                ].map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-10 h-10 bg-slate-700 border border-slate-700 text-slate-400 hover:text-white rounded-xl flex items-center justify-center transition-all duration-200 ${social.name === "YouTube" ? "hover:bg-orange-500 hover:border-orange-500" : "hover:bg-blue-600 hover:border-blue-600"}`}
-                    aria-label={social.name}
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                      {social.icon}
-                    </svg>
-                  </a>
-                ))}
-              </div>
-            </div>
-
             {/* Google Maps */}
             <div className="mt-6">
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-3">
