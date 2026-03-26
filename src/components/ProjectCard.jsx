@@ -14,6 +14,8 @@ const tagColors = {
   "Refinery": "bg-red-500/10 text-red-400 border-red-500/20",
   "Power": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
   "Bridge": "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+  "Gas": "bg-orange-500/10 text-orange-400 border-orange-500/20",
+  "Renewable Energy": "bg-green-500/10 text-green-400 border-green-500/20",
 };
 
 export { tagColors };

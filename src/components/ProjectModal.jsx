@@ -11,6 +11,8 @@ export default function ProjectModal({ project, onClose }) {
   if (!project) return null;
 
   const content = project.content;
+  const isStringContent = typeof content === "string";
+  const isObjectContent = content && typeof content === "object";
 
   return (
     <div
@@ -54,22 +56,58 @@ export default function ProjectModal({ project, onClose }) {
             {t(lang, "portfolio.client")}: {project.client}
           </p>
 
-          {/* Year & Industry */}
-          <div className="flex gap-4 mb-4 text-sm">
+          {/* Year & Industry & Location */}
+          <div className="flex flex-wrap gap-4 mb-4 text-sm">
             <span className="text-slate-400">
               <span className="text-slate-500">Year:</span> {project.year}
             </span>
             <span className="text-slate-400">
               <span className="text-slate-500">Industry:</span> {project.industry}
             </span>
+            {project.location && (
+              <span className="text-slate-400">
+                <span className="text-slate-500">Location:</span> {project.location}
+              </span>
+            )}
           </div>
 
           <p className="text-slate-400 leading-relaxed mb-4">
             {project.description}
           </p>
 
-          {/* Detailed Content */}
-          {content && (
+          {/* String content (user format) */}
+          {isStringContent && (
+            <div className="border-t border-slate-600 pt-4">
+              <h4 className="text-orange-400 font-semibold text-sm mb-2">
+                Project Details
+              </h4>
+              <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">
+                {content.trim()}
+              </p>
+            </div>
+          )}
+
+          {/* Highlights (user format) */}
+          {project.highlights && project.highlights.length > 0 && (
+            <div className={`${isStringContent ? "mt-4" : "border-t border-slate-600 pt-4"}`}>
+              <h4 className="text-orange-400 font-semibold text-sm mb-2">
+                Key Highlights
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {project.highlights.map((item, i) => (
+                  <span
+                    key={i}
+                    className="bg-orange-500/10 text-orange-400 text-xs px-2.5 py-1 rounded-lg font-medium border border-orange-500/20"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Object content (structured format) */}
+          {isObjectContent && (
             <div className="space-y-4 border-t border-slate-600 pt-4">
               {/* Scope of Work */}
               {content.scope && (
