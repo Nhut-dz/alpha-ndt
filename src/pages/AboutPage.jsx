@@ -740,11 +740,11 @@ export default function AboutPage() {
                 `}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="bg-slate-600/30 overflow-hidden">
+                <div className="h-80 overflow-hidden bg-slate-600/30">
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       e.target.src =
                         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&facepad=2";
