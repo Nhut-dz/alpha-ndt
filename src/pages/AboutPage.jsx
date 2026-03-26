@@ -120,6 +120,17 @@ const coreValues = [
 
 const milestones = [
   {
+    year: "2025",
+    title: "Chevron & Statfjord Projects",
+    image: "/about-timeline-9.jpg",
+    items: [
+      "Delivered NDT services for Chevron Phase 67 offshore platform installation campaign.",
+      "Provided PWHT services for Statfjord C oil & gas project.",
+      "Expanded Block B Gas Project scope with PWHT heat treatment furnace system.",
+      "Continued growth in renewable energy with offshore wind farm inspection contracts.",
+    ],
+  },
+  {
     year: "2024",
     title: "AUT Technology & Block B Gas",
     image: "/about-timeline-8.jpg",
@@ -327,14 +338,6 @@ function HistoryTimeline({ fadeRef }) {
   return (
     <section className="py-16 bg-slate-900" ref={fadeRef.ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className={`transition-all duration-700 ${
-            fadeRef.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          <SectionTitle label="OUR HISTORY" heading="Milestones &" highlight="Development" />
-        </div>
-
         {/* Horizontal Year Timeline Bar */}
         <div
           className={`mb-10 transition-all duration-700 delay-100 ${
