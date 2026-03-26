@@ -68,8 +68,8 @@ export default function Hero() {
               </div>
             ) : (
               <div className="text-white drop-shadow-lg" style={{ fontFamily: "'Arial Unicode MS', Arial, sans-serif" }}>
-                <p className="text-3xl md:text-5xl lg:text-6xl font-bold italic mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}><span className="text-orange-400">Powerful</span> and effective cooperation</p>
-                <p className="text-xl md:text-3xl lg:text-4xl">lasting for years...</p>
+                <p className="text-3xl md:text-5xl lg:text-6xl font-bold italic mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}><span className="text-orange-400">Powerful</span></p>
+                <p className="text-xl md:text-3xl lg:text-4xl">and effective cooperation lasting for years...</p>
               </div>
             )}
           </div>
