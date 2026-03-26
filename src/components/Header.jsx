@@ -2,40 +2,36 @@
 // Header Component - Sticky Navigation
 // ============================================================
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
 
 export default function Header() {
   const { lang } = useLang();
+  const location = useLocation();
 
   const navItems = [
-    { label: t(lang, "nav.home"), href: "#home" },
-    { label: t(lang, "nav.about"), href: "#about" },
-    { label: t(lang, "nav.services"), href: "#services" },
-    { label: t(lang, "nav.portfolio"), href: "#portfolio" },
-    { label: t(lang, "nav.news"), href: "#news" },
-    { label: t(lang, "nav.contact"), href: "#contact" },
+    { label: t(lang, "nav.home"), href: "/" },
+    { label: t(lang, "nav.about"), href: "/about" },
+    { label: t(lang, "nav.services"), href: "/services" },
+    { label: t(lang, "nav.portfolio"), href: "/portfolio" },
+    { label: t(lang, "nav.news"), href: "/news" },
+    { label: t(lang, "nav.contact"), href: "/contact" },
     { label: "Platform", href: "http://platform.alpha-ndt.com/Login?ReturnUrl=~/Default?st=", external: true },
   ];
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
 
-  // Detect scroll to add background
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll + close menu
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
     setMenuOpen(false);
-    setActiveSection(href.replace("#", ""));
-  };
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <header
@@ -47,53 +43,49 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, "#home")}
-            className="flex items-center gap-3 group"
-            aria-label="Alpha NDT - Trang chủ"
-          >
-            <img
-              src="/logo.png"
-              alt="Alpha NDT"
-              className="h-20 sm:h-24 w-auto object-contain"
-            />
-          </a>
+          <Link to="/" className="flex items-center gap-3 group" aria-label="Alpha NDT - Trang chủ">
+            <img src="/logo.png" alt="Alpha NDT" className="h-20 sm:h-24 w-auto object-contain" />
+          </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1" role="navigation">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                onClick={(e) => !item.external && handleNavClick(e, item.href)}
-                className={`px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 ${
-                  !item.external && activeSection === item.href.replace("#", "")
-                    ? "text-orange-400 bg-orange-500/10 border-b-2 border-orange-400"
-                    : "text-white hover:text-orange-300 hover:bg-white/10"
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 text-white hover:text-orange-300 hover:bg-white/10"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={`px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 ${
+                    location.pathname === item.href
+                      ? "text-orange-400 bg-orange-500/10 border-b-2 border-orange-400"
+                      : "text-white hover:text-orange-300 hover:bg-white/10"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
 
-          {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, "#contact")}
+            <Link
+              to="/contact"
               className="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               {t(lang, "nav.contactNow")}
-            </a>
+            </Link>
 
-            {/* Mobile hamburger */}
             <button
               className="lg:hidden p-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -111,31 +103,39 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={`lg:hidden transition-all duration-300 overflow-hidden ${
             menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}
         >
           <nav className="flex flex-col gap-1 pb-4 border-t border-slate-700 pt-4">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                onClick={(e) => !item.external && handleNavClick(e, item.href)}
-                className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, "#contact")}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
+            <Link
+              to="/contact"
               className="mt-2 inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors"
             >
               {t(lang, "nav.contactNow")}
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

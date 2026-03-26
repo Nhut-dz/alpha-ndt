@@ -3,19 +3,16 @@
 // Alpha NDT Website - React + Tailwind CSS
 // ============================================================
 import { lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import HomePage from "./pages/HomePage";
 
-// Lazy load below-fold sections for performance
-const About = lazy(() => import("./components/About"));
-const Services = lazy(() => import("./components/Services"));
-const Portfolio = lazy(() => import("./components/Portfolio"));
-const Partners = lazy(() => import("./components/Partners"));
-const WhyUs = lazy(() => import("./components/WhyUs"));
-const News = lazy(() => import("./components/News"));
-const Careers = lazy(() => import("./components/Careers"));
-const Contact = lazy(() => import("./components/Contact"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
+const NewsPage = lazy(() => import("./pages/NewsPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 const Footer = lazy(() => import("./components/Footer"));
 
 // Section skeleton loader
@@ -62,55 +59,30 @@ function FloatingCTA() {
 
 export default function App() {
   return (
+    <BrowserRouter>
     <LanguageProvider>
     <div className="min-h-screen bg-slate-800 font-sans antialiased">
-      {/* Sticky Header - always loaded */}
       <Header />
 
-      {/* Hero - always loaded (above fold) */}
-      <Hero />
-
-      {/* Below-fold sections - lazy loaded */}
       <Suspense fallback={<SectionLoader />}>
-        <About />
-      </Suspense>
-
-      <Suspense fallback={<SectionLoader />}>
-        <Services />
-      </Suspense>
-
-      <Suspense fallback={<SectionLoader />}>
-        <Portfolio />
-      </Suspense>
-
-      <Suspense fallback={<SectionLoader />}>
-        <Partners />
-      </Suspense>
-
-      <Suspense fallback={<SectionLoader />}>
-        <WhyUs />
-      </Suspense>
-
-      <Suspense fallback={<SectionLoader />}>
-        <News />
-      </Suspense>
-
-      <Suspense fallback={<SectionLoader />}>
-        <Careers />
-      </Suspense>
-
-      <Suspense fallback={<SectionLoader />}>
-        <Contact />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </Suspense>
 
       <Suspense fallback={<div className="bg-slate-900 h-32" />}>
         <Footer />
       </Suspense>
 
-      {/* Floating UI elements */}
       <BackToTop />
       <FloatingCTA />
     </div>
     </LanguageProvider>
+    </BrowserRouter>
   );
 }
