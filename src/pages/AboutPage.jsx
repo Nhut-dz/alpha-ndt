@@ -304,6 +304,26 @@ const vietnamLocations = [
   { name: "Offshore Biển Đông", x: 370, y: 520, projects: "Biển Đông 1" },
 ];
 
+// ---- COUNTER HOOK ----
+function useCountUp(target, duration = 2000, trigger = true) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!trigger) return;
+    let start = 0;
+    const startTime = performance.now();
+    const step = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [target, duration, trigger]);
+  return count;
+}
+
 // ---- COMPONENTS ----
 
 function SectionTitle({ label, heading, highlight, children, center = false }) {
@@ -810,32 +830,29 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 9. DISTRIBUTION NETWORK - VIETNAM MAP ===== */}
-      <section className="py-16 bg-slate-800" ref={fade9.ref}>
+      <section className="py-20 bg-slate-50" ref={fade9.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 transition-all duration-700 ${
+            className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 transition-all duration-700 ${
               fade9.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             {/* Left: Text & Stats */}
             <div className="flex-1 order-2 lg:order-1">
-              <span className="inline-block text-orange-400 font-bold text-sm tracking-widest uppercase mb-3">
-                DISTRIBUTION NETWORK
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
-                Mạng lưới dự án trải dài khắp <span className="text-orange-400">Việt Nam</span>
-              </h2>
+              <p className="text-slate-500 text-lg mb-6 leading-relaxed">
+                Hệ thống dự án trải dài từ Bắc vào Nam, mang dịch vụ kiểm tra chất lượng đến tận công trình.
+              </p>
 
-              {/* Big stat */}
-              <div className="mb-6">
-                <span className="text-6xl sm:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                  500+
+              {/* Big counter */}
+              <div className="mb-4">
+                <span className="text-7xl sm:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-yellow-400">
+                  {useCountUp(500, 2500, fade9.visible)}+
                 </span>
               </div>
-              <p className="text-orange-400 font-semibold text-lg mb-4">
-                Dự án đã thực hiện tại 15+ tỉnh thành & ngoài khơi.
+              <p className="text-slate-700 font-semibold text-xl mb-4">
+                Mạng lưới dự án phủ sóng 34 tỉnh thành.
               </p>
-              <p className="text-slate-400 leading-relaxed mb-8">
+              <p className="text-slate-500 leading-relaxed mb-8">
                 Alpha NDT tự hào là đơn vị NDT hàng đầu Việt Nam với mạng lưới dự án
                 phủ sóng từ Bắc vào Nam, từ các nhà máy điện, lọc dầu, đóng tàu cho đến
                 các giàn khoan ngoài khơi và trang trại điện gió.
@@ -846,11 +863,9 @@ export default function AboutPage() {
                 {vietnamLocations.filter(l => !l.name.includes("Offshore")).map((loc, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-1.5 bg-slate-700/50 border border-slate-600 text-slate-300 text-xs font-medium px-3 py-1.5 rounded-full hover:border-orange-500/40 hover:text-orange-400 transition-colors cursor-default"
-                    onMouseEnter={() => setActiveTooltip(i)}
-                    onMouseLeave={() => setActiveTooltip(null)}
+                    className="inline-flex items-center gap-1.5 bg-white border border-slate-200 text-slate-600 text-sm font-medium px-3 py-1.5 rounded-full hover:border-green-400 hover:text-green-600 transition-colors cursor-default shadow-sm"
                   >
-                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
+                    <span className="w-2 h-2 bg-red-500 rounded-full" />
                     {loc.name}
                   </span>
                 ))}
@@ -861,25 +876,21 @@ export default function AboutPage() {
             <div className="relative flex-shrink-0 order-1 lg:order-2">
               <svg
                 viewBox="0 0 500 900"
-                className="w-[300px] md:w-[380px] lg:w-[420px] h-auto drop-shadow-2xl"
+                className="w-[280px] md:w-[360px] lg:w-[400px] h-auto"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
                   <linearGradient id="vnMapGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#22c55e" />
-                    <stop offset="50%" stopColor="#16a34a" />
-                    <stop offset="100%" stopColor="#15803d" />
+                    <stop offset="0%" stopColor="#4CAF50" />
+                    <stop offset="50%" stopColor="#388E3C" />
+                    <stop offset="100%" stopColor="#2E7D32" />
                   </linearGradient>
-                  <linearGradient id="vnMapStroke" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#4ade80" />
-                    <stop offset="100%" stopColor="#166534" />
-                  </linearGradient>
-                  <filter id="mapShadow" x="-10%" y="-5%" width="120%" height="110%">
-                    <feDropShadow dx="3" dy="5" stdDeviation="8" floodColor="#000" floodOpacity="0.3" />
+                  <filter id="mapGlow" x="-20%" y="-10%" width="140%" height="120%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="12" floodColor="#4CAF50" floodOpacity="0.15" />
                   </filter>
                 </defs>
 
-                {/* Vietnam detailed outline - North */}
+                {/* Vietnam outline */}
                 <path
                   d="M250 40 L270 35 L290 45 L310 40 L330 50 L345 45 L360 55 L370 70
                      L355 80 L340 75 L325 85 L335 100 L350 95 L365 105 L355 115
@@ -908,29 +919,28 @@ export default function AboutPage() {
                      L230 125 L235 115 L240 105 L235 95 L240 85 L245 75
                      L240 65 L245 55 L250 40Z"
                   fill="url(#vnMapGrad)"
-                  stroke="url(#vnMapStroke)"
-                  strokeWidth="2"
-                  filter="url(#mapShadow)"
+                  stroke="#66BB6A"
+                  strokeWidth="1.5"
+                  filter="url(#mapGlow)"
                 />
 
-                {/* Hoàng Sa islands */}
-                <g opacity="0.6">
-                  <circle cx="400" cy="340" r="4" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
-                  <circle cx="410" cy="335" r="3" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
-                  <circle cx="415" cy="345" r="2.5" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
-                  <circle cx="405" cy="350" r="2" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
-                  <text x="395" y="325" fill="#4ade80" fontSize="10" fontWeight="bold" textAnchor="middle">Hoàng Sa</text>
+                {/* Hoàng Sa */}
+                <g opacity="0.5">
+                  <circle cx="400" cy="340" r="4" fill="#4CAF50" />
+                  <circle cx="410" cy="335" r="3" fill="#4CAF50" />
+                  <circle cx="415" cy="345" r="2.5" fill="#4CAF50" />
+                  <text x="400" y="325" fill="#81C784" fontSize="9" fontWeight="600" textAnchor="middle">Hoàng Sa</text>
                 </g>
 
-                {/* Trường Sa islands */}
-                <g opacity="0.6">
-                  <circle cx="420" cy="530" r="3" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
-                  <circle cx="430" cy="540" r="2.5" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
-                  <circle cx="415" cy="545" r="2" fill="#22c55e" stroke="#4ade80" strokeWidth="1" />
-                  <text x="425" y="520" fill="#4ade80" fontSize="10" fontWeight="bold" textAnchor="middle">Trường Sa</text>
+                {/* Trường Sa */}
+                <g opacity="0.5">
+                  <circle cx="420" cy="530" r="3" fill="#4CAF50" />
+                  <circle cx="430" cy="540" r="2.5" fill="#4CAF50" />
+                  <circle cx="415" cy="545" r="2" fill="#4CAF50" />
+                  <text x="425" y="520" fill="#81C784" fontSize="9" fontWeight="600" textAnchor="middle">Trường Sa</text>
                 </g>
 
-                {/* Location pins */}
+                {/* Location markers */}
                 {vietnamLocations.map((loc, i) => (
                   <g
                     key={i}
@@ -938,14 +948,11 @@ export default function AboutPage() {
                     onMouseEnter={() => setActiveTooltip(i)}
                     onMouseLeave={() => setActiveTooltip(null)}
                   >
-                    {/* Pulse animation */}
-                    <circle cx={loc.x} cy={loc.y} r="10" fill="#f97316" opacity="0.2">
-                      <animate attributeName="r" values="8;16;8" dur="2.5s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
-                      <animate attributeName="opacity" values="0.3;0;0.3" dur="2.5s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
+                    <circle cx={loc.x} cy={loc.y} r="12" fill="#ef4444" opacity="0.15">
+                      <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" begin={`${i * 0.15}s`} />
+                      <animate attributeName="opacity" values="0.2;0;0.2" dur="2s" repeatCount="indefinite" begin={`${i * 0.15}s`} />
                     </circle>
-                    {/* Pin marker */}
-                    <circle cx={loc.x} cy={loc.y} r="7" fill="#ea580c" stroke="#fff" strokeWidth="2.5" />
-                    <circle cx={loc.x} cy={loc.y} r="3" fill="#fff" />
+                    <circle cx={loc.x} cy={loc.y} r="5" fill="#ef4444" stroke="#fff" strokeWidth="2" />
                   </g>
                 ))}
               </svg>
@@ -953,15 +960,15 @@ export default function AboutPage() {
               {/* Tooltip */}
               {activeTooltip !== null && (
                 <div
-                  className="absolute bg-slate-800 border border-orange-500/40 rounded-xl px-4 py-2.5 pointer-events-none z-20 shadow-2xl"
+                  className="absolute bg-white border border-slate-200 rounded-lg px-4 py-2.5 pointer-events-none z-20 shadow-lg"
                   style={{
                     left: `${(vietnamLocations[activeTooltip].x / 500) * 100}%`,
                     top: `${(vietnamLocations[activeTooltip].y / 900) * 100 - 4}%`,
                     transform: "translate(-50%, -100%)",
                   }}
                 >
-                  <p className="text-orange-400 font-bold text-sm">{vietnamLocations[activeTooltip].name}</p>
-                  <p className="text-slate-300 text-xs">{vietnamLocations[activeTooltip].projects}</p>
+                  <p className="text-green-700 font-bold text-sm">{vietnamLocations[activeTooltip].name}</p>
+                  <p className="text-slate-500 text-xs">{vietnamLocations[activeTooltip].projects}</p>
                 </div>
               )}
             </div>
