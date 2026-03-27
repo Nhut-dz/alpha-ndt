@@ -1,8 +1,10 @@
 // ============================================================
 // AboutPage - Comprehensive Company Profile Page
 // ============================================================
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
+
+const VietnamMap = lazy(() => import("../components/VietnamMap"));
 
 function useFadeIn(threshold = 0.1) {
   const ref = useRef(null);
@@ -283,27 +285,6 @@ const businessSectors = [
   },
 ];
 
-// Vietnam map locations with realistic coordinates for detailed SVG (viewBox 0 0 500 900)
-const vietnamLocations = [
-  { name: "Hà Nội", x: 280, y: 175, projects: "Office & Projects" },
-  { name: "Hải Phòng", x: 310, y: 190, projects: "Đình Vũ LPG Project" },
-  { name: "Thái Bình", x: 295, y: 200, projects: "Hàm Rồng Pipeline" },
-  { name: "Quảng Ninh", x: 330, y: 155, projects: "Mong Dương Power Plant" },
-  { name: "Thanh Hóa", x: 265, y: 235, projects: "Nghi Sơn Refinery" },
-  { name: "Nghệ An", x: 255, y: 270, projects: "Industrial Projects" },
-  { name: "Đà Nẵng", x: 265, y: 370, projects: "Central Region Office" },
-  { name: "Quảng Ngãi", x: 260, y: 400, projects: "Dung Quất Refinery & Shipyard" },
-  { name: "Bình Định", x: 270, y: 430, projects: "PTSC Fabrication" },
-  { name: "Nha Trang", x: 285, y: 500, projects: "Offshore Support Base" },
-  { name: "TP. Hồ Chí Minh", x: 240, y: 610, projects: "Headquarters" },
-  { name: "Vũng Tàu", x: 270, y: 630, projects: "HQ & Major Fabrication Yards" },
-  { name: "Phú Mỹ", x: 258, y: 620, projects: "Phú Mỹ Power Plant" },
-  { name: "Cần Thơ", x: 215, y: 670, projects: "Cần Thơ Bridge" },
-  { name: "Cà Mau", x: 195, y: 720, projects: "Gas Processing & Fertilizer Plant" },
-  { name: "Offshore Block 15-1", x: 340, y: 580, projects: "Sư Tử Fields" },
-  { name: "Offshore Biển Đông", x: 370, y: 520, projects: "Biển Đông 1" },
-];
-
 // ---- COUNTER HOOK ----
 function useCountUp(target, duration = 2000, trigger = true) {
   const [count, setCount] = useState(0);
@@ -460,7 +441,6 @@ export default function AboutPage() {
   const fade7 = useFadeIn();
   const fade8 = useFadeIn();
   const fade9 = useFadeIn();
-  const [activeTooltip, setActiveTooltip] = useState(null);
 
   return (
     <div className="bg-slate-800">
@@ -852,125 +832,18 @@ export default function AboutPage() {
               <p className="text-slate-700 font-semibold text-xl mb-4">
                 Mạng lưới dự án phủ sóng 34 tỉnh thành.
               </p>
-              <p className="text-slate-500 leading-relaxed mb-8">
+              <p className="text-slate-500 leading-relaxed">
                 Alpha NDT tự hào là đơn vị NDT hàng đầu Việt Nam với mạng lưới dự án
                 phủ sóng từ Bắc vào Nam, từ các nhà máy điện, lọc dầu, đóng tàu cho đến
                 các giàn khoan ngoài khơi và trang trại điện gió.
               </p>
-
-              {/* Location tags */}
-              <div className="flex flex-wrap gap-2">
-                {vietnamLocations.filter(l => !l.name.includes("Offshore")).map((loc, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-1.5 bg-white border border-slate-200 text-slate-600 text-sm font-medium px-3 py-1.5 rounded-full hover:border-green-400 hover:text-green-600 transition-colors cursor-default shadow-sm"
-                  >
-                    <span className="w-2 h-2 bg-red-500 rounded-full" />
-                    {loc.name}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            {/* Right: Vietnam Map */}
-            <div className="relative flex-shrink-0 order-1 lg:order-2">
-              <svg
-                viewBox="0 0 500 900"
-                className="w-[280px] md:w-[360px] lg:w-[400px] h-auto"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="vnMapGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#4CAF50" />
-                    <stop offset="50%" stopColor="#388E3C" />
-                    <stop offset="100%" stopColor="#2E7D32" />
-                  </linearGradient>
-                  <filter id="mapGlow" x="-20%" y="-10%" width="140%" height="120%">
-                    <feDropShadow dx="0" dy="4" stdDeviation="12" floodColor="#4CAF50" floodOpacity="0.15" />
-                  </filter>
-                </defs>
-
-                {/* Vietnam outline */}
-                <path
-                  d="M250 40 L270 35 L290 45 L310 40 L330 50 L345 45 L360 55 L370 70
-                     L355 80 L340 75 L325 85 L335 100 L350 95 L365 105 L355 115
-                     L340 110 L330 120 L345 130 L335 140 L320 135 L310 145 L325 155
-                     L315 165 L300 160 L290 170 L305 180 L295 190 L280 185
-                     L270 195 L285 205 L275 215 L260 210 L250 220 L265 230
-                     L255 240 L245 235 L235 245 L250 255 L240 265 L230 260
-                     L220 270 L235 280 L225 290 L215 285 L210 295 L225 305
-                     L220 315 L230 325 L245 335 L260 345 L275 360 L285 375
-                     L280 390 L270 400 L275 415 L270 430 L280 445 L275 460
-                     L265 475 L275 490 L285 505 L280 520 L270 535 L275 550
-                     L265 565 L260 580 L270 590 L280 600 L275 610 L265 620
-                     L270 635 L260 645 L250 640 L240 650 L230 660 L220 670
-                     L210 680 L200 690 L195 700 L205 710 L200 720 L190 725
-                     L180 720 L175 710 L185 700 L180 690 L190 680 L200 670
-                     L210 660 L205 650 L195 645 L185 650 L175 660 L170 670
-                     L165 665 L170 655 L180 645 L190 635 L195 625 L200 615
-                     L195 605 L205 595 L210 585 L215 575 L210 565 L220 555
-                     L225 545 L220 535 L230 525 L235 515 L230 505 L240 495
-                     L245 485 L240 475 L250 465 L255 455 L250 445 L245 435
-                     L250 425 L245 415 L240 405 L235 395 L230 385 L225 375
-                     L220 365 L225 355 L230 345 L225 335 L220 325 L215 315
-                     L220 305 L215 295 L220 285 L215 275 L210 265 L215 255
-                     L220 245 L215 235 L220 225 L215 215 L220 205 L225 195
-                     L220 185 L225 175 L230 165 L225 155 L230 145 L235 135
-                     L230 125 L235 115 L240 105 L235 95 L240 85 L245 75
-                     L240 65 L245 55 L250 40Z"
-                  fill="url(#vnMapGrad)"
-                  stroke="#66BB6A"
-                  strokeWidth="1.5"
-                  filter="url(#mapGlow)"
-                />
-
-                {/* Hoàng Sa */}
-                <g opacity="0.5">
-                  <circle cx="400" cy="340" r="4" fill="#4CAF50" />
-                  <circle cx="410" cy="335" r="3" fill="#4CAF50" />
-                  <circle cx="415" cy="345" r="2.5" fill="#4CAF50" />
-                  <text x="400" y="325" fill="#81C784" fontSize="9" fontWeight="600" textAnchor="middle">Hoàng Sa</text>
-                </g>
-
-                {/* Trường Sa */}
-                <g opacity="0.5">
-                  <circle cx="420" cy="530" r="3" fill="#4CAF50" />
-                  <circle cx="430" cy="540" r="2.5" fill="#4CAF50" />
-                  <circle cx="415" cy="545" r="2" fill="#4CAF50" />
-                  <text x="425" y="520" fill="#81C784" fontSize="9" fontWeight="600" textAnchor="middle">Trường Sa</text>
-                </g>
-
-                {/* Location markers */}
-                {vietnamLocations.map((loc, i) => (
-                  <g
-                    key={i}
-                    className="cursor-pointer"
-                    onMouseEnter={() => setActiveTooltip(i)}
-                    onMouseLeave={() => setActiveTooltip(null)}
-                  >
-                    <circle cx={loc.x} cy={loc.y} r="12" fill="#ef4444" opacity="0.15">
-                      <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" begin={`${i * 0.15}s`} />
-                      <animate attributeName="opacity" values="0.2;0;0.2" dur="2s" repeatCount="indefinite" begin={`${i * 0.15}s`} />
-                    </circle>
-                    <circle cx={loc.x} cy={loc.y} r="5" fill="#ef4444" stroke="#fff" strokeWidth="2" />
-                  </g>
-                ))}
-              </svg>
-
-              {/* Tooltip */}
-              {activeTooltip !== null && (
-                <div
-                  className="absolute bg-white border border-slate-200 rounded-lg px-4 py-2.5 pointer-events-none z-20 shadow-lg"
-                  style={{
-                    left: `${(vietnamLocations[activeTooltip].x / 500) * 100}%`,
-                    top: `${(vietnamLocations[activeTooltip].y / 900) * 100 - 4}%`,
-                    transform: "translate(-50%, -100%)",
-                  }}
-                >
-                  <p className="text-green-700 font-bold text-sm">{vietnamLocations[activeTooltip].name}</p>
-                  <p className="text-slate-500 text-xs">{vietnamLocations[activeTooltip].projects}</p>
-                </div>
-              )}
+            {/* Right: Vietnam Map (real provinces) */}
+            <div className="flex-shrink-0 order-1 lg:order-2">
+              <Suspense fallback={<div className="w-[280px] md:w-[360px] lg:w-[400px] h-[500px] bg-slate-100 rounded-xl animate-pulse" />}>
+                <VietnamMap />
+              </Suspense>
             </div>
           </div>
         </div>
