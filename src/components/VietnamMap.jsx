@@ -22,42 +22,23 @@ const regionColors = {
   "Mekong Delta": "#2E7D32",
 };
 
-// Alpha NDT project locations
+// Alpha NDT actual project locations & partners only
 const markers = [
   { name: "Hà Nội", coordinates: [105.872, 21.1306], projects: "Office & Projects" },
   { name: "Hải Phòng", coordinates: [106.635, 20.79], projects: "Đình Vũ LPG Project" },
+  { name: "Thái Bình", coordinates: [106.371, 20.5303], projects: "Hàm Rồng Pipeline" },
   { name: "Quảng Ninh", coordinates: [107.181, 21.223], projects: "Mong Dương Power Plant" },
   { name: "Thanh Hóa", coordinates: [105.215, 20.0917], projects: "Nghi Sơn Refinery" },
   { name: "Nghệ An", coordinates: [104.827, 19.3548], projects: "Industrial Projects" },
-  { name: "Huế", coordinates: [107.634, 16.312], projects: "Central Projects" },
   { name: "Đà Nẵng", coordinates: [108.102, 16.0912], projects: "Central Region Office" },
-  { name: "Quảng Ngãi", coordinates: [108.686, 14.9971], projects: "Dung Quất Refinery" },
+  { name: "Quảng Ngãi", coordinates: [108.686, 14.9971], projects: "Dung Quất Refinery & Shipyard" },
   { name: "Bình Định", coordinates: [108.971, 14.1075], projects: "PTSC Fabrication" },
   { name: "Khánh Hòa", coordinates: [109.359, 12.6049], projects: "Offshore Support Base" },
-  { name: "Gia Lai", coordinates: [108.156, 13.8493], projects: "Highland Projects" },
-  { name: "Đắk Lắk", coordinates: [108.133, 12.7691], projects: "Industrial Inspection" },
-  { name: "Lâm Đồng", coordinates: [108.0, 11.5362], projects: "Power Plant Inspection" },
   { name: "TP.HCM", coordinates: [106.926, 10.409], projects: "Headquarters" },
-  { name: "Vũng Tàu", coordinates: [107.143, 10.3969], projects: "Major Fabrication Yards" },
-  { name: "Bình Dương", coordinates: [106.659, 11.1382], projects: "Industrial Zone" },
-  { name: "Đồng Nai", coordinates: [107.178, 11.1258], projects: "Manufacturing Hub" },
-  { name: "Bình Thuận", coordinates: [108.232, 11.1284], projects: "Wind Farm Inspection" },
-  { name: "Long An", coordinates: [106.134, 10.6869], projects: "Industrial Projects" },
-  { name: "Tiền Giang", coordinates: [106.217, 10.4581], projects: "Bridge Inspection" },
+  { name: "Vũng Tàu", coordinates: [107.143, 10.3969], projects: "HQ & Major Fabrication Yards" },
+  { name: "Phú Mỹ", coordinates: [107.05, 10.55], projects: "Phú Mỹ Power Plant" },
   { name: "Cần Thơ", coordinates: [105.685, 10.2421], projects: "Cần Thơ Bridge" },
-  { name: "Cà Mau", coordinates: [105.073, 9.05545], projects: "Gas Processing Plant" },
-  { name: "Kiên Giang", coordinates: [105.284, 9.85962], projects: "Offshore Projects" },
-  { name: "Phú Thọ", coordinates: [105.143, 21.3127], projects: "Industrial Inspection" },
-  { name: "Thái Nguyên", coordinates: [105.887, 21.5812], projects: "Steel Mill Inspection" },
-  { name: "Bắc Giang", coordinates: [106.493, 21.3512], projects: "Manufacturing QC" },
-  { name: "Ninh Bình", coordinates: [105.852, 20.2722], projects: "Cement Plant" },
-  { name: "Quảng Bình", coordinates: [106.357, 17.4691], projects: "Industrial Services" },
-  { name: "Sóc Trăng", coordinates: [105.9, 9.5614], projects: "Energy Projects" },
-  { name: "An Giang", coordinates: [105.154, 10.5736], projects: "Infrastructure" },
-  { name: "Bến Tre", coordinates: [106.496, 10.171], projects: "Bridge & Marine" },
-  { name: "Lào Cai", coordinates: [104.096, 22.3559], projects: "Mining Inspection" },
-  { name: "Hà Giang", coordinates: [104.965, 22.7655], projects: "Infrastructure" },
-  { name: "Tây Ninh", coordinates: [106.14, 11.4121], projects: "Industrial Zone" },
+  { name: "Cà Mau", coordinates: [105.073, 9.05545], projects: "Gas Processing & Fertilizer Plant" },
 ];
 
 function VietnamMap() {
