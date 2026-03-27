@@ -39,6 +39,8 @@ const markers = [
   { name: "Phú Mỹ", coordinates: [107.05, 10.55], projects: "Phú Mỹ Power Plant" },
   { name: "Cần Thơ", coordinates: [105.685, 10.2421], projects: "Cần Thơ Bridge" },
   { name: "Cà Mau", coordinates: [105.073, 9.05545], projects: "Gas Processing & Fertilizer Plant" },
+  { name: "Offshore Block 15-1", coordinates: [109.0, 9.8], projects: "Sư Tử Fields" },
+  { name: "Offshore Biển Đông", coordinates: [109.5, 11.0], projects: "Biển Đông 1" },
 ];
 
 function VietnamMap() {
