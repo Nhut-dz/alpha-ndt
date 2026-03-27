@@ -449,7 +449,7 @@ export default function AboutPage() {
   return (
     <div className="bg-slate-800">
       {/* ===== BANNER ===== */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-end overflow-hidden">
         <img
           src="/about-banner.jpg"
           alt="About Us Banner"
@@ -457,8 +457,8 @@ export default function AboutPage() {
           style={{ imageRendering: "auto", filter: "contrast(1.02)" }}
         />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-left px-8 md:px-16 lg:px-24 pt-28">
-          <p className="text-2xl md:text-4xl lg:text-5xl text-slate-200 max-w-4xl leading-relaxed drop-shadow-lg font-semibold" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}>
+        <div className="relative z-10 text-left px-8 md:px-16 lg:px-24 pb-24">
+          <p className="text-xl md:text-3xl lg:text-4xl text-slate-200 max-w-4xl leading-relaxed drop-shadow-lg font-semibold" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}>
             A leading regional enterprise in the field of non-destructive testing (NDT), providing high-quality technical solutions and industrial services.
           </p>
         </div>
