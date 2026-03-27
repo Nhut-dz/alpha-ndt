@@ -310,16 +310,16 @@ const vietnamLocations = [
 
 // ---- COMPONENTS ----
 
-function SectionTitle({ label, heading, highlight, children }) {
+function SectionTitle({ label, heading, highlight, children, center = false }) {
   return (
-    <div className="text-center mb-12">
+    <div className={`${center ? "text-center" : "text-left"} mb-12`}>
       <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
         {label}
       </span>
       <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
         {heading} <span className="text-orange-400">{highlight}</span>
       </h2>
-      {children && <p className="text-slate-400 text-lg max-w-2xl mx-auto">{children}</p>}
+      {children && <p className={`text-slate-400 text-lg max-w-2xl ${center ? "mx-auto" : ""}`}>{children}</p>}
     </div>
   );
 }
@@ -457,13 +457,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-left px-8 md:px-16 lg:px-24 pt-28">
-          <h1
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg"
-            style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}
-          >
-            <span className="text-orange-400">About</span> Us
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-slate-200 max-w-3xl leading-relaxed drop-shadow-md">
+          <p className="text-2xl md:text-4xl lg:text-5xl text-slate-200 max-w-4xl leading-relaxed drop-shadow-lg font-semibold" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}>
             A leading regional enterprise in the field of non-destructive testing (NDT), providing high-quality technical solutions and industrial services.
           </p>
         </div>
@@ -754,7 +748,7 @@ export default function AboutPage() {
               fade7.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <SectionTitle label="LEADERSHIP" heading="Our" highlight="Management Team" />
+            <SectionTitle label="LEADERSHIP" heading="Our" highlight="Management Team" center />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {leaders.map((person, i) => (
