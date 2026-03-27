@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-end overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Image Slideshow Background */}
       <div className="absolute inset-0 z-0">
@@ -46,7 +46,7 @@ export default function Hero() {
       </div>
 
       {/* Banner Text Overlay */}
-      <div className="relative z-10 text-left px-8 md:px-16 lg:px-24 pb-24">
+      <div className="relative z-10 text-left px-8 md:px-16 lg:px-24">
         {bannerSlides.map((slide, index) => (
           <div
             key={index}
@@ -55,8 +55,10 @@ export default function Hero() {
               opacity: currentSlide === index ? 1 : 0,
               transition: `opacity ${FADE_DURATION}ms ease-in-out`,
               position: index === 0 ? "relative" : "absolute",
-              left: 0,
-              bottom: 0,
+              inset: index === 0 ? undefined : 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             {index === 0 ? (
@@ -66,8 +68,8 @@ export default function Hero() {
               </div>
             ) : (
               <div className="text-white drop-shadow-lg" style={{ fontFamily: "'Arial Unicode MS', Arial, sans-serif" }}>
-                <p className="text-4xl md:text-6xl lg:text-7xl font-bold italic mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}><span className="text-orange-400">Powerful</span></p>
-                <p className="text-2xl md:text-4xl lg:text-5xl">and effective cooperation lasting for years...</p>
+                <p className="text-3xl md:text-5xl lg:text-6xl font-bold italic mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}><span className="text-orange-400">Powerful</span></p>
+                <p className="text-xl md:text-3xl lg:text-4xl">and effective cooperation lasting for years...</p>
               </div>
             )}
           </div>
