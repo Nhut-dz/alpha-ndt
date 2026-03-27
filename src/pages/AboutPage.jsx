@@ -447,7 +447,28 @@ export default function AboutPage() {
   const [activeTooltip, setActiveTooltip] = useState(null);
 
   return (
-    <div className="bg-slate-800 pt-28">
+    <div className="bg-slate-800">
+      {/* ===== BANNER ===== */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <img
+          src="/about-banner.jpg"
+          alt="About Us Banner"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-left px-8 md:px-16 lg:px-24 pt-28">
+          <h1
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg"
+            style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}
+          >
+            <span className="text-orange-400">About</span> Us
+          </h1>
+          <p className="text-lg md:text-xl lg:text-2xl text-slate-200 max-w-3xl leading-relaxed drop-shadow-md">
+            A leading regional enterprise in the field of non-destructive testing (NDT), providing high-quality technical solutions and industrial services.
+          </p>
+        </div>
+      </section>
+
       {/* ===== 1. COMPANY OVERVIEW ===== */}
       <section className="py-16 bg-slate-800" ref={fade1.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
