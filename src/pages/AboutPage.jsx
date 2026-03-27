@@ -220,9 +220,9 @@ const milestones = [
 ];
 
 const leaders = [
-  { name: "Nguyễn Hữu Thời", role: "Chủ tịch / Chairman", image: "/leader-1.jpg" },
-  { name: "Trần Quốc Dũng", role: "Giám Đốc / Director", image: "/leader-2.jpg" },
-  { name: "Nguyễn Giang Nam", role: "Phó Giám Đốc / Deputy Director", image: "/leader-3.jpg" },
+  { name: "Nguyễn Hữu Thời", role: "Chairman", image: "/leader-1.jpg" },
+  { name: "Trần Quốc Dũng", role: "Director", image: "/leader-2.jpg" },
+  { name: "Nguyễn Giang Nam", role: "Deputy Director", image: "/leader-3.jpg" },
 ];
 
 const businessSectors = [
