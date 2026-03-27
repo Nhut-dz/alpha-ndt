@@ -813,15 +813,21 @@ export default function AboutPage() {
       <section className="py-20 bg-slate-50" ref={fade9.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
+            className={`text-center mb-12 transition-all duration-700 ${
+              fade9.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
+            <span className="inline-block text-green-600 font-bold text-2xl md:text-3xl tracking-widest uppercase">
+              DISTRIBUTION NETWORK
+            </span>
+          </div>
+          <div
             className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 transition-all duration-700 ${
               fade9.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             {/* Left: Text & Stats */}
             <div className="flex-1 order-2 lg:order-1">
-              <span className="inline-block text-green-600 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
-                DISTRIBUTION NETWORK
-              </span>
               <p className="text-slate-700 text-xl md:text-2xl font-bold mb-6 leading-relaxed">
                 Hệ thống dự án trải dài từ Bắc vào Nam, mang dịch vụ kiểm tra chất lượng đến tận công trình.
               </p>
