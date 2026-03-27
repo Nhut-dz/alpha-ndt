@@ -664,6 +664,12 @@ export default function AboutPage() {
                 fade4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
+              <div className="w-14 h-14 bg-orange-500/10 text-orange-400 rounded-xl flex items-center justify-center mb-6 border border-orange-500/20">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
               <h3 className="text-orange-400 font-bold text-2xl mb-4">Our Vision</h3>
               <p className="text-slate-200 leading-relaxed text-lg">
                 To be the most trusted and technologically advanced NDT and inspection company
@@ -679,6 +685,11 @@ export default function AboutPage() {
                 fade4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
+              <div className="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 border border-blue-500/20">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm0 0h9" />
+                </svg>
+              </div>
               <h3 className="text-orange-400 font-bold text-2xl mb-4">Our Mission</h3>
               <p className="text-slate-200 leading-relaxed text-lg">
                 To deliver reliable, efficient, and professional NDT and inspection services
