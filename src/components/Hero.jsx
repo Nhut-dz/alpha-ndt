@@ -55,10 +55,8 @@ export default function Hero() {
               opacity: currentSlide === index ? 1 : 0,
               transition: `opacity ${FADE_DURATION}ms ease-in-out`,
               position: index === 0 ? "relative" : "absolute",
-              inset: index === 0 ? undefined : 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              left: 0,
+              bottom: 0,
             }}
           >
             {index === 0 ? (
