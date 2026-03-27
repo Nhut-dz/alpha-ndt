@@ -819,7 +819,10 @@ export default function AboutPage() {
           >
             {/* Left: Text & Stats */}
             <div className="flex-1 order-2 lg:order-1">
-              <p className="text-slate-500 text-lg mb-6 leading-relaxed">
+              <span className="inline-block text-green-600 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
+                DISTRIBUTION NETWORK
+              </span>
+              <p className="text-slate-700 text-xl md:text-2xl font-bold mb-6 leading-relaxed">
                 Hệ thống dự án trải dài từ Bắc vào Nam, mang dịch vụ kiểm tra chất lượng đến tận công trình.
               </p>
 
