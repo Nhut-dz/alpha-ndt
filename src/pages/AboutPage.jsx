@@ -449,7 +449,7 @@ export default function AboutPage() {
   return (
     <div className="bg-slate-800">
       {/* ===== BANNER ===== */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <img
           src="/about-banner.jpg"
           alt="About Us Banner"
