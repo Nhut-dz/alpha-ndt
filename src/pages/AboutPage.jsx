@@ -472,7 +472,7 @@ export default function AboutPage() {
               fade1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <SectionTitle label="ABOUT US" heading="Your Trusted" highlight="Inspection Partner">
+            <SectionTitle label="OVERVIEW" heading="Your Trusted" highlight="Inspection Partner">
               Established in 2002, Alpha NDT is a leading company in Vietnam specializing in
               Non-Destructive Testing and Industrial Inspection services.
             </SectionTitle>
