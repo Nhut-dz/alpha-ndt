@@ -170,7 +170,7 @@ const translations = {
 
   // About
   about: {
-    label: "OVERVIEW",
+    label: "ABOUT US",
     heading1: "Your Trusted",
     headingHighlight: "Inspection Partner",
     description:
