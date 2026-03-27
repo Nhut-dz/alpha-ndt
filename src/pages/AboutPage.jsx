@@ -454,6 +454,7 @@ export default function AboutPage() {
           src="/about-banner.jpg"
           alt="About Us Banner"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ imageRendering: "auto", filter: "contrast(1.02)" }}
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-left px-8 md:px-16 lg:px-24 pt-28">
