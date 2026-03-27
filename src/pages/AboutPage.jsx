@@ -648,8 +648,15 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 4. VISION & MISSION ===== */}
-      <section className="py-16 bg-slate-900" ref={fade4.ref}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 overflow-hidden" ref={fade4.ref}>
+        <img
+          src="/vision-bg.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-900/80" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`transition-all duration-700 ${
               fade4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -660,7 +667,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Vision */}
             <div
-              className={`bg-gradient-to-br from-orange-500/5 to-amber-500/5 border border-orange-500/20 rounded-2xl p-8 transition-all duration-700 delay-100 ${
+              className={`bg-gradient-to-br from-orange-500/10 to-amber-500/10 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-8 transition-all duration-700 delay-100 ${
                 fade4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
@@ -681,7 +688,7 @@ export default function AboutPage() {
             </div>
             {/* Mission */}
             <div
-              className={`bg-gradient-to-br from-blue-500/5 to-cyan-500/5 border border-blue-500/20 rounded-2xl p-8 transition-all duration-700 delay-200 ${
+              className={`bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8 transition-all duration-700 delay-200 ${
                 fade4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
