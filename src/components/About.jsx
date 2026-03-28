@@ -48,7 +48,7 @@ export default function About() {
   const { lang } = useLang();
 
   return (
-    <section id="about" className="py-12 bg-slate-800" ref={sectionRef}>
+    <section id="about" className="py-12 bg-slate-50" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section label */}
         <div
@@ -59,7 +59,7 @@ export default function About() {
           <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
             {t(lang, "about.label")}
           </span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800">
             {t(lang, "about.heading1")}{" "}
             <span className="text-orange-400">
               {t(lang, "about.headingHighlight")}
@@ -77,15 +77,15 @@ export default function About() {
                 : "opacity-0 -translate-x-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1.5 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-600 text-xs font-bold px-3 py-1.5 rounded-full mb-6">
               Established in 2002 • Headquarters in Ho Chi Minh City
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-6 leading-tight">
               AlphaNDT – Over 20 years supporting Vietnam’s industrial sector
             </h3>
 
-            <p className="text-slate-400 text-base leading-relaxed mb-6">
+            <p className="text-slate-600 text-base leading-relaxed mb-6">
               {t(lang, "about.description")}{" "}
               <strong className="text-orange-400">
                 {t(lang, "about.industries")}
@@ -93,10 +93,10 @@ export default function About() {
               {t(lang, "about.descEnd")}
             </p>
 
-            <p className="text-slate-400 text-base leading-relaxed mb-8">
+            <p className="text-slate-600 text-base leading-relaxed mb-8">
               Certified with{" "}
-              <strong className="text-white">ISO 9001:2015</strong> and{" "}
-              <strong className="text-white">ISO/IEC 17025</strong>, and supported
+              <strong className="text-slate-800">ISO 9001:2015</strong> and{" "}
+              <strong className="text-slate-800">ISO/IEC 17025</strong>, and supported
               by engineers holding PCN, CSWIP, and ASNT certifications – we are
               committed to delivering the most accurate inspection results in
               accordance with international standards.
@@ -107,7 +107,7 @@ export default function About() {
               {highlights.map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <span className="text-xl">{item.icon}</span>
-                  <span className="text-slate-300 text-sm font-medium">
+                  <span className="text-slate-700 text-sm font-medium">
                     {item.text}
                   </span>
                 </li>
@@ -122,7 +122,7 @@ export default function About() {
                   .querySelector("#services")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors group"
+              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-300 transition-colors group"
             >
               {t(lang, "about.learnMore")}
               <svg
@@ -161,7 +161,7 @@ export default function About() {
                     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
 
             </div>
 
@@ -179,12 +179,12 @@ export default function About() {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="border-t border-slate-800 pt-8">
+          <div className="border-t border-slate-200 pt-8">
             <div className="text-center mb-10">
-              <h4 className="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-2">
+              <h4 className="text-slate-600 text-sm font-semibold tracking-widest uppercase mb-2">
                 {t(lang, "about.certTitle")}
               </h4>
-              <p className="text-white font-bold text-xl">
+              <p className="text-slate-800 font-bold text-xl">
                 {t(lang, "about.certDesc")}
               </p>
             </div>

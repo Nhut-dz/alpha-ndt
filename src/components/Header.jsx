@@ -37,14 +37,14 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-900/95 backdrop-blur-md shadow-2xl py-2 border-b border-blue-500/30"
-          : "bg-gradient-to-b from-slate-900/80 to-transparent py-4"
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-slate-200"
+          : "bg-white/80 backdrop-blur-sm py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group" aria-label="Alpha NDT - Trang chủ">
-            <img src="/logo.png" alt="Alpha NDT" className="h-20 sm:h-24 w-auto object-contain" />
+            <img src="/logo-light.png" alt="Alpha NDT" className="h-20 sm:h-24 w-auto object-contain" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1" role="navigation">
@@ -55,7 +55,7 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 text-white hover:text-orange-300 hover:bg-white/10"
+                  className="px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 text-slate-700 hover:text-orange-500 hover:bg-orange-50"
                 >
                   {item.label}
                 </a>
@@ -65,8 +65,8 @@ export default function Header() {
                   to={item.href}
                   className={`px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 ${
                     location.pathname === item.href
-                      ? "text-orange-400 bg-orange-500/10 border-b-2 border-orange-400"
-                      : "text-white hover:text-orange-300 hover:bg-white/10"
+                      ? "text-orange-500 bg-orange-50 border-b-2 border-orange-400"
+                      : "text-slate-700 hover:text-orange-500 hover:bg-orange-50"
                   }`}
                 >
                   {item.label}
@@ -87,7 +87,7 @@ export default function Header() {
             </Link>
 
             <button
-              className="lg:hidden p-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden p-2 rounded-md text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
@@ -108,7 +108,7 @@ export default function Header() {
             menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}
         >
-          <nav className="flex flex-col gap-1 pb-4 border-t border-slate-700 pt-4">
+          <nav className="flex flex-col gap-1 pb-4 border-t border-slate-200 pt-4">
             {navItems.map((item) =>
               item.external ? (
                 <a
@@ -116,7 +116,7 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 rounded-md transition-colors"
                 >
                   {item.label}
                 </a>
@@ -124,7 +124,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 rounded-md transition-colors"
                 >
                   {item.label}
                 </Link>
