@@ -6,7 +6,6 @@ import { projects } from "../data";
 import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
 import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
 
 function useFadeIn() {
   const ref = useRef(null);
@@ -27,7 +26,6 @@ export default function Portfolio() {
   const allLabel = t(lang, "portfolio.all");
   const filters = [allLabel, ...filtersEN];
   const [activeFilter, setActiveFilter] = useState(allLabel);
-  const [selected, setSelected] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const ITEMS_PER_PAGE = 6;
 
@@ -94,7 +92,6 @@ export default function Portfolio() {
               project={project}
               index={i}
               visible={visible}
-              onClick={setSelected}
             />
           ))}
         </div>
@@ -143,8 +140,6 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Modal */}
-      <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </section>
   );
 }
