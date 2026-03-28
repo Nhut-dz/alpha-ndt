@@ -7,6 +7,7 @@ import { useParams, Link } from "react-router-dom";
 import { postAPI } from "../services/api";
 import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
+import Breadcrumb from "../components/Breadcrumb";
 
 function formatDate(dateStr) {
   if (!dateStr) return "";
@@ -87,21 +88,10 @@ export default function NewsDetailPage() {
       <div className="max-w-4xl px-4 sm:px-8 lg:px-16">
 
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-          <Link to="/" className="hover:text-white transition-colors">Trang chủ</Link>
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-          <Link to="/news" className="hover:text-white transition-colors">Tin tức</Link>
-          {article.category?.name && (
-            <>
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <span className="text-orange-400">{article.category.name}</span>
-            </>
-          )}
-        </nav>
+        <Breadcrumb items={[
+          { label: "Tin tức", to: "/news" },
+          ...(article.category?.name ? [{ label: article.category.name }] : [{ label: article.title }])
+        ]} />
 
         {/* Meta: Date + Views */}
         <div className="flex items-center gap-4 mb-4">

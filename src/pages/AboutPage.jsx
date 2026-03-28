@@ -3,6 +3,7 @@
 // ============================================================
 import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../components/Breadcrumb";
 
 const VietnamMap = lazy(() => import("../components/VietnamMap"));
 
@@ -459,6 +460,11 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={[{ label: "Giới thiệu" }]} />
+      </div>
 
       {/* ===== 1. COMPANY OVERVIEW ===== */}
       <section className="py-16 bg-white" ref={fade1.ref}>
