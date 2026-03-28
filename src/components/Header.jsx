@@ -35,10 +35,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || location.pathname !== "/"
-          ? "bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-slate-200"
-          : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-200 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-2"
+          : "bg-white py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
