@@ -53,7 +53,7 @@ export default function ProjectCard({ project, index, visible }) {
         {/* Industry badge */}
         <div className="absolute top-3 left-3">
           <span
-            className={`text-xs font-bold px-3 py-1.5 rounded-full border backdrop-blur-sm ${
+            className={`text-xs font-bold px-3 py-1.5 rounded-full border ${
               tagColors[project.tag] ||
               "bg-slate-500/10 text-slate-400 border-slate-500/20"
             }`}
@@ -63,12 +63,12 @@ export default function ProjectCard({ project, index, visible }) {
         </div>
 
         {/* Year */}
-        <div className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-lg">
+        <div className="absolute top-3 right-3 bg-white text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-lg">
           {project.year}
         </div>
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-800/40 backdrop-blur-sm">
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-800/40">
           <div className="bg-white text-slate-900 text-sm font-bold px-5 py-2.5 rounded-full flex items-center gap-2">
             <svg
               className="w-4 h-4"

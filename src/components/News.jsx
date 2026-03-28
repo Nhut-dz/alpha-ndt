@@ -123,12 +123,11 @@ export default function News() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
 
                     {/* Category */}
                     {categoryName && (
                       <div className="absolute top-3 left-3">
-                        <span className={`text-xs font-bold px-3 py-1.5 rounded-full border backdrop-blur-sm ${categoryColorMap[categoryName] || defaultCategoryColors}`}>
+                        <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${categoryColorMap[categoryName] || defaultCategoryColors}`}>
                           {categoryName}
                         </span>
                       </div>

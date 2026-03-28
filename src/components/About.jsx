@@ -161,7 +161,6 @@ export default function About() {
                     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
 
             </div>
 
