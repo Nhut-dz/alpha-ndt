@@ -91,20 +91,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 bg-slate-900" ref={ref}>
+    <section id="contact" className="py-12 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
             {t(lang, "contact.label")}
           </span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
             {t(lang, "contact.heading1")}{" "}
             <span className="text-orange-400">
               {t(lang, "contact.headingHighlight")}
             </span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
             {t(lang, "contact.description")}
           </p>
         </div>
@@ -125,12 +125,12 @@ export default function Contact() {
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-slate-300 text-sm hover:text-blue-400 transition-colors whitespace-pre-line"
+                        className="text-slate-700 text-sm hover:text-blue-400 transition-colors whitespace-pre-line"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-slate-300 text-sm whitespace-pre-line">{info.value}</p>
+                      <p className="text-slate-700 text-sm whitespace-pre-line">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default function Contact() {
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-3">
                 Bản đồ
               </p>
-              <div className="rounded-xl overflow-hidden border border-slate-700">
+              <div className="rounded-xl overflow-hidden border border-slate-200">
                 <iframe
                   title="Alpha NDT Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5!2d106.6340!3d10.7870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z37LDoCBDMTgsIFBow7puZyAxMiwgQsOjeSBIaeG7h24sIEhDTQ!5e0!3m2!1svi!2s!4v1"
@@ -159,7 +159,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div className={`lg:col-span-3 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
-            <div className="bg-slate-700 border border-slate-700 rounded-2xl p-6 sm:p-8">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8">
               {submitted ? (
                 <div className="text-center py-8">
                   <div className="w-20 h-20 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -167,23 +167,23 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-white font-black text-2xl mb-2">Gửi thành công!</h3>
-                  <p className="text-slate-400 mb-6">Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ làm việc.</p>
+                  <h3 className="text-slate-800 font-black text-2xl mb-2">Gửi thành công!</h3>
+                  <p className="text-slate-500 mb-6">Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ làm việc.</p>
                   <button
                     onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", phone: "", service: "", message: "" }); }}
-                    className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                    className="bg-blue-600 hover:bg-blue-500 text-slate-800 font-semibold px-6 py-3 rounded-xl transition-colors"
                   >
                     Gửi yêu cầu khác
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                  <h3 className="text-white font-bold text-xl mb-6">{t(lang, "contact.send")}</h3>
+                  <h3 className="text-slate-800 font-bold text-xl mb-6">{t(lang, "contact.send")}</h3>
 
                   {/* Name + Email */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-slate-400 text-sm font-medium mb-2">
+                      <label className="block text-slate-500 text-sm font-medium mb-2">
                         {t(lang, "contact.name")} <span className="text-red-400">*</span>
                       </label>
                       <input
@@ -191,12 +191,12 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange("name")}
                         placeholder="Nguyễn Văn A"
-                        className={`w-full bg-slate-800 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.name ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
+                        className={`w-full bg-white border rounded-xl px-4 py-3 text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.name ? "border-red-500/50" : "border-slate-300 focus:border-blue-500"}`}
                       />
                       {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
                     </div>
                     <div>
-                      <label className="block text-slate-400 text-sm font-medium mb-2">
+                      <label className="block text-slate-500 text-sm font-medium mb-2">
                         {t(lang, "contact.email")} <span className="text-red-400">*</span>
                       </label>
                       <input
@@ -204,7 +204,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange("email")}
                         placeholder="email@company.com"
-                        className={`w-full bg-slate-800 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.email ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
+                        className={`w-full bg-white border rounded-xl px-4 py-3 text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors ${errors.email ? "border-red-500/50" : "border-slate-300 focus:border-blue-500"}`}
                       />
                       {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                     </div>
@@ -213,21 +213,21 @@ export default function Contact() {
                   {/* Phone + Service */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-slate-400 text-sm font-medium mb-2">{t(lang, "contact.phone")}</label>
+                      <label className="block text-slate-500 text-sm font-medium mb-2">{t(lang, "contact.phone")}</label>
                       <input
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange("phone")}
                         placeholder="+84 9xx xxx xxx"
-                        className="w-full bg-slate-800 border border-slate-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors"
+                        className="w-full bg-white border border-slate-300 focus:border-blue-500 rounded-xl px-4 py-3 text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-400 text-sm font-medium mb-2">{t(lang, "contact.service")}</label>
+                      <label className="block text-slate-500 text-sm font-medium mb-2">{t(lang, "contact.service")}</label>
                       <select
                         value={formData.service}
                         onChange={handleChange("service")}
-                        className="w-full bg-slate-800 border border-slate-700 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors appearance-none"
+                        className="w-full bg-white border border-slate-300 focus:border-blue-500 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors appearance-none"
                       >
                         <option value="">{t(lang, "contact.selectService")}</option>
                         <option value="UT">Ultrasonic Testing (UT)</option>
@@ -244,7 +244,7 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-slate-400 text-sm font-medium mb-2">
+                    <label className="block text-slate-500 text-sm font-medium mb-2">
                       {t(lang, "contact.message")} <span className="text-red-400">*</span>
                     </label>
                     <textarea
@@ -252,7 +252,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange("message")}
                       placeholder="Mô tả dự án, thiết bị cần kiểm định, tiêu chuẩn yêu cầu..."
-                      className={`w-full bg-slate-800 border rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors resize-none ${errors.message ? "border-red-500/50" : "border-slate-700 focus:border-blue-500"}`}
+                      className={`w-full bg-white border rounded-xl px-4 py-3 text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors resize-none ${errors.message ? "border-red-500/50" : "border-slate-300 focus:border-blue-500"}`}
                     />
                     {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
                   </div>
@@ -266,7 +266,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                    className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 disabled:cursor-not-allowed text-slate-800 font-bold py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
@@ -281,7 +281,7 @@ export default function Contact() {
                     {loading ? t(lang, "contact.sending") || "Đang gửi..." : t(lang, "contact.send")}
                   </button>
 
-                  <p className="text-slate-600 text-xs text-center">
+                  <p className="text-slate-500 text-xs text-center">
                     Thông tin của bạn được bảo mật hoàn toàn. Chúng tôi không chia sẻ dữ liệu với bên thứ ba.
                   </p>
                 </form>

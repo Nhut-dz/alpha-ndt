@@ -123,7 +123,7 @@ export default function Services() {
   const [hoveredId, setHoveredId] = useState(null);
 
   return (
-    <section id="services" className="py-12 bg-slate-900" ref={sectionRef}>
+    <section id="services" className="py-12 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div
@@ -134,13 +134,13 @@ export default function Services() {
           <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
             {t(lang, "services.label")}
           </span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
             {t(lang, "services.heading1")}{" "}
             <span className="text-orange-400">
               {t(lang, "services.headingHighlight")}
             </span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             {t(lang, "services.description")}
           </p>
         </div>
@@ -153,9 +153,9 @@ export default function Services() {
               key={service.id}
               onMouseEnter={() => setHoveredId(service.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className={`group relative bg-slate-700 border border-slate-700 rounded-2xl p-6 cursor-pointer
+              className={`group relative bg-white border border-slate-200 shadow-sm rounded-2xl p-6 cursor-pointer
                 transition-all duration-300 overflow-hidden
-                hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1
+                hover:border-orange-300 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
               `}
               style={{ transitionDelay: `${i * 60}ms` }}
@@ -169,7 +169,7 @@ export default function Services() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-700/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent" />
                 </div>
               )}
 
@@ -179,18 +179,18 @@ export default function Services() {
               />
 
               {/* Title */}
-              <h3 className="text-white font-bold text-base mb-1 group-hover:text-blue-300 transition-colors">
+              <h3 className="text-slate-800 font-bold text-base mb-1 group-hover:text-blue-600 transition-colors">
                 {lang === "en" ? service.title : service.titleVi}
               </h3>
               <p className="text-slate-500 text-xs font-medium mb-3">{lang === "en" ? service.titleVi : service.title}</p>
 
               {/* Description */}
-              <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
+              <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">
                 {service.description}
               </p>
 
               {/* Learn more link */}
-              <div className="mt-4 flex items-center gap-1 text-blue-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+              <div className="mt-4 flex items-center gap-1 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-2 group-hover:translate-y-0">
                 {t(lang, "about.learnMore")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -208,7 +208,7 @@ export default function Services() {
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-slate-800 font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
           >
            Consultation on suitable services
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

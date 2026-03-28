@@ -18,7 +18,7 @@ function useFadeIn() {
   return { ref, visible };
 }
 
-const defaultCategoryColors = "bg-slate-500/10 text-slate-400 border-slate-500/20";
+const defaultCategoryColors = "bg-slate-500/10 text-slate-600 border-slate-500/20";
 const categoryColorMap = {
   "Công nghệ": "bg-purple-500/10 text-purple-400 border-purple-500/20",
   "Dịch vụ": "bg-orange-500/10 text-orange-400 border-orange-500/20",
@@ -55,7 +55,7 @@ export default function News() {
   }, []);
 
   return (
-    <section id="news" className="pt-6 pb-12 bg-slate-900" ref={ref}>
+    <section id="news" className="pt-6 pb-12 bg-slate-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -63,7 +63,7 @@ export default function News() {
             <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
               {t(lang, "news.label")}
             </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800">
               {t(lang, "news.heading1")}{" "}
               <span className="text-orange-400">
                 {t(lang, "news.headingHighlight")}
@@ -72,7 +72,7 @@ export default function News() {
           </div>
           <a
             href="#"
-            className="flex-none inline-flex items-center gap-2 border border-slate-700 hover:border-blue-500 text-slate-400 hover:text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-200"
+            className="flex-none inline-flex items-center gap-2 border border-slate-300 hover:border-blue-500 text-slate-600 hover:text-slate-800 text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-200"
           >
             Xem tất cả
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ export default function News() {
         {/* Loading state */}
         {loading && (
           <div className="flex justify-center py-12">
-            <svg className="w-8 h-8 text-blue-400 animate-spin" fill="none" viewBox="0 0 24 24">
+            <svg className="w-8 h-8 text-blue-600 animate-spin" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
             </svg>
@@ -108,8 +108,8 @@ export default function News() {
                 <Link
                   to={`/news/${article.slug}`}
                   key={article.id}
-                  className={`group bg-slate-700 border border-slate-700 rounded-2xl overflow-hidden
-                    hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1
+                  className={`group bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden
+                    hover:border-blue-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1
                     transition-all duration-300 cursor-pointer block
                     ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
                   `}
@@ -123,7 +123,7 @@ export default function News() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
 
                     {/* Category */}
                     {categoryName && (
@@ -145,15 +145,15 @@ export default function News() {
                       {formatDate(article.created_at)}
                     </div>
 
-                    <h3 className="text-white font-bold text-base leading-snug mb-3 group-hover:text-blue-300 transition-colors line-clamp-2">
+                    <h3 className="text-slate-800 font-bold text-base leading-snug mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
                       {article.title}
                     </h3>
 
-                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-4">
+                    <p className="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
                       {excerpt}
                     </p>
 
-                    <div className="flex items-center gap-1 text-blue-400 text-sm font-medium group-hover:gap-2 transition-all">
+                    <div className="flex items-center gap-1 text-blue-600 text-sm font-medium group-hover:gap-2 transition-all">
                       {t(lang, "news.readMore")}
                       <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
