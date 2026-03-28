@@ -89,7 +89,7 @@ export default function NewsDetailPage() {
 
         {/* Breadcrumb */}
         <Breadcrumb items={[
-          { label: "Tin tức", to: "/news" },
+          { label: "News", to: "/news" },
           ...(article.category?.name ? [{ label: article.category.name }] : [{ label: article.title }])
         ]} />
 

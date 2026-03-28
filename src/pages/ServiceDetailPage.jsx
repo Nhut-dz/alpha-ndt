@@ -60,7 +60,7 @@ export default function ServiceDetailPage() {
       {/* Breadcrumb */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumb items={[
-          { label: "Dịch vụ", to: "/services" },
+          { label: "Services", to: "/services" },
           { label: detail.title }
         ]} />
       </div>

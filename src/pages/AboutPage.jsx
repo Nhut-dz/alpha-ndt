@@ -463,7 +463,7 @@ export default function AboutPage() {
 
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Breadcrumb items={[{ label: "Giới thiệu" }]} />
+        <Breadcrumb items={[{ label: "About" }]} />
       </div>
 
       {/* ===== 1. COMPANY OVERVIEW ===== */}

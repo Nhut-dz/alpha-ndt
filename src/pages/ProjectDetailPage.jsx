@@ -47,7 +47,7 @@ export default function ProjectDetailPage() {
 
         {/* Breadcrumb */}
         <Breadcrumb items={[
-          { label: "Dự án", to: "/portfolio" },
+          { label: "Projects", to: "/portfolio" },
           { label: project.title }
         ]} />
 
