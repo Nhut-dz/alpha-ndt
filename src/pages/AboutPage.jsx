@@ -313,10 +313,10 @@ function SectionTitle({ label, heading, highlight, children, center = false }) {
       <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
         {label}
       </span>
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
         {heading} <span className="text-orange-400">{highlight}</span>
       </h2>
-      {children && <p className={`text-slate-600 text-lg max-w-2xl ${center ? "mx-auto" : ""}`}>{children}</p>}
+      {children && <p className={`text-slate-400 text-lg max-w-2xl ${center ? "mx-auto" : ""}`}>{children}</p>}
     </div>
   );
 }
@@ -337,7 +337,7 @@ function HistoryTimeline({ fadeRef }) {
   }
 
   return (
-    <section className="py-16 bg-slate-50" ref={fadeRef.ref}>
+    <section className="py-16 bg-slate-900" ref={fadeRef.ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`transition-all duration-700 ${
@@ -362,8 +362,8 @@ function HistoryTimeline({ fadeRef }) {
                     onClick={() => setActiveYear(ms.year)}
                     className={`relative flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                       activeYear === ms.year
-                        ? "bg-orange-500 text-slate-800 shadow-lg shadow-orange-500/30 scale-110"
-                        : "bg-white text-slate-600 border border-slate-200 hover:border-orange-500/50 hover:text-orange-400"
+                        ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-110"
+                        : "bg-slate-800 text-slate-400 border border-slate-700 hover:border-orange-500/50 hover:text-orange-400"
                     }`}
                   >
                     {ms.year}
@@ -387,10 +387,10 @@ function HistoryTimeline({ fadeRef }) {
           {visibleMilestones.map((ms) => (
             <div
               key={ms.year}
-              className={`bg-white border rounded-2xl overflow-hidden transition-all duration-300 ${
+              className={`bg-slate-800 border rounded-2xl overflow-hidden transition-all duration-300 ${
                 ms.year === activeYear
                   ? "border-orange-500/50 shadow-lg shadow-orange-500/10"
-                  : "border-slate-200 hover:border-slate-600"
+                  : "border-slate-700 hover:border-slate-600"
               }`}
             >
               {/* Image */}
@@ -409,14 +409,14 @@ function HistoryTimeline({ fadeRef }) {
               <div className="p-5">
                 <h3
                   className={`font-black text-2xl mb-3 ${
-                    ms.year === activeYear ? "text-orange-400" : "text-slate-800"
+                    ms.year === activeYear ? "text-orange-400" : "text-white"
                   }`}
                 >
                   {ms.year}
                 </h3>
                 <ul className="space-y-2">
                   {ms.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-2 text-slate-600 text-sm">
+                    <li key={j} className="flex items-start gap-2 text-slate-400 text-sm">
                       <span className="text-orange-400 mt-0.5 flex-shrink-0">&bull;</span>
                       {item}
                     </li>
@@ -443,7 +443,7 @@ export default function AboutPage() {
   const fade9 = useFadeIn();
 
   return (
-    <div className="bg-white">
+    <div className="bg-slate-800">
       {/* ===== BANNER ===== */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
         <img
@@ -461,7 +461,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 1. COMPANY OVERVIEW ===== */}
-      <section className="py-16 bg-white" ref={fade1.ref}>
+      <section className="py-16 bg-slate-800" ref={fade1.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`transition-all duration-700 ${
@@ -483,26 +483,26 @@ export default function AboutPage() {
               <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1.5 rounded-full mb-6">
                 Established in 2002 &bull; Ho Chi Minh City, Vietnam
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-6 leading-tight">
+              <h3 className="text-2xl font-bold text-white mb-6 leading-tight">
                 AlphaNDT &ndash; Over 20 years supporting Vietnam&apos;s industrial sector
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <p className="text-slate-400 leading-relaxed mb-4">
                 Alpha NDT (ALPHA TECHNICAL INSPECTION SERVICES AND TRADING JOINT STOCK COMPANY)
                 was established in 2002 with Enterprise Registration No. 0306455519, issued by
                 the Department of Planning and Investment of Ho Chi Minh City. We have been
                 recognized as a leading NDT service provider in Vietnam and a reliable contractor
                 for many domestic and international companies.
               </p>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                With over <strong className="text-slate-800">100+ certified NDT engineers</strong> and
+              <p className="text-slate-400 leading-relaxed mb-6">
+                With over <strong className="text-white">100+ certified NDT engineers</strong> and
                 technicians, we provide professional inspection services across{" "}
                 <strong className="text-orange-400">oil & gas, marine, shipbuilding, power generation,
                 wind energy, and infrastructure</strong> industries. Our commitment to quality,
                 safety, and accuracy has earned us the trust of leading global corporations.
               </p>
-              <p className="text-slate-600 leading-relaxed">
-                Certified with <strong className="text-slate-800">ISO 9001:2015</strong> and{" "}
-                <strong className="text-slate-800">ISO/IEC 17025</strong>, and approved by
+              <p className="text-slate-400 leading-relaxed">
+                Certified with <strong className="text-white">ISO 9001:2015</strong> and{" "}
+                <strong className="text-white">ISO/IEC 17025</strong>, and approved by
                 classification societies including ABS, Bureau Veritas, ClassNK, DNV, KR, and VR.
               </p>
             </div>
@@ -530,13 +530,13 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 2. QUICK STATS BUTTONS ===== */}
-      <section className="py-12 bg-slate-50" ref={fade2.ref}>
+      <section className="py-12 bg-slate-900" ref={fade2.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {quickStats.map((stat, i) => (
               <div
                 key={i}
-                className={`bg-white border border-slate-200 rounded-2xl p-6 text-center
+                className={`bg-slate-800 border border-slate-700 rounded-2xl p-6 text-center
                   hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10
                   transition-all duration-500 hover:-translate-y-1
                   ${fade2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
@@ -549,8 +549,8 @@ export default function AboutPage() {
                 <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">
                   {stat.label}
                 </p>
-                <p className="text-slate-800 font-bold text-lg mb-1">{stat.value}</p>
-                <p className="text-slate-600 text-xs">{stat.desc}</p>
+                <p className="text-white font-bold text-lg mb-1">{stat.value}</p>
+                <p className="text-slate-400 text-xs">{stat.desc}</p>
               </div>
             ))}
           </div>
@@ -558,7 +558,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 3. COMPANY GALLERY ===== */}
-      <section className="py-16 bg-white" ref={fade3.ref}>
+      <section className="py-16 bg-slate-800" ref={fade3.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`transition-all duration-700 ${
@@ -651,7 +651,7 @@ export default function AboutPage() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-slate-50/80" />
+        <div className="absolute inset-0 bg-slate-900/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Vision */}
@@ -701,7 +701,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 5. CORE VALUES ===== */}
-      <section className="py-16 bg-white" ref={fade5.ref}>
+      <section className="py-16 bg-slate-800" ref={fade5.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`transition-all duration-700 ${
@@ -714,20 +714,20 @@ export default function AboutPage() {
             {coreValues.map((val, i) => (
               <div
                 key={i}
-                className={`group bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center
+                className={`group bg-slate-700/50 border border-slate-700 rounded-2xl p-6 text-center
                   hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-2
                   ${fade5.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
                 `}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${val.color} rounded-2xl flex items-center justify-center mx-auto mb-5 text-slate-800 shadow-lg group-hover:scale-110 transition-transform`}
+                  className={`w-16 h-16 bg-gradient-to-br ${val.color} rounded-2xl flex items-center justify-center mx-auto mb-5 text-white shadow-lg group-hover:scale-110 transition-transform`}
                 >
                   {val.icon}
                 </div>
-                <h3 className="text-slate-800 font-bold text-lg mb-1">{val.title}</h3>
+                <h3 className="text-white font-bold text-lg mb-1">{val.title}</h3>
                 <p className="text-orange-400 text-sm font-medium mb-3">{val.titleVi}</p>
-                <p className="text-slate-600 text-sm leading-relaxed">{val.description}</p>
+                <p className="text-slate-400 text-sm leading-relaxed">{val.description}</p>
               </div>
             ))}
           </div>
@@ -738,7 +738,7 @@ export default function AboutPage() {
       <HistoryTimeline fadeRef={fade6} />
 
       {/* ===== 7. LEADERSHIP ===== */}
-      <section className="py-16 bg-white" ref={fade7.ref}>
+      <section className="py-16 bg-slate-800" ref={fade7.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`transition-all duration-700 ${
@@ -751,7 +751,7 @@ export default function AboutPage() {
             {leaders.map((person, i) => (
               <div
                 key={i}
-                className={`group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden
+                className={`group bg-slate-700/50 border border-slate-700 rounded-2xl overflow-hidden
                   hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1
                   ${fade7.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
                 `}
@@ -769,7 +769,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="p-5 text-center">
-                  <h4 className="text-slate-800 font-bold text-base mb-1">{person.name}</h4>
+                  <h4 className="text-white font-bold text-base mb-1">{person.name}</h4>
                   <p className="text-orange-400 text-sm font-medium">{person.role}</p>
                 </div>
               </div>
@@ -779,7 +779,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 8. BUSINESS SECTORS ===== */}
-      <section className="py-16 bg-slate-50" ref={fade8.ref}>
+      <section className="py-16 bg-slate-900" ref={fade8.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`transition-all duration-700 ${
@@ -792,7 +792,7 @@ export default function AboutPage() {
             {businessSectors.map((sector, i) => (
               <div
                 key={i}
-                className={`bg-white border border-slate-200 rounded-2xl p-6
+                className={`bg-slate-800 border border-slate-700 rounded-2xl p-6
                   hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1
                   ${fade8.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
                 `}
@@ -801,8 +801,8 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-orange-500/10 text-orange-400 rounded-xl flex items-center justify-center mb-4 border border-orange-500/20">
                   {sector.icon}
                 </div>
-                <h4 className="text-slate-800 font-bold text-base mb-2">{sector.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{sector.desc}</p>
+                <h4 className="text-white font-bold text-base mb-2">{sector.title}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">{sector.desc}</p>
               </div>
             ))}
           </div>
@@ -859,17 +859,17 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-slate-50">
+      <section className="py-12 bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-8 border border-orange-500/20">
-            <h3 className="text-slate-800 font-bold text-2xl mb-3">Partner with Alpha NDT</h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <h3 className="text-white font-bold text-2xl mb-3">Partner with Alpha NDT</h3>
+            <p className="text-slate-400 mb-6 max-w-lg mx-auto">
               With over 20 years of experience and 500+ completed projects, we are ready
               to support your next project with world-class inspection services.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-slate-800 font-semibold px-8 py-3 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors"
             >
               Contact Us
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
