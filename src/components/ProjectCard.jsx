@@ -25,7 +25,7 @@ export default function ProjectCard({ project, index, visible, onClick }) {
     <article
       key={project.id}
       onClick={() => onClick(project)}
-      className={`group relative bg-slate-700 border border-slate-700 rounded-2xl overflow-hidden cursor-pointer
+      className={`group relative bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm
         hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1
         transition-all duration-300
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
@@ -62,7 +62,7 @@ export default function ProjectCard({ project, index, visible, onClick }) {
         </div>
 
         {/* Year */}
-        <div className="absolute top-3 right-3 bg-slate-800/80 backdrop-blur-sm text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-lg">
+        <div className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-lg">
           {project.year}
         </div>
 
@@ -98,10 +98,10 @@ export default function ProjectCard({ project, index, visible, onClick }) {
         <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">
           {project.client}
         </p>
-        <h3 className="text-white font-bold text-base mb-2 group-hover:text-blue-300 transition-colors leading-snug">
+        <h3 className="text-slate-800 font-bold text-base mb-2 group-hover:text-blue-600 transition-colors leading-snug">
           {project.title}
         </h3>
-        <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
+        <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
           {project.description}
         </p>
       </div>
