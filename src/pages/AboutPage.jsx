@@ -337,7 +337,7 @@ function HistoryTimeline({ fadeRef }) {
   }
 
   return (
-    <section className="py-16 bg-white" ref={fadeRef.ref}>
+    <section className="py-16 bg-slate-50" ref={fadeRef.ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`transition-all duration-700 ${
@@ -530,7 +530,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 2. QUICK STATS BUTTONS ===== */}
-      <section className="py-12 bg-white" ref={fade2.ref}>
+      <section className="py-12 bg-slate-50" ref={fade2.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {quickStats.map((stat, i) => (
@@ -651,7 +651,7 @@ export default function AboutPage() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-white/80" />
+        <div className="absolute inset-0 bg-slate-50/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Vision */}
@@ -714,7 +714,7 @@ export default function AboutPage() {
             {coreValues.map((val, i) => (
               <div
                 key={i}
-                className={`group bg-white border border-slate-200 rounded-2xl p-6 text-center
+                className={`group bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center
                   hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-2
                   ${fade5.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
                 `}
@@ -751,7 +751,7 @@ export default function AboutPage() {
             {leaders.map((person, i) => (
               <div
                 key={i}
-                className={`group bg-white border border-slate-200 rounded-2xl overflow-hidden
+                className={`group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden
                   hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1
                   ${fade7.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
                 `}
@@ -779,7 +779,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 8. BUSINESS SECTORS ===== */}
-      <section className="py-16 bg-white" ref={fade8.ref}>
+      <section className="py-16 bg-slate-50" ref={fade8.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`transition-all duration-700 ${
@@ -810,7 +810,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 9. DISTRIBUTION NETWORK - VIETNAM MAP ===== */}
-      <section className="py-20 bg-white" ref={fade9.ref}>
+      <section className="py-20 bg-slate-50" ref={fade9.ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center mb-12 transition-all duration-700 ${
@@ -859,7 +859,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-8 border border-orange-500/20">
             <h3 className="text-slate-800 font-bold text-2xl mb-3">Partner with Alpha NDT</h3>
