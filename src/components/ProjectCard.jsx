@@ -1,6 +1,7 @@
 // ============================================================
 // ProjectCard - Individual project card component
 // ============================================================
+import { Link } from "react-router-dom";
 
 const tagColors = {
   "Oil & Gas": "bg-orange-500/10 text-orange-400 border-orange-500/20",
@@ -20,12 +21,12 @@ const tagColors = {
 
 export { tagColors };
 
-export default function ProjectCard({ project, index, visible, onClick }) {
+export default function ProjectCard({ project, index, visible }) {
   return (
-    <article
+    <Link
+      to={`/portfolio/${project.id}`}
       key={project.id}
-      onClick={() => onClick(project)}
-      className={`group relative bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm
+      className={`group relative bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm block
         hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1
         transition-all duration-300
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
@@ -105,6 +106,6 @@ export default function ProjectCard({ project, index, visible, onClick }) {
           {project.description}
         </p>
       </div>
-    </article>
+    </Link>
   );
 }
