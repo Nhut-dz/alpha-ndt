@@ -144,7 +144,7 @@ export default function NewsDetailPage() {
 
         {/* Featured Image - within content area, not full bleed */}
         {featuredImage && (
-          <div className="mb-8 rounded-xl overflow-hidden border border-slate-700">
+          <div className="mb-8 overflow-hidden">
             <img
               src={featuredImage}
               alt={article.title}
