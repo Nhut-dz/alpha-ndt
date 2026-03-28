@@ -55,7 +55,7 @@ export default function WhyUs() {
   const { lang } = useLang();
 
   return (
-    <section id="why-us" className="pt-12 pb-6 bg-slate-900 relative overflow-hidden" ref={ref}>
+    <section id="why-us" className="pt-12 pb-6 bg-slate-50 relative overflow-hidden" ref={ref}>
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
@@ -66,13 +66,13 @@ export default function WhyUs() {
           <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
             {t(lang, "whyUs.label")}
           </span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
             {t(lang, "whyUs.heading1")}{" "}
             <span className="text-orange-400">
               {t(lang, "whyUs.headingHighlight")}
             </span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             {t(lang, "whyUs.description")}
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function WhyUs() {
           {whyChooseUs.map((item, i) => (
             <div
               key={i}
-              className={`group relative bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-700
+              className={`group relative bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-200
                 rounded-2xl p-6 hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10
                 transition-all duration-300 hover:-translate-y-2 text-center
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
@@ -94,10 +94,10 @@ export default function WhyUs() {
                 {iconMap[item.icon]}
               </div>
 
-              <h3 className="text-white font-bold text-lg mb-3 group-hover:text-blue-300 transition-colors">
+              <h3 className="text-slate-800 font-bold text-lg mb-3 group-hover:text-blue-300 transition-colors">
                 {item.title}
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {item.description}
               </p>
 
