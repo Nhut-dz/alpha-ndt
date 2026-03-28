@@ -36,10 +36,10 @@ export default function RecruitmentDetailPage() {
     return (
       <div className="pt-28 pb-20 bg-white min-h-screen">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">Tin tuyển dụng không tồn tại</h1>
-          <p className="text-slate-600 mb-8">Tin tuyển dụng bạn tìm kiếm không tồn tại hoặc đã hết hạn.</p>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">Job posting not found</h1>
+          <p className="text-slate-600 mb-8">The job posting you're looking for doesn't exist or has expired.</p>
           <Link to="/careers" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
-            ← Quay lại tuyển dụng
+            ← Back to Careers
           </Link>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function RecruitmentDetailPage() {
     <div className="bg-white min-h-screen pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-16">
         <Breadcrumb items={[
-          { label: "Tuyển dụng", to: "/careers" },
+          { label: "Careers", to: "/careers" },
           { label: job.title }
         ]} />
 
@@ -91,20 +91,20 @@ export default function RecruitmentDetailPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 bg-slate-50 rounded-2xl p-5 border border-slate-200">
           {job.salary_range && (
             <div>
-              <p className="text-slate-500 text-xs uppercase font-medium mb-1">Mức lương</p>
+              <p className="text-slate-500 text-xs uppercase font-medium mb-1">Salary</p>
               <p className="text-slate-800 font-semibold">{job.salary_range}</p>
             </div>
           )}
           {job.quantity && (
             <div>
-              <p className="text-slate-500 text-xs uppercase font-medium mb-1">Số lượng</p>
-              <p className="text-slate-800 font-semibold">{job.quantity} người</p>
+              <p className="text-slate-500 text-xs uppercase font-medium mb-1">Openings</p>
+              <p className="text-slate-800 font-semibold">{job.quantity}</p>
             </div>
           )}
           {job.deadline && (
             <div>
-              <p className="text-slate-500 text-xs uppercase font-medium mb-1">Hạn nộp</p>
-              <p className="text-slate-800 font-semibold">{new Date(job.deadline).toLocaleDateString("vi-VN")}</p>
+              <p className="text-slate-500 text-xs uppercase font-medium mb-1">Deadline</p>
+              <p className="text-slate-800 font-semibold">{new Date(job.deadline).toLocaleDateString("en-US")}</p>
             </div>
           )}
           {job.contact_email && (
@@ -126,7 +126,7 @@ export default function RecruitmentDetailPage() {
         {/* Description */}
         {job.description && (
           <div className="mb-8">
-            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Mô tả công việc</h2>
+            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Job Description</h2>
             <p className="text-slate-700 leading-relaxed whitespace-pre-line">{job.description}</p>
           </div>
         )}
@@ -134,7 +134,7 @@ export default function RecruitmentDetailPage() {
         {/* Requirements */}
         {job.requirements && (
           <div className="mb-8 border-t border-slate-200 pt-6">
-            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Yêu cầu</h2>
+            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Requirements</h2>
             <p className="text-slate-600 leading-relaxed whitespace-pre-line">{job.requirements}</p>
           </div>
         )}
@@ -142,7 +142,7 @@ export default function RecruitmentDetailPage() {
         {/* Benefits */}
         {job.benefits && (
           <div className="mb-8 border-t border-slate-200 pt-6">
-            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Quyền lợi</h2>
+            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Benefits</h2>
             <p className="text-slate-600 leading-relaxed whitespace-pre-line">{job.benefits}</p>
           </div>
         )}
@@ -150,7 +150,7 @@ export default function RecruitmentDetailPage() {
         {/* HTML Content */}
         {job.content && (
           <div className="mb-8 border-t border-slate-200 pt-6">
-            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Chi tiết</h2>
+            <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Details</h2>
             <div
               className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-p:text-slate-600 prose-a:text-blue-600"
               dangerouslySetInnerHTML={{ __html: job.content }}
@@ -160,22 +160,22 @@ export default function RecruitmentDetailPage() {
 
         {/* Apply CTA */}
         <div className="mt-12 bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-8 border border-orange-500/20 text-center">
-          <h3 className="text-slate-800 font-bold text-xl mb-3">Ứng tuyển ngay!</h3>
+          <h3 className="text-slate-800 font-bold text-xl mb-3">Apply Now!</h3>
           <p className="text-slate-600 mb-6 max-w-lg mx-auto">
-            Gửi CV và thư xin việc cho chúng tôi qua email hoặc liên hệ trực tiếp.
+            Send us your CV and cover letter via email or contact us directly.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {job.contact_email && (
-              <a href={`mailto:${job.contact_email}?subject=Ứng tuyển: ${job.title}`}
+              <a href={`mailto:${job.contact_email}?subject=Application: ${job.title}`}
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-                Gửi CV qua Email
+                Send CV via Email
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </a>
             )}
             <Link to="/contact" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-              Liên hệ
+              Contact
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

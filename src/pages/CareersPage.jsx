@@ -33,7 +33,7 @@ export default function CareersPage() {
   return (
     <div className="pt-28 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Breadcrumb items={[{ label: "Tuyển dụng" }]} />
+        <Breadcrumb items={[{ label: "Careers" }]} />
       </div>
 
       <section className="py-12 bg-white" ref={ref}>
@@ -44,10 +44,10 @@ export default function CareersPage() {
               CAREERS
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
-              Cơ hội nghề nghiệp tại <span className="text-orange-500">Alpha NDT</span>
+              Career Opportunities at <span className="text-orange-500">Alpha NDT</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              Tham gia đội ngũ chuyên gia hàng đầu trong lĩnh vực kiểm tra không phá hủy (NDT)
+              Join our team of leading experts in Non-Destructive Testing (NDT)
             </p>
           </div>
 
@@ -61,8 +61,8 @@ export default function CareersPage() {
           {/* Empty */}
           {!loading && jobs.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-slate-500 text-lg">Hiện tại chưa có vị trí tuyển dụng nào.</p>
-              <p className="text-slate-400 mt-2">Vui lòng quay lại sau hoặc gửi CV cho chúng tôi.</p>
+              <p className="text-slate-500 text-lg">No open positions at the moment.</p>
+              <p className="text-slate-400 mt-2">Please check back later or send us your CV.</p>
             </div>
           )}
 
@@ -113,11 +113,11 @@ export default function CareersPage() {
                       )}
                       {job.deadline && (
                         <span className="text-slate-400 text-xs">
-                          Hạn: {new Date(job.deadline).toLocaleDateString("vi-VN")}
+                          Deadline: {new Date(job.deadline).toLocaleDateString("en-US")}
                         </span>
                       )}
                       <span className="inline-flex items-center gap-1 text-blue-600 font-medium text-sm group-hover:text-orange-500 transition-colors">
-                        Xem chi tiết
+                        View Details
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
@@ -131,12 +131,12 @@ export default function CareersPage() {
 
           {/* CTA */}
           <div className={`mt-16 text-center bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-10 border border-orange-500/20 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <h3 className="text-slate-800 font-bold text-xl mb-3">Không tìm thấy vị trí phù hợp?</h3>
+            <h3 className="text-slate-800 font-bold text-xl mb-3">Can't find the right position?</h3>
             <p className="text-slate-600 mb-6 max-w-lg mx-auto">
-              Gửi CV của bạn cho chúng tôi. Chúng tôi luôn tìm kiếm những nhân tài xuất sắc.
+              Send us your CV. We're always looking for talented individuals.
             </p>
             <Link to="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-              Liên hệ ngay
+              Contact Us
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
