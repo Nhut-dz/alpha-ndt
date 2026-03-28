@@ -25,4 +25,16 @@ export const contactAPI = {
   send: (data) => api.post('/public/contacts', data),
 }
 
+// Public Projects
+export const projectAPI = {
+  list: (params = {}) => api.get('/public/projects', { params }),
+  getBySlug: (slug) => api.get(`/public/projects/${slug}`),
+}
+
+// Public Recruitments
+export const recruitmentAPI = {
+  list: (params = {}) => api.get('/public/recruitments', { params }),
+  getBySlug: (slug) => api.get(`/public/recruitments/${slug}`),
+}
+
 export default api

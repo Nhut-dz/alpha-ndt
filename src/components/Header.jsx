@@ -16,6 +16,7 @@ export default function Header() {
     { label: t(lang, "nav.services"), href: "/services" },
     { label: t(lang, "nav.portfolio"), href: "/portfolio" },
     { label: t(lang, "nav.news"), href: "/news" },
+    { label: "Tuyển dụng", href: "/careers" },
     { label: t(lang, "nav.contact"), href: "/contact" },
     { label: "Platform", href: "http://platform.alpha-ndt.com/Login?ReturnUrl=~/Default?st=", external: true },
   ];
