@@ -37,21 +37,21 @@ export default function ServiceDetailPage() {
           alt={detail.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 max-w-5xl mx-auto">
           <Link
             to="/services"
-            className="inline-flex items-center gap-1 text-slate-600 hover:text-slate-800 text-sm font-medium mb-4 transition-colors"
+            className="inline-flex items-center gap-1 text-white/80 hover:text-white text-sm font-medium mb-4 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back to Services
           </Link>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-800 mb-3">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
             {detail.title}
           </h1>
-          <p className="text-orange-500 text-lg md:text-xl font-semibold">
+          <p className="text-orange-400 text-lg md:text-xl font-semibold">
             {detail.subtitle}
           </p>
         </div>
