@@ -16,11 +16,11 @@ export default function ProjectModal({ project, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-200/90 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-800/90 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-white border border-slate-200 shadow-xl rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+        className="bg-slate-700 border border-slate-700 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative flex-shrink-0">
@@ -35,7 +35,7 @@ export default function ProjectModal({ project, onClose }) {
           />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 bg-slate-100/80 hover:bg-slate-200 text-slate-800 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+            className="absolute top-4 right-4 bg-slate-800/80 hover:bg-slate-800 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors"
           >
             ✕
           </button>
@@ -49,7 +49,7 @@ export default function ProjectModal({ project, onClose }) {
           >
             {project.tag}
           </span>
-          <h3 className="text-slate-800 font-black text-xl mb-2">
+          <h3 className="text-white font-black text-xl mb-2">
             {project.title}
           </h3>
           <p className="text-orange-400 text-sm font-semibold mb-2">
@@ -58,20 +58,20 @@ export default function ProjectModal({ project, onClose }) {
 
           {/* Year & Industry & Location */}
           <div className="flex flex-wrap gap-4 mb-4 text-sm">
-            <span className="text-slate-600">
+            <span className="text-slate-400">
               <span className="text-slate-500">Year:</span> {project.year}
             </span>
-            <span className="text-slate-600">
+            <span className="text-slate-400">
               <span className="text-slate-500">Industry:</span> {project.industry}
             </span>
             {project.location && (
-              <span className="text-slate-600">
+              <span className="text-slate-400">
                 <span className="text-slate-500">Location:</span> {project.location}
               </span>
             )}
           </div>
 
-          <p className="text-slate-600 leading-relaxed mb-4">
+          <p className="text-slate-400 leading-relaxed mb-4">
             {project.description}
           </p>
 
@@ -81,7 +81,7 @@ export default function ProjectModal({ project, onClose }) {
               <h4 className="text-orange-400 font-semibold text-sm mb-2">
                 Project Details
               </h4>
-              <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-line">
+              <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">
                 {content.trim()}
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function ProjectModal({ project, onClose }) {
                   </h4>
                   <ul className="space-y-1">
                     {content.scope.map((item, i) => (
-                      <li key={i} className="text-slate-600 text-sm flex items-start gap-2">
+                      <li key={i} className="text-slate-400 text-sm flex items-start gap-2">
                         <span className="text-orange-400 mt-1 flex-shrink-0">•</span>
                         {item}
                       </li>
@@ -136,7 +136,7 @@ export default function ProjectModal({ project, onClose }) {
                     {content.methods.map((method, i) => (
                       <span
                         key={i}
-                        className="bg-slate-600 text-slate-700 text-xs px-2.5 py-1 rounded-lg font-medium"
+                        className="bg-slate-600 text-slate-300 text-xs px-2.5 py-1 rounded-lg font-medium"
                       >
                         {method}
                       </span>
@@ -171,7 +171,7 @@ export default function ProjectModal({ project, onClose }) {
                     <h4 className="text-orange-400 font-semibold text-sm mb-1">
                       Location
                     </h4>
-                    <p className="text-slate-600 text-sm">{content.location}</p>
+                    <p className="text-slate-400 text-sm">{content.location}</p>
                   </div>
                 )}
                 {content.duration && (
@@ -179,7 +179,7 @@ export default function ProjectModal({ project, onClose }) {
                     <h4 className="text-orange-400 font-semibold text-sm mb-1">
                       Duration
                     </h4>
-                    <p className="text-slate-600 text-sm">{content.duration}</p>
+                    <p className="text-slate-400 text-sm">{content.duration}</p>
                   </div>
                 )}
               </div>
@@ -189,7 +189,7 @@ export default function ProjectModal({ project, onClose }) {
           <div className="flex justify-end mt-6">
             <button
               onClick={onClose}
-              className="bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold px-6 py-2.5 rounded-xl transition-colors"
+              className="bg-slate-700 hover:bg-slate-600 text-white text-sm font-semibold px-6 py-2.5 rounded-xl transition-colors"
             >
               {t(lang, "portfolio.close")}
             </button>
