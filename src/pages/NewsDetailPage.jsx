@@ -84,7 +84,7 @@ export default function NewsDetailPage() {
 
   return (
     <div className="bg-slate-800 min-h-screen pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl px-4 sm:px-8 lg:px-16">
 
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
