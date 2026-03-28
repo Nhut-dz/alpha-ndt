@@ -37,7 +37,7 @@ export default function ServiceDetailPage() {
           alt={detail.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-white/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 max-w-5xl mx-auto">
           <Link
             to="/services"
