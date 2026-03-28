@@ -1,5 +1,6 @@
 // ============================================================
 // NewsDetailPage - Chi tiết bài viết
+// Layout tham khảo: pvcfc.com.vn article detail
 // ============================================================
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
@@ -17,21 +18,38 @@ export default function NewsDetailPage() {
   const { slug } = useParams();
   const { lang } = useLang();
   const [article, setArticle] = useState(null);
+  const [relatedPosts, setRelatedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    postAPI.getBySlug(slug)
-      .then((res) => {
-        if (res.data?.success) {
-          setArticle(res.data.data);
+    setError(false);
+
+    Promise.all([
+      postAPI.getBySlug(slug),
+      postAPI.list(),
+    ])
+      .then(([articleRes, postsRes]) => {
+        if (articleRes.data?.success) {
+          setArticle(articleRes.data.data);
+          // Lấy bài viết liên quan (cùng category, loại bỏ bài hiện tại)
+          const allPosts = postsRes.data?.data || [];
+          const related = allPosts
+            .filter((p) => p.slug !== slug)
+            .slice(0, 4);
+          setRelatedPosts(related);
         } else {
           setError(true);
         }
       })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
+  }, [slug]);
+
+  // Scroll to top when slug changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
 
   if (loading) {
@@ -62,81 +80,93 @@ export default function NewsDetailPage() {
     );
   }
 
-  const heroImage = article.img_url || null;
+  const featuredImage = article.img_url || null;
 
   return (
-    <div className="bg-slate-800 min-h-screen">
-      {/* Hero Banner */}
-      {heroImage && (
-        <div className="relative h-[340px] md:h-[420px] overflow-hidden">
-          <img
-            src={heroImage}
-            alt={article.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-800 via-slate-800/60 to-slate-800/20" />
-        </div>
-      )}
+    <div className="bg-slate-800 min-h-screen pt-24 pb-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Back link */}
-        <Link
-          to="/news"
-          className="inline-flex items-center gap-1 text-slate-400 hover:text-white text-sm font-medium mb-6 transition-colors"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
+          <Link to="/" className="hover:text-white transition-colors">Trang chủ</Link>
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
-          Quay lại tin tức
-        </Link>
-
-        {/* Category + Date */}
-        <div className="flex items-center gap-3 mb-4">
+          <Link to="/news" className="hover:text-white transition-colors">Tin tức</Link>
           {article.category?.name && (
-            <span className="bg-orange-500/10 text-orange-400 text-xs font-bold px-3 py-1.5 rounded-full border border-orange-500/20">
-              {article.category.name}
-            </span>
+            <>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <span className="text-orange-400">{article.category.name}</span>
+            </>
           )}
-          <span className="text-slate-500 text-sm flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        </nav>
+
+        {/* Meta: Date + Views */}
+        <div className="flex items-center gap-4 mb-4">
+          <span className="text-slate-400 text-sm flex items-center gap-1.5">
+            <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
             {formatDate(article.created_at)}
           </span>
           {article.view > 0 && (
-            <span className="text-slate-500 text-sm flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="text-slate-400 text-sm flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
               {article.view} lượt xem
             </span>
           )}
+          {article.admin?.name && (
+            <span className="text-slate-400 text-sm flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              {article.admin.name}
+            </span>
+          )}
         </div>
 
+        {/* Category badge */}
+        {article.category?.name && (
+          <span className="inline-block bg-orange-500/10 text-orange-400 text-xs font-bold px-3 py-1.5 rounded-full border border-orange-500/20 mb-5">
+            {article.category.name}
+          </span>
+        )}
+
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-8 leading-tight">
           {article.title}
         </h1>
 
-        {/* Author */}
-        {article.admin?.name && (
-          <p className="text-slate-500 text-sm mb-8">
-            Tác giả: <span className="text-slate-300">{article.admin.name}</span>
-          </p>
+        {/* Featured Image - within content area, not full bleed */}
+        {featuredImage && (
+          <div className="mb-8 rounded-xl overflow-hidden border border-slate-700">
+            <img
+              src={featuredImage}
+              alt={article.title}
+              className="w-full h-auto object-cover max-h-[420px]"
+            />
+          </div>
         )}
+
+        {/* Divider */}
+        <div className="border-t border-slate-700 mb-8" />
 
         {/* Article content */}
         <div
           className="prose prose-invert prose-slate max-w-none
             prose-headings:text-white prose-headings:font-bold
-            prose-p:text-slate-300 prose-p:leading-relaxed
+            prose-p:text-slate-300 prose-p:leading-relaxed prose-p:text-base
             prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
-            prose-img:rounded-xl prose-img:border prose-img:border-slate-700
+            prose-img:rounded-xl prose-img:border prose-img:border-slate-700 prose-img:my-6
             prose-strong:text-white
             prose-ul:text-slate-300 prose-ol:text-slate-300
-            prose-blockquote:border-orange-500 prose-blockquote:text-slate-400"
+            prose-blockquote:border-orange-500 prose-blockquote:text-slate-400
+            prose-li:marker:text-orange-400"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
 
@@ -158,6 +188,50 @@ export default function NewsDetailPage() {
             </svg>
           </Link>
         </div>
+
+        {/* Related Articles */}
+        {relatedPosts.length > 0 && (
+          <div className="mt-14">
+            <h2 className="text-orange-400 font-bold text-sm tracking-widest uppercase mb-6">
+              Bài viết liên quan
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {relatedPosts.map((post) => (
+                <Link
+                  key={post.id}
+                  to={`/news/${post.slug}`}
+                  className="group flex gap-4 bg-slate-700/50 rounded-xl p-4 border border-slate-700 hover:border-orange-500/30 transition-all hover:-translate-y-0.5"
+                >
+                  {/* Thumbnail */}
+                  {post.img_url && (
+                    <div className="w-24 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                      <img
+                        src={post.img_url}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-col justify-center min-w-0">
+                    <span className="text-slate-500 text-xs mb-1.5 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      {formatDate(post.created_at)}
+                      {post.category?.name && (
+                        <span className="ml-2 text-orange-400">{post.category.name}</span>
+                      )}
+                    </span>
+                    <h4 className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors line-clamp-2">
+                      {post.title}
+                    </h4>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
