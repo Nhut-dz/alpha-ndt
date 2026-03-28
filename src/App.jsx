@@ -14,6 +14,7 @@ const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const NewsPage = lazy(() => import("./pages/NewsPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const ServiceDetailPage = lazy(() => import("./pages/ServiceDetailPage"));
+const NewsDetailPage = lazy(() => import("./pages/NewsDetailPage"));
 const Footer = lazy(() => import("./components/Footer"));
 
 // Section skeleton loader
@@ -73,6 +74,7 @@ export default function App() {
           <Route path="/services/:id" element={<ServiceDetailPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/:slug" element={<NewsDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Suspense>
