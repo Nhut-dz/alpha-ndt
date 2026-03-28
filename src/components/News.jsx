@@ -2,6 +2,7 @@
 // News / Blog Section
 // ============================================================
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useLang } from "../context/LanguageContext";
 import { t } from "../data/translations";
 import { postAPI, storageUrl } from "../services/api";
@@ -104,11 +105,12 @@ export default function News() {
               const categoryName = article.category?.name || "";
               const excerpt = article.excerpt || stripHtml(article.content).slice(0, 150);
               return (
-                <article
+                <Link
+                  to={`/news/${article.slug}`}
                   key={article.id}
                   className={`group bg-slate-700 border border-slate-700 rounded-2xl overflow-hidden
                     hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1
-                    transition-all duration-300 cursor-pointer
+                    transition-all duration-300 cursor-pointer block
                     ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
                   `}
                   style={{ transitionDelay: `${i * 100}ms` }}
@@ -158,7 +160,7 @@ export default function News() {
                       </svg>
                     </div>
                   </div>
-                </article>
+                </Link>
               );
             })}
           </div>
