@@ -1,8 +1,12 @@
 import Services from "../components/Services";
+import Breadcrumb from "../components/Breadcrumb";
 
 export default function ServicesPage() {
   return (
     <div className="pt-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={[{ label: "Dịch vụ" }]} />
+      </div>
       <Services />
     </div>
   );

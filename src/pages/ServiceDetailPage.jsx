@@ -4,6 +4,7 @@
 import { useParams, Link } from "react-router-dom";
 import { services } from "../data";
 import { serviceDetails } from "../data/serviceDetails";
+import Breadcrumb from "../components/Breadcrumb";
 
 export default function ServiceDetailPage() {
   const { id } = useParams();
@@ -54,6 +55,14 @@ export default function ServiceDetailPage() {
             {detail.subtitle}
           </p>
         </div>
+      </div>
+
+      {/* Breadcrumb */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={[
+          { label: "Dịch vụ", to: "/services" },
+          { label: detail.title }
+        ]} />
       </div>
 
       {/* Content */}
