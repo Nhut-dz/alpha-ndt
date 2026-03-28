@@ -116,7 +116,7 @@ export default function News() {
                   {/* Image */}
                   <div className="relative h-52 overflow-hidden">
                     <img
-                      src={storageUrl(article.img) || "/placeholder-news.jpg"}
+                      src={article.img_url || storageUrl(article.img) || "/placeholder-news.jpg"}
                       alt={article.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
