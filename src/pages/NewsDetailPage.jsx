@@ -171,7 +171,7 @@ export default function NewsDetailPage() {
                 <Link
                   key={post.id}
                   to={`/news/${post.slug}`}
-                  className="group flex gap-4 bg-gray-50 rounded-xl p-4 border border-gray-200 dark:border-slate-700 hover:border-orange-300 transition-all hover:-translate-y-0.5"
+                  className="group flex gap-4 bg-gray-50 dark:bg-slate-800 rounded-xl p-4 border border-gray-200 dark:border-slate-700 hover:border-orange-300 transition-all hover:-translate-y-0.5"
                 >
                   {/* Thumbnail */}
                   {post.img_url && (
