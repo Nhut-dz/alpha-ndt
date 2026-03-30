@@ -71,20 +71,20 @@ export default function Partners() {
   const { lang } = useLang();
 
   return (
-    <section id="partners" className="py-12 bg-slate-50 overflow-hidden" ref={ref}>
+    <section id="partners" className="py-12 bg-slate-50 dark:bg-slate-800 overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-orange-400 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
             {t(lang, "partners.label")}
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mb-4">
             {t(lang, "partners.heading1")}{" "}
             <span className="text-orange-400">
               {t(lang, "partners.headingHighlight")}
             </span>
           </h2>
-          <p className="text-slate-600 max-w-xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
             Proud to serve the world's leading oil and gas, energy, and shipbuilding corporations.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function Partners() {
               {doubled.map((partner, i) => (
                 <div
                   key={i}
-                  className="flex-none flex items-center justify-center w-40 h-24 bg-white border border-slate-200 rounded-xl hover:border-orange-400/50 transition-all duration-300 group p-4" 
+                  className="flex-none flex items-center justify-center w-40 h-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-orange-400/50 transition-all duration-300 group p-4" 
                 >
                   {partner.logo ? (
                     <img
@@ -116,7 +116,7 @@ export default function Partners() {
                     />
                   ) : (
                     <div className="text-center">
-                      <div className="text-slate-800 font-black text-lg group-hover:text-orange-500 transition-colors">
+                      <div className="text-slate-800 dark:text-white font-black text-lg group-hover:text-orange-500 transition-colors">
                         {partner.abbr}
                       </div>
                     </div>

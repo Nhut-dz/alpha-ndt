@@ -11,7 +11,7 @@ const Careers = lazy(() => import("../components/Careers"));
 const Contact = lazy(() => import("../components/Contact"));
 
 const SectionLoader = () => (
-  <div className="py-24 flex justify-center bg-slate-800">
+  <div className="py-24 flex justify-center bg-white dark:bg-slate-900">
     <div className="flex gap-2">
       <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
       <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />

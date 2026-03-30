@@ -31,22 +31,22 @@ export default function CareersPage() {
   };
 
   return (
-    <div className="pt-28 bg-white min-h-screen">
+    <div className="pt-28 bg-white dark:bg-slate-900 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumb items={[{ label: "Careers" }]} />
       </div>
 
-      <section className="py-12 bg-white" ref={ref}>
+      <section className="py-12 bg-white dark:bg-slate-900" ref={ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className={`text-center mb-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             <span className="inline-block text-orange-500 font-bold text-2xl md:text-3xl tracking-widest uppercase mb-3">
               CAREERS
             </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-white mb-4">
               Career Opportunities at <span className="text-orange-500">Alpha NDT</span>
             </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto">
               Join our team of leading experts in Non-Destructive Testing (NDT)
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function CareersPage() {
           {/* Empty */}
           {!loading && jobs.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-slate-500 text-lg">No open positions at the moment.</p>
+              <p className="text-slate-500 dark:text-slate-400 text-lg">No open positions at the moment.</p>
               <p className="text-slate-400 mt-2">Please check back later or send us your CV.</p>
             </div>
           )}
@@ -73,18 +73,18 @@ export default function CareersPage() {
                 <Link
                   key={job.id}
                   to={`/careers/${job.slug}`}
-                  className={`group block bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-orange-500/30 hover:-translate-y-0.5 transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                  className={`group block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-orange-500/30 hover:-translate-y-0.5 transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-800 group-hover:text-orange-500 transition-colors mb-2">
+                      <h3 className="text-xl font-bold text-slate-800 dark:text-white group-hover:text-orange-500 transition-colors mb-2">
                         {job.title}
                       </h3>
-                      <p className="text-slate-600 text-sm line-clamp-2 mb-3">
+                      <p className="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 mb-3">
                         {job.description || job.position}
                       </p>
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+                      <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
                         {job.department && (
                           <span className="flex items-center gap-1">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ export default function CareersPage() {
                             {job.location}
                           </span>
                         )}
-                        <span className="bg-blue-50 text-blue-600 px-2.5 py-0.5 rounded-full font-medium text-xs">
+                        <span className="bg-blue-50 dark:bg-blue-900/20 text-blue-600 px-2.5 py-0.5 rounded-full font-medium text-xs">
                           {typeLabel(job.employment_type)}
                         </span>
                       </div>
@@ -131,8 +131,8 @@ export default function CareersPage() {
 
           {/* CTA */}
           <div className={`mt-16 text-center bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-10 border border-orange-500/20 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <h3 className="text-slate-800 font-bold text-xl mb-3">Can't find the right position?</h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <h3 className="text-slate-800 dark:text-white font-bold text-xl mb-3">Can't find the right position?</h3>
+            <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-lg mx-auto">
               Send us your CV. We're always looking for talented individuals.
             </p>
             <Link to="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors">

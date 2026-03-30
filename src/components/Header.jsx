@@ -4,10 +4,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLang } from "../context/LanguageContext";
+import { useTheme } from "../context/ThemeContext";
 import { t } from "../data/translations";
 
 export default function Header() {
   const { lang } = useLang();
+  const { dark, toggleTheme } = useTheme();
   const location = useLocation();
 
   const navItems = [
@@ -36,10 +38,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-200 dark:border-slate-700 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg py-1"
-          : "bg-white py-2"
+          ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg py-1"
+          : "bg-white dark:bg-slate-900 py-2"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +58,7 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 text-slate-700 hover:text-orange-500 hover:bg-blue-50"
+                  className="px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:bg-blue-50 dark:bg-blue-900/20 dark:hover:bg-slate-800"
                 >
                   {item.label}
                 </a>
@@ -66,8 +68,8 @@ export default function Header() {
                   to={item.href}
                   className={`px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 ${
                     location.pathname === item.href
-                      ? "text-orange-500 bg-blue-50 border-b-2 border-blue-500"
-                      : "text-slate-700 hover:text-orange-500 hover:bg-blue-50"
+                      ? "text-orange-500 bg-blue-50 dark:bg-slate-800 border-b-2 border-blue-500"
+                      : "text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:bg-blue-50 dark:bg-blue-900/20 dark:hover:bg-slate-800"
                   }`}
                 >
                   {item.label}
@@ -76,9 +78,24 @@ export default function Header() {
             )}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <button
-              className="lg:hidden p-2 rounded-md text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {dark ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              )}
+            </button>
+            <button
+              className="lg:hidden p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
@@ -99,7 +116,7 @@ export default function Header() {
             menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}
         >
-          <nav className="flex flex-col gap-1 pb-4 border-t border-slate-200 pt-4">
+          <nav className="flex flex-col gap-1 pb-4 border-t border-slate-200 dark:border-slate-700 pt-4">
             {navItems.map((item) =>
               item.external ? (
                 <a
@@ -107,7 +124,7 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 rounded-md transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"
                 >
                   {item.label}
                 </a>
@@ -115,7 +132,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 rounded-md transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"
                 >
                   {item.label}
                 </Link>

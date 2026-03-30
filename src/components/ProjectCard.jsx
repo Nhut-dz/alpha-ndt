@@ -26,7 +26,7 @@ export default function ProjectCard({ project, index, visible }) {
     <Link
       to={`/portfolio/${project.id}`}
       key={project.id}
-      className={`group relative bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm block
+      className={`group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden cursor-pointer shadow-sm block
         hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1
         transition-all duration-300
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
@@ -63,13 +63,13 @@ export default function ProjectCard({ project, index, visible }) {
         </div>
 
         {/* Year */}
-        <div className="absolute top-3 right-3 bg-white text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-lg">
+        <div className="absolute top-3 right-3 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-lg">
           {project.year}
         </div>
 
         {/* Hover overlay */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-800/40">
-          <div className="bg-white text-slate-900 text-sm font-bold px-5 py-2.5 rounded-full flex items-center gap-2">
+          <div className="bg-white dark:bg-slate-900 text-slate-900 text-sm font-bold px-5 py-2.5 rounded-full flex items-center gap-2">
             <svg
               className="w-4 h-4"
               fill="none"
@@ -96,13 +96,13 @@ export default function ProjectCard({ project, index, visible }) {
 
       {/* Content */}
       <div className="p-5">
-        <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">
+        <p className="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">
           {project.client}
         </p>
-        <h3 className="text-slate-800 font-bold text-base mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+        <h3 className="text-slate-800 dark:text-white font-bold text-base mb-2 group-hover:text-blue-600 transition-colors leading-snug">
           {project.title}
         </h3>
-        <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
+        <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed line-clamp-2">
           {project.description}
         </p>
       </div>

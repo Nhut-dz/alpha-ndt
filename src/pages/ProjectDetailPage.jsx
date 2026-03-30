@@ -17,10 +17,10 @@ export default function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <div className="pt-28 pb-20 bg-white min-h-screen">
+      <div className="pt-28 pb-20 bg-white dark:bg-slate-900 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">Dự án không tồn tại</h1>
-          <p className="text-slate-600 mb-8">Dự án bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
+          <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">Dự án không tồn tại</h1>
+          <p className="text-slate-600 dark:text-slate-300 mb-8">Dự án bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
           <Link
             to="/portfolio"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
@@ -42,7 +42,7 @@ export default function ProjectDetailPage() {
     .slice(0, 4);
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-16">
+    <div className="bg-white dark:bg-slate-900 min-h-screen pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-16">
 
         {/* Breadcrumb */}
@@ -53,17 +53,17 @@ export default function ProjectDetailPage() {
 
         {/* Meta info */}
         <div className="flex flex-wrap items-center gap-3 mb-4">
-          <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${tagColors[project.tag] || "bg-slate-100 text-slate-500 border-slate-200"}`}>
+          <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${tagColors[project.tag] || "bg-slate-100 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-700"}`}>
             {project.tag}
           </span>
-          <span className="text-slate-500 text-sm flex items-center gap-1.5">
+          <span className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-1.5">
             <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
             {project.year}
           </span>
           {project.industry && (
-            <span className="text-slate-500 text-sm flex items-center gap-1.5">
+            <span className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-1.5">
               <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
@@ -78,7 +78,7 @@ export default function ProjectDetailPage() {
         </p>
 
         {/* Title */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-8 leading-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 dark:text-white mb-8 leading-tight">
           {project.title}
         </h1>
 
@@ -95,25 +95,25 @@ export default function ProjectDetailPage() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-slate-200 mb-8" />
+        <div className="border-t border-slate-200 dark:border-slate-700 mb-8" />
 
         {/* Description */}
         <div className="mb-8">
           <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">
             Mô tả dự án
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-300 text-lg leading-relaxed">
             {project.description}
           </p>
         </div>
 
         {/* String content */}
         {isStringContent && (
-          <div className="border-t border-slate-200 pt-6 mb-8">
+          <div className="border-t border-slate-200 dark:border-slate-700 pt-6 mb-8">
             <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">
               Chi tiết dự án
             </h2>
-            <p className="text-slate-600 leading-relaxed whitespace-pre-line">
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line">
               {content.trim()}
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function ProjectDetailPage() {
 
         {/* Highlights */}
         {project.highlights && project.highlights.length > 0 && (
-          <div className="border-t border-slate-200 pt-6 mb-8">
+          <div className="border-t border-slate-200 dark:border-slate-700 pt-6 mb-8">
             <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">
               Điểm nổi bật
             </h2>
@@ -140,7 +140,7 @@ export default function ProjectDetailPage() {
 
         {/* Object content (structured) */}
         {isObjectContent && (
-          <div className="space-y-6 border-t border-slate-200 pt-6 mb-8">
+          <div className="space-y-6 border-t border-slate-200 dark:border-slate-700 pt-6 mb-8">
             {content.scope && (
               <div>
                 <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">
@@ -148,7 +148,7 @@ export default function ProjectDetailPage() {
                 </h2>
                 <ul className="space-y-2">
                   {content.scope.map((item, i) => (
-                    <li key={i} className="text-slate-600 flex items-start gap-2">
+                    <li key={i} className="text-slate-600 dark:text-slate-300 flex items-start gap-2">
                       <span className="text-orange-500 mt-1 flex-shrink-0">•</span>
                       {item}
                     </li>
@@ -164,7 +164,7 @@ export default function ProjectDetailPage() {
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {content.methods.map((method, i) => (
-                    <span key={i} className="bg-slate-100 text-slate-700 text-sm px-3 py-1.5 rounded-lg font-medium">
+                    <span key={i} className="bg-slate-100 text-slate-700 dark:text-slate-300 text-sm px-3 py-1.5 rounded-lg font-medium">
                       {method}
                     </span>
                   ))}
@@ -191,13 +191,13 @@ export default function ProjectDetailPage() {
               {content.location && (
                 <div>
                   <h3 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-2">Địa điểm</h3>
-                  <p className="text-slate-600">{content.location}</p>
+                  <p className="text-slate-600 dark:text-slate-300">{content.location}</p>
                 </div>
               )}
               {content.duration && (
                 <div>
                   <h3 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-2">Thời gian</h3>
-                  <p className="text-slate-600">{content.duration}</p>
+                  <p className="text-slate-600 dark:text-slate-300">{content.duration}</p>
                 </div>
               )}
             </div>
@@ -215,7 +215,7 @@ export default function ProjectDetailPage() {
                 <Link
                   key={p.id}
                   to={`/portfolio/${p.id}`}
-                  className="group flex gap-4 bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-orange-500/30 transition-all hover:-translate-y-0.5 hover:shadow-md"
+                  className="group flex gap-4 bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700 hover:border-orange-500/30 transition-all hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <div className="w-24 h-20 rounded-lg overflow-hidden flex-shrink-0">
                     <img
@@ -229,11 +229,11 @@ export default function ProjectDetailPage() {
                     />
                   </div>
                   <div className="flex flex-col justify-center min-w-0">
-                    <span className="text-slate-500 text-xs mb-1.5 flex items-center gap-1">
+                    <span className="text-slate-500 dark:text-slate-400 text-xs mb-1.5 flex items-center gap-1">
                       {p.year}
                       <span className="ml-2 text-orange-500">{p.tag}</span>
                     </span>
-                    <h4 className="text-slate-800 text-sm font-semibold group-hover:text-orange-500 transition-colors line-clamp-2">
+                    <h4 className="text-slate-800 dark:text-white text-sm font-semibold group-hover:text-orange-500 transition-colors line-clamp-2">
                       {p.title}
                     </h4>
                   </div>
