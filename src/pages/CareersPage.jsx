@@ -128,20 +128,6 @@ export default function CareersPage() {
               ))}
             </div>
           )}
-
-          {/* CTA */}
-          <div className={`mt-16 text-center bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-10 border border-orange-500/20 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <h3 className="text-slate-800 dark:text-white font-bold text-xl mb-3">Can't find the right position?</h3>
-            <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-lg mx-auto">
-              Send us your CV. We're always looking for talented individuals.
-            </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-              Contact Us
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
         </div>
       </section>
     </div>

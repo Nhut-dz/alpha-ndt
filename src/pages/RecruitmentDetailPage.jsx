@@ -157,31 +157,6 @@ export default function RecruitmentDetailPage() {
             />
           </div>
         )}
-
-        {/* Apply CTA */}
-        <div className="mt-12 bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-8 border border-orange-500/20 text-center">
-          <h3 className="text-slate-800 dark:text-white font-bold text-xl mb-3">Apply Now!</h3>
-          <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-lg mx-auto">
-            Send us your CV and cover letter via email or contact us directly.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {job.contact_email && (
-              <a href={`mailto:${job.contact_email}?subject=Application: ${job.title}`}
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-                Send CV via Email
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </a>
-            )}
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-              Contact
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
       </div>
     </div>
   );
