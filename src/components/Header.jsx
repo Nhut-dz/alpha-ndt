@@ -40,8 +40,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? "bg-white/95 dark:bg-slate-900 backdrop-blur-md shadow-lg dark:shadow-slate-800/50 py-1 border-slate-200 dark:border-slate-700"
-          : "bg-white dark:bg-slate-900 py-2 border-slate-200 dark:border-slate-700"
+          ? "bg-white/95 dark:bg-slate-900/70 backdrop-blur-md shadow-lg dark:shadow-slate-900/50 py-1 border-slate-200 dark:border-white/10"
+          : "bg-white dark:bg-transparent py-2 border-slate-200 dark:border-white/10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
