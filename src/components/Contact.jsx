@@ -159,7 +159,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div className={`lg:col-span-3 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
-            <div className="bg-slate-50 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-8">
+            <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-8">
               {submitted ? (
                 <div className="text-center py-8">
                   <div className="w-20 h-20 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -171,7 +171,7 @@ export default function Contact() {
                   <p className="text-slate-500 dark:text-slate-400 mb-6">Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ làm việc.</p>
                   <button
                     onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", phone: "", service: "", message: "" }); }}
-                    className="bg-blue-600 hover:bg-blue-500 text-slate-800 dark:text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                    className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
                   >
                     Gửi yêu cầu khác
                   </button>
@@ -266,7 +266,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 disabled:cursor-not-allowed text-slate-800 dark:text-white font-bold py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                    className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">

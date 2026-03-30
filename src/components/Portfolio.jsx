@@ -76,7 +76,7 @@ export default function Portfolio() {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeFilter === f
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-800 dark:hover:text-white border border-slate-200 dark:border-slate-700"
               }`}
             >
               {f}
@@ -102,7 +102,7 @@ export default function Portfolio() {
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-200 bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800 dark:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-200 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-800 dark:hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
             >
               ‹
             </button>
@@ -113,7 +113,7 @@ export default function Portfolio() {
                 className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-200 ${
                   currentPage === page
                     ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800 dark:text-white"
+                    : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-800 dark:hover:text-white"
                 }`}
               >
                 {page}
@@ -122,7 +122,7 @@ export default function Portfolio() {
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-200 bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800 dark:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-200 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-800 dark:hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
             >
               ›
             </button>
