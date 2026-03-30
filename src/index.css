@@ -118,3 +118,10 @@
 .marquee-track:hover {
   animation-play-state: paused;
 }
+
+/* Force content images in news detail to full width (override CMS inline styles) */
+.prose img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+}
