@@ -864,27 +864,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-2xl p-8 border border-orange-500/20">
-            <h3 className="text-slate-800 font-bold text-2xl mb-3">Partner with Alpha NDT</h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
-              With over 20 years of experience and 500+ completed projects, we are ready
-              to support your next project with world-class inspection services.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-slate-800 font-semibold px-8 py-3 rounded-xl transition-colors"
-            >
-              Contact Us
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

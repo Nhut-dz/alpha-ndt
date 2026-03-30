@@ -159,26 +159,6 @@ export default function ServiceDetailPage() {
           </div>
         )}
 
-        {/* CTA */}
-        <div className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-2xl p-8 border border-orange-200 text-center">
-          <h3 className="text-slate-800 font-bold text-xl mb-3">
-            Need {detail.title}?
-          </h3>
-          <p className="text-slate-600 mb-6 max-w-lg mx-auto">
-            Contact us to discuss your project requirements. Our team of certified experts
-            is ready to provide tailored solutions for your inspection needs.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors"
-          >
-            Get a Quote
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </div>
-
         {/* Other Services */}
         <div className="mt-12">
           <h2 className="text-orange-500 font-bold text-sm tracking-widest uppercase mb-6">

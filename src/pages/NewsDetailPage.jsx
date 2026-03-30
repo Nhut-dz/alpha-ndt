@@ -160,25 +160,6 @@ export default function NewsDetailPage() {
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
 
-        {/* CTA */}
-        <div className="mt-12 bg-gradient-to-r from-orange-50 to-blue-50 rounded-2xl p-8 border border-orange-200 text-center">
-          <h3 className="text-gray-900 font-bold text-xl mb-3">
-            Bạn cần tư vấn thêm?
-          </h3>
-          <p className="text-gray-500 mb-6 max-w-lg mx-auto">
-            Liên hệ với chúng tôi để được tư vấn chi tiết về dịch vụ kiểm định và giám định chất lượng.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors"
-          >
-            Liên hệ ngay
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </div>
-
         {/* Related Articles */}
         {relatedPosts.length > 0 && (
           <div className="mt-14">
