@@ -152,7 +152,7 @@ export default function NewsDetailPage() {
             prose-headings:text-gray-900 prose-headings:font-bold
             prose-p:text-gray-700 prose-p:leading-relaxed prose-p:text-base
             prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-            prose-img:w-full prose-img:h-auto prose-img:rounded-xl prose-img:border prose-img:border-gray-200 prose-img:my-6
+            prose-img:!w-full prose-img:!h-auto prose-img:!max-w-full prose-img:rounded-xl prose-img:border prose-img:border-gray-200 prose-img:my-6
             prose-strong:text-gray-900
             prose-ul:text-gray-700 prose-ol:text-gray-700
             prose-blockquote:border-orange-500 prose-blockquote:text-gray-500
