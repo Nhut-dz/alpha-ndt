@@ -59,7 +59,7 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:bg-blue-50 dark:bg-blue-900/20 dark:hover:bg-slate-800"
+                  className="px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:bg-blue-50 dark:hover:bg-white/10"
                 >
                   {item.label}
                 </a>
@@ -69,8 +69,8 @@ export default function Header() {
                   to={item.href}
                   className={`px-4 py-2 text-sm font-semibold tracking-wide uppercase rounded-md transition-all duration-200 ${
                     location.pathname === item.href
-                      ? "text-orange-500 bg-blue-50 dark:bg-slate-800 border-b-2 border-blue-500"
-                      : "text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:bg-blue-50 dark:bg-blue-900/20 dark:hover:bg-slate-800"
+                      ? "text-orange-500 border-b-2 border-blue-500"
+                      : "text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:bg-blue-50 dark:hover:bg-white/10"
                   }`}
                 >
                   {item.label}
